@@ -3,16 +3,15 @@
  * https://github.com/Amarok79/Contracts
  */
 
-using BenchmarkDotNet.Running;
+using System;
+using System.Runtime.CompilerServices;
 
 
 namespace Amarok.Contracts
 {
-	public static class Program
+	/// <summary>
+	/// </summary>
+	public static partial class Verify
 	{
-		public static void Main()
-		{
-			BenchmarkRunner.Run<Benchmarks>();
-		}
 	}
 }
