@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>netcoreapp2.1;net471</TargetFrameworks>
+		<RootNamespace>Amarok</RootNamespace>
+		<CodeAnalysisRuleSet>..\Minimal.ruleset</CodeAnalysisRuleSet>
+		<AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\bin\benchmark\</OutputPath>
+		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+		<LangVersion>latest</LangVersion>
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<WarningsAsErrors />
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\bin\benchmark\</OutputPath>
+		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\Amarok.Contracts.licenseheader" Link="Amarok.Contracts.licenseheader" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.11.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Amarok.Contracts\Amarok.Contracts.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Contracts\" />
+	</ItemGroup>
+
+	<Choose>
+		<When Condition=" '$(Configuration)' != 'Debug' ">
+			<ItemGroup>
+				<PackageReference Include="SonarAnalyzer.CSharp">
+					<Version>7.5.0.6605</Version>
+					<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+					<PrivateAssets>all</PrivateAssets>
+				</PackageReference>
+			</ItemGroup>
+		</When>
+	</Choose>
+
+</Project>
