@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/amarok79/Amarok.Contracts/_apis/build/status/Amarok.Contracts)](https://dev.azure.com/amarok79/Amarok.Contracts/_build/latest?definitionId=4)
+[![Build status](https://dev.azure.com/amarok79/Amarok.Events/_apis/build/status/Amarok.Contracts)](https://dev.azure.com/amarok79/Amarok.Events/_build/latest?definitionId=6)
 [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=Amarok79_Contracts&metric=alert_status)](https://sonarcloud.io/dashboard?id=Amarok79_Contracts)
 [![Build Status](https://sonarcloud.io/api/project_badges/measure?project=Amarok79_Contracts&metric=coverage)](https://sonarcloud.io/api/project_badges/measure?project=Amarok79_Contracts&metric=coverage)
 [![NuGet](https://img.shields.io/nuget/v/Amarok.Contracts.svg?logo=)](https://www.nuget.org/packages/Amarok.Contracts/)
