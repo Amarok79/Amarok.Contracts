@@ -8,10 +8,10 @@
 		<Company>&lt;none&gt;</Company>
 		<Description>TBD</Description>
 		<Copyright>Copyright (c) 2018, Olaf Kober</Copyright>
-		<PackageLicenseUrl>https://raw.githubusercontent.com/Amarok79/Contracts/master/LICENSE</PackageLicenseUrl>
-		<PackageProjectUrl>https://github.com/Amarok79/Contracts</PackageProjectUrl>
+		<PackageLicenseUrl>https://raw.githubusercontent.com/Amarok79/Amarok.Contracts/master/LICENSE</PackageLicenseUrl>
+		<PackageProjectUrl>https://github.com/Amarok79/Amarok.Contracts</PackageProjectUrl>
 		<PackageIconUrl>https://amarok.blob.core.windows.net/public/amarok.ico</PackageIconUrl>
-		<RepositoryUrl>https://github.com/Amarok79/Contracts</RepositoryUrl>
+		<RepositoryUrl>https://github.com/Amarok79/Amarok.Contracts</RepositoryUrl>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<CodeAnalysisRuleSet>..\Global.ruleset</CodeAnalysisRuleSet>
@@ -49,7 +49,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
-		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.2" />
+		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.1" />
 		<PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.1" />
 	</ItemGroup>
 	<ItemGroup>
