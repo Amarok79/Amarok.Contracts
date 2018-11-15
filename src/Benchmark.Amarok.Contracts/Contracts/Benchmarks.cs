@@ -42,17 +42,17 @@ namespace Amarok.Contracts
 			return SomeMethod1("abc");
 		}
 
-		//[Benchmark]
-		//public Boolean VerifyNotNull()
-		//{
-		//	return SomeMethod2("abc");
-		//}
+		[Benchmark]
+		public Boolean VerifyNotNull()
+		{
+			return SomeMethod2("abc");
+		}
 
-		//[Benchmark]
-		//public Boolean VerifyNotNull_Conditional()
-		//{
-		//	return SomeMethod3("abc");
-		//}
+		[Benchmark]
+		public Boolean VerifyNotNull_Conditional()
+		{
+			return SomeMethod3("abc");
+		}
 
 		[Benchmark]
 		public Boolean VerifyNotNull_Configurable()

@@ -13,5 +13,17 @@ namespace Amarok.Contracts
 	/// </summary>
 	public static partial class Verify
 	{
+		/// <summary>
+		/// </summary>
+		public static partial class Debug
+		{
+		}
+
+		/// <summary>
+		/// </summary>
+		public static partial class Configurable
+		{
+			public static Boolean IsEnabled;
+		}
 	}
 }
