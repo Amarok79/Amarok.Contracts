@@ -12,58 +12,51 @@ using NUnit.Framework;
 
 namespace Amarok.Contracts
 {
-	public class Test_Verify
+	public partial class Test_Verify
 	{
-		[TestFixture]
-		public class NotNull
+		[Test]
+		public void NotNull_DoesNotThrow_For_Instance()
 		{
-			[Test]
-			public void DoesNotThrow()
-			{
-				Check.ThatCode(() => Verify.NotNull(new Object(), "name"))
-					.DoesNotThrow();
-			}
-
-			[Test]
-			public void Throws()
-			{
-				var exception = Check.ThatCode(() => Verify.NotNull((Object)null, "name"))
-					.Throws<ArgumentNullException>()
-					.Value;
-
-				Check.That(exception.Message)
-					.Not.IsEmpty();
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+			Check.ThatCode(() => Verify.NotNull(new Object(), "name"))
+				.DoesNotThrow();
 		}
 
-		[TestFixture]
-		public class NotNull_Debug
+		[Test]
+		public void NotNull_Throws_For_Null()
 		{
-			[Test]
-			public void DoesNotThrow()
-			{
-				Check.ThatCode(() => Verify.Debug.NotNull(new Object(), "name"))
-					.DoesNotThrow();
-			}
+			var exception = Check.ThatCode(() => Verify.NotNull((Object)null, "name"))
+				.Throws<ArgumentNullException>()
+				.Value;
 
-			[Test]
-			public void Throws()
-			{
-				var exception = Check.ThatCode(() => Verify.Debug.NotNull((Object)null, "name"))
-					.Throws<ArgumentNullException>()
-					.Value;
+			Check.That(exception.Message)
+				.StartsWith(ExceptionResources.ArgumentNull);
+			Check.That(exception.ParamName)
+				.IsEqualTo("name");
+			Check.That(exception.InnerException)
+				.IsNull();
+		}
 
-				Check.That(exception.Message)
-					.Not.IsEmpty();
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+
+		[Test]
+		public void DebugNotNull_DoesNotThrow_For_Instance()
+		{
+			Check.ThatCode(() => Verify.Debug.NotNull(new Object(), "name"))
+				.DoesNotThrow();
+		}
+
+		[Test]
+		public void DebugNotNull_Throws_For_Null()
+		{
+			var exception = Check.ThatCode(() => Verify.Debug.NotNull((Object)null, "name"))
+				.Throws<ArgumentNullException>()
+				.Value;
+
+			Check.That(exception.Message)
+				.StartsWith(ExceptionResources.ArgumentNull);
+			Check.That(exception.ParamName)
+				.IsEqualTo("name");
+			Check.That(exception.InnerException)
+				.IsNull();
 		}
 	}
 }

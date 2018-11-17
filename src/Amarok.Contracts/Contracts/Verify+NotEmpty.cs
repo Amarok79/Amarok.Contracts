@@ -14,7 +14,7 @@ namespace Amarok.Contracts
 	public partial class Verify
 	{
 		/// <summary>
-		/// Verifies that the given value is not a null reference, hence, that it refers to a valid object.
+		/// Verifies that the given value is neither null nor an empty string.
 		/// </summary>
 		/// 
 		/// <param name="value">
@@ -24,19 +24,22 @@ namespace Amarok.Contracts
 		/// 
 		/// <exception cref="ArgumentNullException">
 		/// Null is not a valid value.</exception>
+		/// <exception cref="ArgumentException">
+		/// An empty string is not a valid value.</exception>
 		[DebuggerStepThrough]
-		public static void NotNull<T>(T value, String paramName)
-			where T : class
+		public static void NotEmpty(String value, String paramName)
 		{
 			if (value is null)
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+			if (value.Length == 0)
+				throw new ArgumentException(ExceptionResources.ArgumentEmptyString, paramName);
 		}
 
 
 		public static partial class Debug
 		{
 			/// <summary>
-			/// Verifies that the given value is not a null reference, hence, that it refers to a valid object.
+			/// Verifies that the given value is neither null nor an empty string.
 			/// </summary>
 			/// 
 			/// <param name="value">
@@ -46,13 +49,16 @@ namespace Amarok.Contracts
 			/// 
 			/// <exception cref="ArgumentNullException">
 			/// Null is not a valid value.</exception>
+			/// <exception cref="ArgumentException">
+			/// An empty string is not a valid value.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void NotNull<T>(T value, String paramName)
-				where T : class
+			public static void NotEmpty(String value, String paramName)
 			{
 				if (value is null)
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+				if (value.Length == 0)
+					throw new ArgumentException(ExceptionResources.ArgumentEmptyString, paramName);
 			}
 		}
 	}

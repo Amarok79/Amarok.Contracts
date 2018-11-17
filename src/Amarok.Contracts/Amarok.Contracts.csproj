@@ -49,6 +49,19 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-63127-02" PrivateAssets="All" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Contracts\ExceptionResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>ExceptionResources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Update="Contracts\ExceptionResources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>ExceptionResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
 
 	<Choose>
 		<When Condition=" '$(Configuration)' != 'Debug' ">
