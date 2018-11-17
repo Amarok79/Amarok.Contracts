@@ -6,14 +6,13 @@
 #define DEBUG
 
 using System;
-using NCrunch.Framework;
 using NFluent;
 using NUnit.Framework;
 
 
 namespace Amarok.Contracts
 {
-	public partial class Test_Verify
+	public class Test_Verify
 	{
 		[TestFixture]
 		public class NotNull
@@ -64,56 +63,6 @@ namespace Amarok.Contracts
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)
 					.IsNull();
-			}
-		}
-
-		[TestFixture]
-		public class NotNull_Configurable
-		{
-			[Test]
-			public void DoesNotThrow()
-			{
-				Check.ThatCode(() => Verify.Configurable.NotNull(new Object(), "name"))
-					.DoesNotThrow();
-
-			}
-
-			[Test, Serial]
-			public void Throws_Enabled()
-			{
-				Verify.Configurable.IsEnabled = true;
-				try
-				{
-					var exception = Check.ThatCode(() => Verify.Configurable.NotNull((Object)null, "name"))
-						.Throws<ArgumentNullException>()
-						.Value;
-
-					Check.That(exception.Message)
-						.Not.IsEmpty();
-					Check.That(exception.ParamName)
-						.IsEqualTo("name");
-					Check.That(exception.InnerException)
-						.IsNull();
-				}
-				finally
-				{
-					Verify.Configurable.IsEnabled = false;
-				}
-			}
-
-			[Test, Serial]
-			public void Throws_Disabled()
-			{
-				Verify.Configurable.IsEnabled = false;
-				try
-				{
-					Check.ThatCode(() => Verify.Configurable.NotNull((Object)null, "name"))
-						.DoesNotThrow();
-				}
-				finally
-				{
-					Verify.Configurable.IsEnabled = false;
-				}
 			}
 		}
 	}

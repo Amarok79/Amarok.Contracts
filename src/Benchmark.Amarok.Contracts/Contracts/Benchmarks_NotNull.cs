@@ -28,19 +28,6 @@ namespace Amarok.Contracts
 			Verify.Debug.NotNull(text, nameof(text));
 		}
 
-		public void TestMethodUsingVerifyConfigurable(String text)
-		{
-			Verify.Configurable.NotNull(text, nameof(text));
-			Verify.Configurable.NotNull(text, nameof(text));
-			Verify.Configurable.NotNull(text, nameof(text));
-		}
-
-
-		public Benchmarks_NotNull()
-		{
-			Verify.Configurable.IsEnabled = false;
-		}
-
 
 		[Benchmark(Baseline = true)]
 		public void Verify_NotNull()
@@ -52,12 +39,6 @@ namespace Amarok.Contracts
 		public void Verify_Debug_NotNull()
 		{
 			TestMethodUsingVerifyDebug("abc");
-		}
-
-		[Benchmark]
-		public void Verify_Configurable_NotNull()
-		{
-			TestMethodUsingVerifyConfigurable("abc");
 		}
 	}
 }

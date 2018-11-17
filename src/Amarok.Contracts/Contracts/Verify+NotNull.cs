@@ -55,29 +55,5 @@ namespace Amarok.Contracts
 					throw new ArgumentNullException(paramName);
 			}
 		}
-
-
-		public static partial class Configurable
-		{
-			/// <summary>
-			/// Verifies that the given value is not a null reference, hence, that it refers to a valid object.
-			/// </summary>
-			/// 
-			/// <param name="value">
-			/// The value to verify.</param>
-			/// <param name="paramName">
-			/// The name of the method parameter that is verified.</param>
-			/// 
-			/// <exception cref="ArgumentNullException">
-			/// A null reference was passed to a method that did not accept it as a valid argument.</exception>
-			[DebuggerStepThrough]
-			public static void NotNull<T>(T value, String paramName)
-				where T : class
-			{
-				if (!sIsEnabled)
-					return;
-				Verify.NotNull(value, paramName);
-			}
-		}
 	}
 }
