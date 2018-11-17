@@ -27,6 +27,10 @@
 	  <DefineConstants>DEBUG;TRACE</DefineConstants>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp2.1|AnyCPU'">
+	  <DefineConstants>TRACE</DefineConstants>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<None Include="..\Amarok.Contracts.licenseheader" Link="Amarok.Contracts.licenseheader" />
 		<None Include="..\amarok.snk" Link="amarok.snk" />

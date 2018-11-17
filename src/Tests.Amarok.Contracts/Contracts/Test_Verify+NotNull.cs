@@ -3,6 +3,8 @@
  * https://github.com/Amarok79/Amarok.Contracts
  */
 
+#define DEBUG
+
 using System;
 using NCrunch.Framework;
 using NFluent;
@@ -11,7 +13,7 @@ using NUnit.Framework;
 
 namespace Amarok.Contracts
 {
-	public class Test_Verify
+	public partial class Test_Verify
 	{
 		[TestFixture]
 		public class NotNull
@@ -52,7 +54,6 @@ namespace Amarok.Contracts
 			[Test]
 			public void Throws()
 			{
-#if DEBUG
 				var exception = Check.ThatCode(() => Verify.Debug.NotNull((Object)null, "name"))
 					.Throws<ArgumentNullException>()
 					.Value;
@@ -63,10 +64,6 @@ namespace Amarok.Contracts
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)
 					.IsNull();
-#else
-				Check.ThatCode(() => Verify.Debug.NotNull((Object)null, "name"))
-					.DoesNotThrow();
-#endif
 			}
 		}
 
@@ -78,10 +75,11 @@ namespace Amarok.Contracts
 			{
 				Check.ThatCode(() => Verify.Configurable.NotNull(new Object(), "name"))
 					.DoesNotThrow();
+
 			}
 
 			[Test, Serial]
-			public void Throws_On()
+			public void Throws_Enabled()
 			{
 				Verify.Configurable.IsEnabled = true;
 				try
@@ -104,7 +102,7 @@ namespace Amarok.Contracts
 			}
 
 			[Test, Serial]
-			public void Throws_Off()
+			public void Throws_Disabled()
 			{
 				Verify.Configurable.IsEnabled = false;
 				try

@@ -4,7 +4,6 @@
  */
 
 #pragma warning disable S3218 // Inner class members should not shadow outer class "static" or type members
-#pragma warning disable S3963 // "static" fields should be initialized inline
 
 using System;
 using System.Diagnostics;
@@ -50,7 +49,7 @@ namespace Amarok.Contracts
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void NotNull<T>(T value, String paramName)
-			where T : class
+				where T : class
 			{
 				if (value is null)
 					throw new ArgumentNullException(paramName);
@@ -73,9 +72,9 @@ namespace Amarok.Contracts
 			/// A null reference was passed to a method that did not accept it as a valid argument.</exception>
 			[DebuggerStepThrough]
 			public static void NotNull<T>(T value, String paramName)
-			where T : class
+				where T : class
 			{
-				if (!IsEnabled)
+				if (!sIsEnabled)
 					return;
 				Verify.NotNull(value, paramName);
 			}
