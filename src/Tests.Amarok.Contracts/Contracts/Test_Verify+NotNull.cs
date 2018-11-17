@@ -19,6 +19,8 @@ namespace Amarok.Contracts
 		{
 			Check.ThatCode(() => Verify.NotNull(new Object(), "name"))
 				.DoesNotThrow();
+			Check.ThatCode(() => Verify.NotNull(123, "name"))
+				.DoesNotThrow();
 		}
 
 		[Test]
@@ -41,6 +43,8 @@ namespace Amarok.Contracts
 		public void DebugNotNull_DoesNotThrow_For_Instance()
 		{
 			Check.ThatCode(() => Verify.Debug.NotNull(new Object(), "name"))
+				.DoesNotThrow();
+			Check.ThatCode(() => Verify.Debug.NotNull(123, "name"))
 				.DoesNotThrow();
 		}
 

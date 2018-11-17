@@ -25,8 +25,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentNullException">
 		/// Null is not a valid value.</exception>
 		[DebuggerStepThrough]
-		public static void NotNull<T>(T value, String paramName)
-			where T : class
+		public static void NotNull(Object value, String paramName)
 		{
 			if (value is null)
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -48,8 +47,7 @@ namespace Amarok.Contracts
 			/// Null is not a valid value.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void NotNull<T>(T value, String paramName)
-				where T : class
+			public static void NotNull(Object value, String paramName)
 			{
 				if (value is null)
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
