@@ -6,7 +6,9 @@
 #pragma warning disable S3218 // Inner class members should not shadow outer class "static" or type members
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 
 namespace Amarok.Contracts
@@ -23,9 +25,9 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentNullException">
-		/// Null is not a valid value.</exception>
+		/// A null value is not valid.</exception>
 		/// <exception cref="ArgumentException">
-		/// An empty string is not a valid value.</exception>
+		/// An empty string is not valid.</exception>
 		[DebuggerStepThrough]
 		public static void NotEmpty(String value, String paramName)
 		{
@@ -33,6 +35,37 @@ namespace Amarok.Contracts
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
 			if (value.Length == 0)
 				throw new ArgumentException(ExceptionResources.ArgumentEmptyString, paramName);
+		}
+
+		/// <summary>
+		/// Verifies that the given collection is neither null nor empty.
+		/// </summary>
+		/// 
+		/// <param name="collection">
+		/// The collection to verify.</param>
+		/// <param name="paramName">
+		/// The name of the method parameter that is verified.</param>
+		/// 
+		/// <exception cref="ArgumentNullException">
+		/// A null value is not valid.</exception>
+		/// <exception cref="ArgumentException">
+		/// An empty collection is not valid.</exception>
+		[DebuggerStepThrough]
+		public static void NotEmpty<T>(IEnumerable<T> collection, String paramName)
+		{
+			if (collection is null)
+				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+
+			if (collection is IReadOnlyCollection<T> readOnlyCollection)
+			{
+				if (readOnlyCollection.Count == 0)
+					throw new ArgumentException(ExceptionResources.ArgumentEmptyCollection, paramName);
+			}
+			else
+			{
+				if (!collection.Any())
+					throw new ArgumentException(ExceptionResources.ArgumentEmptyCollection, paramName);
+			}
 		}
 
 
@@ -48,9 +81,9 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentNullException">
-			/// Null is not a valid value.</exception>
+			/// A null value is not valid.</exception>
 			/// <exception cref="ArgumentException">
-			/// An empty string is not a valid value.</exception>
+			/// An empty string is not valid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void NotEmpty(String value, String paramName)
@@ -59,6 +92,38 @@ namespace Amarok.Contracts
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
 				if (value.Length == 0)
 					throw new ArgumentException(ExceptionResources.ArgumentEmptyString, paramName);
+			}
+
+			/// <summary>
+			/// Verifies that the given collection is neither null nor empty.
+			/// </summary>
+			/// 
+			/// <param name="collection">
+			/// The collection to verify.</param>
+			/// <param name="paramName">
+			/// The name of the method parameter that is verified.</param>
+			/// 
+			/// <exception cref="ArgumentNullException">
+			/// A null value is not valid.</exception>
+			/// <exception cref="ArgumentException">
+			/// An empty collection is not valid.</exception>
+			[Conditional("DEBUG")]
+			[DebuggerStepThrough]
+			public static void NotEmpty<T>(IEnumerable<T> collection, String paramName)
+			{
+				if (collection is null)
+					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+
+				if (collection is IReadOnlyCollection<T> readOnlyCollection)
+				{
+					if (readOnlyCollection.Count == 0)
+						throw new ArgumentException(ExceptionResources.ArgumentEmptyCollection, paramName);
+				}
+				else
+				{
+					if (!collection.Any())
+						throw new ArgumentException(ExceptionResources.ArgumentEmptyCollection, paramName);
+				}
 			}
 		}
 	}

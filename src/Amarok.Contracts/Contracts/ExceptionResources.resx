@@ -117,10 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArgumentEmptyCollection" xml:space="preserve">
+    <value>An empty collection is not valid.</value>
+  </data>
   <data name="ArgumentEmptyString" xml:space="preserve">
-    <value>Empty string is not a valid value.</value>
+    <value>An empty string is not valid.</value>
   </data>
   <data name="ArgumentNull" xml:space="preserve">
-    <value>Null is not a valid value.</value>
+    <value>A null value is not valid.</value>
   </data>
 </root>

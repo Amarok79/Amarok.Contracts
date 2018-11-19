@@ -5,12 +5,9 @@
 
 #define DEBUG
 
-using NUnit.Framework;
-
 
 namespace Amarok.Contracts
 {
-	[TestFixture]
 	public partial class Test_Verify
 	{
 	}

@@ -61,7 +61,16 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Empty string is not a valid value..
+        ///   Looks up a localized string similar to An empty collection is not valid..
+        /// </summary>
+        internal static string ArgumentEmptyCollection {
+            get {
+                return ResourceManager.GetString("ArgumentEmptyCollection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An empty string is not valid..
         /// </summary>
         internal static string ArgumentEmptyString {
             get {
@@ -70,7 +79,7 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Null is not a valid value..
+        ///   Looks up a localized string similar to A null value is not valid..
         /// </summary>
         internal static string ArgumentNull {
             get {

@@ -14,53 +14,60 @@ namespace Amarok.Contracts
 {
 	public partial class Test_Verify
 	{
-		[Test]
-		public void NotNull_DoesNotThrow_For_Instance()
+		[TestFixture]
+		public class NotNull_Object
 		{
-			Check.ThatCode(() => Verify.NotNull(new Object(), "name"))
-				.DoesNotThrow();
-			Check.ThatCode(() => Verify.NotNull(123, "name"))
-				.DoesNotThrow();
+			[Test]
+			public void DoesNotThrow_For_Instance()
+			{
+				Check.ThatCode(() => Verify.NotNull(new Object(), "name"))
+					.DoesNotThrow();
+				Check.ThatCode(() => Verify.NotNull(123, "name"))
+					.DoesNotThrow();
+			}
+
+			[Test]
+			public void Throws_For_Null()
+			{
+				var exception = Check.ThatCode(() => Verify.NotNull((Object)null, "name"))
+					.Throws<ArgumentNullException>()
+					.Value;
+
+				Check.That(exception.Message)
+					.StartsWith(ExceptionResources.ArgumentNull);
+				Check.That(exception.ParamName)
+					.IsEqualTo("name");
+				Check.That(exception.InnerException)
+					.IsNull();
+			}
 		}
 
-		[Test]
-		public void NotNull_Throws_For_Null()
+		[TestFixture]
+		public class Debug_NotNull_Object
 		{
-			var exception = Check.ThatCode(() => Verify.NotNull((Object)null, "name"))
-				.Throws<ArgumentNullException>()
-				.Value;
+			[Test]
+			public void DoesNotThrow_For_Instance()
+			{
+				Check.ThatCode(() => Verify.Debug.NotNull(new Object(), "name"))
+					.DoesNotThrow();
+				Check.ThatCode(() => Verify.Debug.NotNull(123, "name"))
+					.DoesNotThrow();
+			}
 
-			Check.That(exception.Message)
-				.StartsWith(ExceptionResources.ArgumentNull);
-			Check.That(exception.ParamName)
-				.IsEqualTo("name");
-			Check.That(exception.InnerException)
-				.IsNull();
-		}
+			[Test]
+			public void Throws_For_Null()
+			{
+				var exception = Check.ThatCode(() => Verify.Debug.NotNull((Object)null, "name"))
+					.Throws<ArgumentNullException>()
+					.Value;
 
-
-		[Test]
-		public void DebugNotNull_DoesNotThrow_For_Instance()
-		{
-			Check.ThatCode(() => Verify.Debug.NotNull(new Object(), "name"))
-				.DoesNotThrow();
-			Check.ThatCode(() => Verify.Debug.NotNull(123, "name"))
-				.DoesNotThrow();
-		}
-
-		[Test]
-		public void DebugNotNull_Throws_For_Null()
-		{
-			var exception = Check.ThatCode(() => Verify.Debug.NotNull((Object)null, "name"))
-				.Throws<ArgumentNullException>()
-				.Value;
-
-			Check.That(exception.Message)
-				.StartsWith(ExceptionResources.ArgumentNull);
-			Check.That(exception.ParamName)
-				.IsEqualTo("name");
-			Check.That(exception.InnerException)
-				.IsNull();
+				Check.That(exception.Message)
+					.StartsWith(ExceptionResources.ArgumentNull);
+				Check.That(exception.ParamName)
+					.IsEqualTo("name");
+				Check.That(exception.InnerException)
+					.IsNull();
+			}
 		}
 	}
 }
