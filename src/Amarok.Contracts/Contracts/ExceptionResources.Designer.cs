@@ -61,7 +61,7 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An empty string is not a valid value..
+        ///   Looks up a localized string similar to Empty string is not a valid value..
         /// </summary>
         internal static string ArgumentEmptyString {
             get {
