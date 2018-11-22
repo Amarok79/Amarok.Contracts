@@ -10,7 +10,7 @@ TBD
 
 ## Redistribution
 
-The library is redistributed as NuGet package: [Amarok.Contracts](https://www.nuget.org/packages/Amarok.Contracts/)
+The library is redistributed as NuGet package: [Amarok.Contracts](https://www.nuget.org/packages/Amarok.Contracts/) (not yet available)
 
 The package provides strong-named binaries for *.NET Standard 2.0* only. Tests are generally performed with *.NET Framework 4.7.1* and *.NET Core 2.1*.
 
