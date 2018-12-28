@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFrameworks>netcoreapp2.1;net471</TargetFrameworks>
+		<TargetFrameworks>netcoreapp2.2;net471</TargetFrameworks>
 		<RootNamespace>Amarok</RootNamespace>
 		<CodeAnalysisRuleSet>..\Minimal.ruleset</CodeAnalysisRuleSet>
 		<AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
@@ -46,7 +46,7 @@
 		<When Condition=" '$(Configuration)' != 'Debug' ">
 			<ItemGroup>
 				<PackageReference Include="SonarAnalyzer.CSharp">
-					<Version>7.8.0.7320</Version>
+					<Version>7.9.1.7622</Version>
 					<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
 					<PrivateAssets>all</PrivateAssets>
 				</PackageReference>
