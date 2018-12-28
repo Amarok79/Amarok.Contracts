@@ -126,6 +126,9 @@
   <data name="ArgumentIsPositive" xml:space="preserve">
     <value>A negative value is not valid.</value>
   </data>
+  <data name="ArgumentIsStrictlyPositive" xml:space="preserve">
+    <value>Zero or a negative value are not valid.</value>
+  </data>
   <data name="ArgumentNull" xml:space="preserve">
     <value>A null value is not valid.</value>
   </data>

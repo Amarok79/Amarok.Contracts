@@ -14,7 +14,7 @@ namespace Amarok.Contracts
 	public partial class Verify
 	{
 		/// <summary>
-		/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+		/// Verifies that the given value is greater than zero, hence, that it is a positive number.
 		/// </summary>
 		/// 
 		/// <param name="value">
@@ -23,16 +23,16 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// A negative value is not valid.</exception>
+		/// Zero or a negative value are not valid.</exception>
 		[DebuggerStepThrough]
-		public static void IsPositive(Int32 value, String paramName)
+		public static void IsStrictlyPositive(Int32 value, String paramName)
 		{
-			if (value < 0)
-				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+			if (value <= 0)
+				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
 		}
 
 		/// <summary>
-		/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+		/// Verifies that the given value is greater than zero, hence, that it is a positive number.
 		/// </summary>
 		/// 
 		/// <param name="value">
@@ -41,16 +41,16 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// A negative value is not valid.</exception>
+		/// Zero or a negative value are not valid.</exception>
 		[DebuggerStepThrough]
-		public static void IsPositive(Int64 value, String paramName)
+		public static void IsStrictlyPositive(Int64 value, String paramName)
 		{
-			if (value < 0L)
-				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+			if (value <= 0L)
+				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
 		}
 
 		/// <summary>
-		/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+		/// Verifies that the given value is greater than zero, hence, that it is a positive number.
 		/// </summary>
 		/// 
 		/// <param name="value">
@@ -59,16 +59,16 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// A negative value is not valid.</exception>
+		/// Zero or a negative value are not valid.</exception>
 		[DebuggerStepThrough]
-		public static void IsPositive(Double value, String paramName)
+		public static void IsStrictlyPositive(Double value, String paramName)
 		{
-			if (value < 0.0d)
-				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+			if (value <= 0.0d)
+				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
 		}
 
 		/// <summary>
-		/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+		/// Verifies that the given value is greater than zero, hence, that it is a positive number.
 		/// </summary>
 		/// 
 		/// <param name="value">
@@ -77,19 +77,19 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// A negative value is not valid.</exception>
+		/// Zero or a negative value are not valid.</exception>
 		[DebuggerStepThrough]
-		public static void IsPositive(TimeSpan value, String paramName)
+		public static void IsStrictlyPositive(TimeSpan value, String paramName)
 		{
-			if (value.Ticks < 0L)
-				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+			if (value.Ticks <= 0L)
+				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
 		}
 
 
 		public static partial class Debug
 		{
 			/// <summary>
-			/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+			/// Verifies that the given value is greater than zero, hence, that it is a positive number.
 			/// </summary>
 			/// 
 			/// <param name="value">
@@ -98,17 +98,17 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// A negative value is not valid.</exception>
+			/// Zero or a negative value are not valid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void IsPositive(Int32 value, String paramName)
+			public static void IsStrictlyPositive(Int32 value, String paramName)
 			{
-				if (value < 0)
-					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+				if (value <= 0)
+					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
 			}
 
 			/// <summary>
-			/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+			/// Verifies that the given value is greater than zero, hence, that it is a positive number.
 			/// </summary>
 			/// 
 			/// <param name="value">
@@ -117,17 +117,17 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// A negative value is not valid.</exception>
+			/// Zero or a negative value are not valid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void IsPositive(Int64 value, String paramName)
+			public static void IsStrictlyPositive(Int64 value, String paramName)
 			{
-				if (value < 0L)
-					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+				if (value <= 0L)
+					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
 			}
 
 			/// <summary>
-			/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+			/// Verifies that the given value is greater than zero, hence, that it is a positive number.
 			/// </summary>
 			/// 
 			/// <param name="value">
@@ -136,17 +136,17 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// A negative value is not valid.</exception>
+			/// Zero or a negative value are not valid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void IsPositive(Double value, String paramName)
+			public static void IsStrictlyPositive(Double value, String paramName)
 			{
-				if (value < 0.0d)
-					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+				if (value <= 0.0d)
+					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
 			}
 
 			/// <summary>
-			/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+			/// Verifies that the given value is greater than zero, hence, that it is a positive number.
 			/// </summary>
 			/// 
 			/// <param name="value">
@@ -155,13 +155,13 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// A negative value is not valid.</exception>
+			/// Zero or a negative value are not valid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void IsPositive(TimeSpan value, String paramName)
+			public static void IsStrictlyPositive(TimeSpan value, String paramName)
 			{
-				if (value.Ticks < 0L)
-					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+				if (value.Ticks <= 0L)
+					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
 			}
 		}
 	}
