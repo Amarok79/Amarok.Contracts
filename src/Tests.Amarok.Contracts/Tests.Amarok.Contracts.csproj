@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>netcoreapp2.2;net471</TargetFrameworks>
 		<RootNamespace>Amarok</RootNamespace>
-		<CodeAnalysisRuleSet>..\Global.ruleset</CodeAnalysisRuleSet>
+		<CodeAnalysisRuleSet>..\Minimal.ruleset</CodeAnalysisRuleSet>
 		<SignAssembly>true</SignAssembly>
 		<AssemblyOriginatorKeyFile>..\amarok.snk</AssemblyOriginatorKeyFile>
 		<AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
@@ -15,27 +15,15 @@
 		<LangVersion>latest</LangVersion>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<WarningsAsErrors />
+		<DefineConstants>TRACE</DefineConstants>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<OutputPath>..\..\bin\tests\</OutputPath>
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
 		<LangVersion>latest</LangVersion>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
 	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.1|AnyCPU'">
-	  <DefineConstants>DEBUG;TRACE</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp2.1|AnyCPU'">
-	  <DefineConstants>TRACE</DefineConstants>
-	</PropertyGroup>
-
-	<ItemGroup>
-	  <None Remove="Tests.Amarok.Contracts.net471.v3.ncrunchproject" />
-	  <None Remove="Tests.Amarok.Contracts.netcoreapp2.1.v3.ncrunchproject" />
-	  <None Remove="Tests.Amarok.Contracts.v3.ncrunchproject" />
-	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="..\Amarok.Contracts.licenseheader" Link="Amarok.Contracts.licenseheader" />

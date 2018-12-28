@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
@@ -43,25 +43,26 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="Amarok.Contracts.v3.ncrunchproject" />
+		<None Remove="Amarok.Contracts.v3.ncrunchproject" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="..\Amarok.Contracts.licenseheader" Link="Amarok.Contracts.licenseheader" />
 		<None Include="..\amarok.snk" Link="amarok.snk" />
 	</ItemGroup>
+
 	<ItemGroup>
-	  <Compile Update="Contracts\ExceptionResources.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>ExceptionResources.resx</DependentUpon>
-	  </Compile>
+		<Compile Update="Contracts\ExceptionResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ExceptionResources.resx</DependentUpon>
+		</Compile>
 	</ItemGroup>
 	<ItemGroup>
-	  <EmbeddedResource Update="Contracts\ExceptionResources.resx">
-	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>ExceptionResources.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
+		<EmbeddedResource Update="Contracts\ExceptionResources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>ExceptionResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
 	</ItemGroup>
 
 	<Choose>
