@@ -1,0 +1,168 @@
+﻿/* Copyright(c) 2018, Olaf Kober
+ * Licensed under GNU Lesser General Public License v3.0 (LPGL-3.0).
+ * https://github.com/Amarok79/Amarok.Contracts
+ */
+
+#pragma warning disable S3218 // Inner class members should not shadow outer class "static" or type members
+
+using System;
+using System.Diagnostics;
+
+
+namespace Amarok.Contracts
+{
+	public partial class Verify
+	{
+		/// <summary>
+		/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+		/// </summary>
+		/// 
+		/// <param name="value">
+		/// The value to verify.</param>
+		/// <param name="paramName">
+		/// The name of the method parameter that is verified.</param>
+		/// 
+		/// <exception cref="ArgumentNullException">
+		/// A negative value is not valid.</exception>
+		[DebuggerStepThrough]
+		public static void IsPositive(Int32 value, String paramName)
+		{
+			if (value < 0)
+				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+		}
+
+		/// <summary>
+		/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+		/// </summary>
+		/// 
+		/// <param name="value">
+		/// The value to verify.</param>
+		/// <param name="paramName">
+		/// The name of the method parameter that is verified.</param>
+		/// 
+		/// <exception cref="ArgumentNullException">
+		/// A negative value is not valid.</exception>
+		[DebuggerStepThrough]
+		public static void IsPositive(Int64 value, String paramName)
+		{
+			if (value < 0L)
+				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+		}
+
+		/// <summary>
+		/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+		/// </summary>
+		/// 
+		/// <param name="value">
+		/// The value to verify.</param>
+		/// <param name="paramName">
+		/// The name of the method parameter that is verified.</param>
+		/// 
+		/// <exception cref="ArgumentNullException">
+		/// A negative value is not valid.</exception>
+		[DebuggerStepThrough]
+		public static void IsPositive(Double value, String paramName)
+		{
+			if (value < 0.0d)
+				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+		}
+
+		/// <summary>
+		/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+		/// </summary>
+		/// 
+		/// <param name="value">
+		/// The value to verify.</param>
+		/// <param name="paramName">
+		/// The name of the method parameter that is verified.</param>
+		/// 
+		/// <exception cref="ArgumentNullException">
+		/// A negative value is not valid.</exception>
+		[DebuggerStepThrough]
+		public static void IsPositive(TimeSpan value, String paramName)
+		{
+			if (value.Ticks < 0L)
+				throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+		}
+
+
+		public static partial class Debug
+		{
+			/// <summary>
+			/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+			/// </summary>
+			/// 
+			/// <param name="value">
+			/// The value to verify.</param>
+			/// <param name="paramName">
+			/// The name of the method parameter that is verified.</param>
+			/// 
+			/// <exception cref="ArgumentNullException">
+			/// A negative value is not valid.</exception>
+			[Conditional("DEBUG")]
+			[DebuggerStepThrough]
+			public static void IsPositive(Int32 value, String paramName)
+			{
+				if (value < 0)
+					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+			}
+
+			/// <summary>
+			/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+			/// </summary>
+			/// 
+			/// <param name="value">
+			/// The value to verify.</param>
+			/// <param name="paramName">
+			/// The name of the method parameter that is verified.</param>
+			/// 
+			/// <exception cref="ArgumentNullException">
+			/// A negative value is not valid.</exception>
+			[Conditional("DEBUG")]
+			[DebuggerStepThrough]
+			public static void IsPositive(Int64 value, String paramName)
+			{
+				if (value < 0L)
+					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+			}
+
+			/// <summary>
+			/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+			/// </summary>
+			/// 
+			/// <param name="value">
+			/// The value to verify.</param>
+			/// <param name="paramName">
+			/// The name of the method parameter that is verified.</param>
+			/// 
+			/// <exception cref="ArgumentNullException">
+			/// A negative value is not valid.</exception>
+			[Conditional("DEBUG")]
+			[DebuggerStepThrough]
+			public static void IsPositive(Double value, String paramName)
+			{
+				if (value < 0.0d)
+					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+			}
+
+			/// <summary>
+			/// Verifies that the given value is equal to or greater than zero, hence, that it is a positive number.
+			/// </summary>
+			/// 
+			/// <param name="value">
+			/// The value to verify.</param>
+			/// <param name="paramName">
+			/// The name of the method parameter that is verified.</param>
+			/// 
+			/// <exception cref="ArgumentNullException">
+			/// A negative value is not valid.</exception>
+			[Conditional("DEBUG")]
+			[DebuggerStepThrough]
+			public static void IsPositive(TimeSpan value, String paramName)
+			{
+				if (value.Ticks < 0L)
+					throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
+			}
+		}
+	}
+}

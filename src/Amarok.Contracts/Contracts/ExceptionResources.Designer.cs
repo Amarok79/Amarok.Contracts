@@ -79,6 +79,15 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A negative value is not valid..
+        /// </summary>
+        internal static string ArgumentIsPositive {
+            get {
+                return ResourceManager.GetString("ArgumentIsPositive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A null value is not valid..
         /// </summary>
         internal static string ArgumentNull {

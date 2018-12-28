@@ -123,6 +123,9 @@
   <data name="ArgumentEmptyString" xml:space="preserve">
     <value>An empty string is not valid.</value>
   </data>
+  <data name="ArgumentIsPositive" xml:space="preserve">
+    <value>A negative value is not valid.</value>
+  </data>
   <data name="ArgumentNull" xml:space="preserve">
     <value>A null value is not valid.</value>
   </data>
