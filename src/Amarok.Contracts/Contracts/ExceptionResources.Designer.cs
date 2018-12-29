@@ -97,6 +97,15 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A value exceeding the upper limit is not valid..
+        /// </summary>
+        internal static string ArgumentIsStrictlyLessThan {
+            get {
+                return ResourceManager.GetString("ArgumentIsStrictlyLessThan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zero or a negative value are not valid..
         /// </summary>
         internal static string ArgumentIsStrictlyPositive {
