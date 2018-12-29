@@ -20,7 +20,7 @@ namespace Amarok.Contracts
 		/// <param name="value">
 		/// The value to verify.</param>
 		/// <param name="upperLimit">
-		/// The upper limit.</param>
+		/// The inclusive upper limit.</param>
 		/// <param name="paramName">
 		/// The name of the method parameter that is verified.</param>
 		/// 
@@ -40,7 +40,7 @@ namespace Amarok.Contracts
 		/// <param name="value">
 		/// The value to verify.</param>
 		/// <param name="upperLimit">
-		/// The upper limit.</param>
+		/// The inclusive upper limit.</param>
 		/// <param name="paramName">
 		/// The name of the method parameter that is verified.</param>
 		/// 
@@ -60,7 +60,7 @@ namespace Amarok.Contracts
 		/// <param name="value">
 		/// The value to verify.</param>
 		/// <param name="upperLimit">
-		/// The upper limit.</param>
+		/// The inclusive upper limit.</param>
 		/// <param name="paramName">
 		/// The name of the method parameter that is verified.</param>
 		/// 
@@ -80,7 +80,7 @@ namespace Amarok.Contracts
 		/// <param name="value">
 		/// The value to verify.</param>
 		/// <param name="upperLimit">
-		/// The upper limit.</param>
+		/// The inclusive upper limit.</param>
 		/// <param name="paramName">
 		/// The name of the method parameter that is verified.</param>
 		/// 
@@ -103,7 +103,7 @@ namespace Amarok.Contracts
 			/// <param name="value">
 			/// The value to verify.</param>
 			/// <param name="upperLimit">
-			/// The upper limit.</param>
+			/// The inclusive upper limit.</param>
 			/// <param name="paramName">
 			/// The name of the method parameter that is verified.</param>
 			/// 
@@ -123,7 +123,7 @@ namespace Amarok.Contracts
 			/// <param name="value">
 			/// The value to verify.</param>
 			/// <param name="upperLimit">
-			/// The upper limit.</param>
+			/// The inclusive upper limit.</param>
 			/// <param name="paramName">
 			/// The name of the method parameter that is verified.</param>
 			/// 
@@ -143,7 +143,7 @@ namespace Amarok.Contracts
 			/// <param name="value">
 			/// The value to verify.</param>
 			/// <param name="upperLimit">
-			/// The upper limit.</param>
+			/// The inclusive upper limit.</param>
 			/// <param name="paramName">
 			/// The name of the method parameter that is verified.</param>
 			/// 
@@ -163,7 +163,7 @@ namespace Amarok.Contracts
 			/// <param name="value">
 			/// The value to verify.</param>
 			/// <param name="upperLimit">
-			/// The upper limit.</param>
+			/// The inclusive upper limit.</param>
 			/// <param name="paramName">
 			/// The name of the method parameter that is verified.</param>
 			/// 
