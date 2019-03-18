@@ -15,7 +15,7 @@
 		<Company>&lt;none&gt;</Company>
 		<Description>Simple helper methods for verifying argument values.</Description>
 		<Copyright>Copyright (c) 2019, Olaf Kober</Copyright>
-		<PackageLicenseUrl></PackageLicenseUrl>
+		<PackageLicenseUrl>https://github.com/Amarok79/Amarok.Contracts/blob/master/LICENSE</PackageLicenseUrl>
 		<PackageProjectUrl>https://github.com/Amarok79/Amarok.Contracts</PackageProjectUrl>
 		<PackageIconUrl>https://amarok.blob.core.windows.net/public/amarok.ico</PackageIconUrl>
 		<RepositoryUrl>https://github.com/Amarok79/Amarok.Contracts</RepositoryUrl>
