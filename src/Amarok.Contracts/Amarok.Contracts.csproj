@@ -15,10 +15,10 @@
 		<Company>&lt;none&gt;</Company>
 		<Description>Simple helper methods for verifying argument values.</Description>
 		<Copyright>Copyright (c) 2019, Olaf Kober</Copyright>
-		<PackageLicenseUrl>https://github.com/Amarok79/Amarok.Contracts/blob/master/LICENSE</PackageLicenseUrl>
 		<PackageProjectUrl>https://github.com/Amarok79/Amarok.Contracts</PackageProjectUrl>
 		<PackageIconUrl>https://amarok.blob.core.windows.net/public/amarok.ico</PackageIconUrl>
 		<RepositoryUrl>https://github.com/Amarok79/Amarok.Contracts</RepositoryUrl>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<CodeAnalysisRuleSet>..\Global.ruleset</CodeAnalysisRuleSet>
@@ -29,7 +29,7 @@
 		<SignAssembly>true</SignAssembly>
 		<AssemblyOriginatorKeyFile>..\amarok.snk</AssemblyOriginatorKeyFile>
 		<DelaySign>false</DelaySign>
-		<PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
+		<PackageLicenseExpression></PackageLicenseExpression>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -59,6 +59,10 @@
 	<ItemGroup>
 		<None Include="..\Amarok.Contracts.licenseheader" Link="Amarok.Contracts.licenseheader" />
 		<None Include="..\amarok.snk" Link="amarok.snk" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\LICENSE.txt" Pack="true" PackagePath=""/>
 	</ItemGroup>
 
 	<ItemGroup>
