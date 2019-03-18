@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This library provides static helper methods for verifying argument values, for example, to verify that argument values are neither null nor empty strings, or that argument values are within a defined value range. These helper methods can be used to easily verify arguments on public APIs.
+This library provides static helper methods for verifying argument values, for example, to verify that argument values are neither null nor empty strings, or that argument values are within a defined value range. The provided helper methods can be used to easily verify arguments on your public APIs.
 
 
 ## Redistribution
