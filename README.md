@@ -5,18 +5,18 @@
 
 ## Introduction
 
-TBD
+This library provides static helper methods for verifying argument values, for example, to verify that argument values are neither null nor empty strings, or that argument values are within a defined value range. These helper methods can be used to easily verify arguments on public APIs.
 
 
 ## Redistribution
 
-The library is redistributed as NuGet package: [Amarok.Contracts](https://www.nuget.org/packages/Amarok.Contracts/) (not yet available)
+The library is redistributed as NuGet package: [Amarok.Contracts](https://www.nuget.org/packages/Amarok.Contracts/)
 
 The package provides strong-named binaries for *.NET Standard 2.0* only. Tests are generally performed with *.NET Framework 4.7.1* and *.NET Core 2.1*.
 
 
 ## Further Links
 
-For comprehensive documentation about how to use this library, refer to [Documentation](doc/Documentation.md).
+For documentation about how to use this library, refer to [Documentation](doc/Documentation.md).
 
 Also, visit the [FAQ](doc/FAQ.md) which hopefully answers your questions.
