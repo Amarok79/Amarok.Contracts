@@ -79,6 +79,15 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Values exceeding the inclusive lower limit are invalid..
+        /// </summary>
+        internal static string ArgumentIsGreaterThan {
+            get {
+                return ResourceManager.GetString("ArgumentIsGreaterThan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Values exceeding the inclusive upper limit are invalid..
         /// </summary>
         internal static string ArgumentIsLessThan {
@@ -93,6 +102,15 @@ namespace Amarok.Contracts {
         internal static string ArgumentIsPositive {
             get {
                 return ResourceManager.GetString("ArgumentIsPositive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Values exceeding the exclusive lower limit are invalid..
+        /// </summary>
+        internal static string ArgumentIsStrictlyGreaterThan {
+            get {
+                return ResourceManager.GetString("ArgumentIsStrictlyGreaterThan", resourceCulture);
             }
         }
         

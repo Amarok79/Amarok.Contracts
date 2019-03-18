@@ -123,11 +123,17 @@
   <data name="ArgumentEmptyString" xml:space="preserve">
     <value>Empty strings are invalid.</value>
   </data>
+  <data name="ArgumentIsGreaterThan" xml:space="preserve">
+    <value>Values exceeding the inclusive lower limit are invalid.</value>
+  </data>
   <data name="ArgumentIsLessThan" xml:space="preserve">
     <value>Values exceeding the inclusive upper limit are invalid.</value>
   </data>
   <data name="ArgumentIsPositive" xml:space="preserve">
     <value>Negative values are invalid.</value>
+  </data>
+  <data name="ArgumentIsStrictlyGreaterThan" xml:space="preserve">
+    <value>Values exceeding the exclusive lower limit are invalid.</value>
   </data>
   <data name="ArgumentIsStrictlyLessThan" xml:space="preserve">
     <value>Values exceeding the exclusive upper limit are invalid.</value>
