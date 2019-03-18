@@ -29,7 +29,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentException">
 		/// An empty string is not valid.</exception>
 		[DebuggerStepThrough]
-		public static void NotEmpty(String value, String paramName)
+		public static void NotEmpty(String? value, String paramName)
 		{
 			if (value is null)
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -51,7 +51,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentException">
 		/// An empty collection is not valid.</exception>
 		[DebuggerStepThrough]
-		public static void NotEmpty<T>(IEnumerable<T> collection, String paramName)
+		public static void NotEmpty<T>(IEnumerable<T>? collection, String paramName)
 		{
 			if (collection is null)
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -86,7 +86,7 @@ namespace Amarok.Contracts
 			/// An empty string is not valid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void NotEmpty(String value, String paramName)
+			public static void NotEmpty(String? value, String paramName)
 			{
 				if (value is null)
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -109,7 +109,7 @@ namespace Amarok.Contracts
 			/// An empty collection is not valid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void NotEmpty<T>(IEnumerable<T> collection, String paramName)
+			public static void NotEmpty<T>(IEnumerable<T>? collection, String paramName)
 			{
 				if (collection is null)
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
