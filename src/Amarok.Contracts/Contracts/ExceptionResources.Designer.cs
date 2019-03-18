@@ -124,6 +124,15 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Lower limit: .
+        /// </summary>
+        internal static string LowerLimit {
+            get {
+                return ResourceManager.GetString("LowerLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upper limit: .
         /// </summary>
         internal static string UpperLimit {

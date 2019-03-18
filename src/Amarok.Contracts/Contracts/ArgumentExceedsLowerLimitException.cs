@@ -1,4 +1,4 @@
-﻿/* Copyright(c) 2018, Olaf Kober
+﻿/* Copyright(c) 2019, Olaf Kober
  * Licensed under GNU Lesser General Public License v3.0 (LPGL-3.0).
  * https://github.com/Amarok79/Amarok.Contracts
  */
@@ -11,17 +11,17 @@ using System.Security.Permissions;
 namespace Amarok.Contracts
 {
 	/// <summary>
-	/// An exception that is thrown when a value exceeds the defined upper limit.
+	/// An exception that is thrown when a value exceeds the defined lower limit.
 	/// </summary>
 	[Serializable]
-	public class ArgumentExceedsUpperLimitException : ArgumentOutOfRangeException
+	public class ArgumentExceedsLowerLimitException : ArgumentOutOfRangeException
 	{
 		#region ++ Public Interface ++
 
 		/// <summary>
-		/// Gets the upper limit that has been exceeded.
+		/// Gets the lower limit that has been exceeded.
 		/// </summary>
-		public Object? UpperLimit { get; }
+		public Object? LowerLimit { get; }
 
 		/// <summary>
 		/// Gets the error message and the string representation of the invalid argument value.
@@ -31,8 +31,8 @@ namespace Amarok.Contracts
 			get
 			{
 				String msg = base.Message;
-				if (this.UpperLimit != null && msg != null)
-					msg = msg + Environment.NewLine + ExceptionResources.UpperLimit + this.UpperLimit;
+				if (this.LowerLimit != null && msg != null)
+					msg = msg + Environment.NewLine + ExceptionResources.LowerLimit + this.LowerLimit;
 				return msg;
 			}
 		}
@@ -41,7 +41,7 @@ namespace Amarok.Contracts
 		/// <summary>
 		/// Initializes a new instance.
 		/// </summary>
-		public ArgumentExceedsUpperLimitException()
+		public ArgumentExceedsLowerLimitException()
 		{
 		}
 
@@ -51,7 +51,7 @@ namespace Amarok.Contracts
 		/// 
 		/// <param name="paramName">
 		/// The name of the parameter that caused the exception.</param>
-		public ArgumentExceedsUpperLimitException(String paramName)
+		public ArgumentExceedsLowerLimitException(String paramName)
 			: base(paramName)
 		{
 		}
@@ -64,7 +64,7 @@ namespace Amarok.Contracts
 		/// The error message that explains the reason for the exception.</param>
 		/// <param name="innerException">
 		/// The exception that is the cause of the current exception.</param>
-		public ArgumentExceedsUpperLimitException(String message, Exception innerException)
+		public ArgumentExceedsLowerLimitException(String message, Exception innerException)
 			: base(message, innerException)
 		{
 		}
@@ -77,7 +77,7 @@ namespace Amarok.Contracts
 		/// The name of the parameter that caused the exception.</param>
 		/// <param name="message">
 		/// The error message that explains the reason for the exception.</param>
-		public ArgumentExceedsUpperLimitException(String paramName, String message)
+		public ArgumentExceedsLowerLimitException(String paramName, String message)
 			: base(paramName, message)
 		{
 		}
@@ -90,14 +90,14 @@ namespace Amarok.Contracts
 		/// The name of the parameter that caused the exception.</param>
 		/// <param name="actualValue">
 		/// The value of the argument that causes this exception.</param>
-		/// <param name="upperLimit">
+		/// <param name="lowerLimit">
 		/// The upper limit that the value exceeded.</param>
 		/// <param name="message">
 		/// The error message that explains the reason for the exception.</param>
-		public ArgumentExceedsUpperLimitException(String paramName, Object actualValue, Object upperLimit, String message)
+		public ArgumentExceedsLowerLimitException(String paramName, Object actualValue, Object lowerLimit, String message)
 			: base(paramName, actualValue, message)
 		{
-			this.UpperLimit = upperLimit;
+			this.LowerLimit = lowerLimit;
 		}
 
 		#endregion
@@ -112,10 +112,10 @@ namespace Amarok.Contracts
 		/// The object that holds the serialized object data.</param>
 		/// <param name="context">
 		/// The contextual information about the source or destination.</param>
-		protected ArgumentExceedsUpperLimitException(SerializationInfo info, StreamingContext context)
+		protected ArgumentExceedsLowerLimitException(SerializationInfo info, StreamingContext context)
 			: base(info, context)
 		{
-			this.UpperLimit = info.GetValue("UpperLimit", typeof(Object));
+			this.LowerLimit = info.GetValue("LowerLimit", typeof(Object));
 		}
 
 		/// <summary>
@@ -134,7 +134,7 @@ namespace Amarok.Contracts
 		{
 			base.GetObjectData(info, context);
 
-			info.AddValue("UpperLimit", this.UpperLimit, typeof(Object));
+			info.AddValue("LowerLimit", this.LowerLimit, typeof(Object));
 		}
 
 		#endregion
