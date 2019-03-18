@@ -18,7 +18,7 @@
 		<PackageProjectUrl>https://github.com/Amarok79/Amarok.Contracts</PackageProjectUrl>
 		<PackageIconUrl>https://amarok.blob.core.windows.net/public/amarok.ico</PackageIconUrl>
 		<RepositoryUrl>https://github.com/Amarok79/Amarok.Contracts</RepositoryUrl>
-		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageLicenseFile>license\LICENSE.txt</PackageLicenseFile>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<CodeAnalysisRuleSet>..\Global.ruleset</CodeAnalysisRuleSet>
@@ -62,7 +62,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\LICENSE.txt" Pack="true" PackagePath=""/>
+		<None Include="..\LICENSE.txt" Pack="true" PackagePath="license"/>
 	</ItemGroup>
 
 	<ItemGroup>
