@@ -5,7 +5,19 @@
 
 ## Introduction
 
-This library provides static helper methods for verifying argument values, for example, to verify that argument values are neither null nor empty strings, or that argument values are within a defined value range. The provided helper methods can be used to easily verify arguments on your public APIs.
+This library provides static helper methods for verifying argument values, for example, to verify that argument values are neither null nor empty strings, or that argument values are within a defined value range.
+
+```cs
+public void SomeMethod(String text, Int32 value)
+{
+  Verify.NotNull(text, nameof(text));
+  Verify.IsStrictlyPositive(value, nameof(value));
+  
+  ...
+}
+```
+
+If those contracts are violated, appropriate argument exceptions are thrown.
 
 
 ## Redistribution
