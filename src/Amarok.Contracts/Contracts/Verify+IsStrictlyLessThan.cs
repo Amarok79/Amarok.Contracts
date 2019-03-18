@@ -25,7 +25,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentExceedsUpperLimitException">
-		/// A value exceeding the upper limit is not valid.</exception>
+		/// Values exceeding the exclusive upper limit are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsStrictlyLessThan(Int32 value, Int32 upperLimit, String paramName)
 		{
@@ -45,7 +45,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentExceedsUpperLimitException">
-		/// A value exceeding the upper limit is not valid.</exception>
+		/// Values exceeding the exclusive upper limit are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsStrictlyLessThan(Int64 value, Int64 upperLimit, String paramName)
 		{
@@ -65,7 +65,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentExceedsUpperLimitException">
-		/// A value exceeding the upper limit is not valid.</exception>
+		/// Values exceeding the exclusive upper limit are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsStrictlyLessThan(Double value, Double upperLimit, String paramName)
 		{
@@ -85,7 +85,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentExceedsUpperLimitException">
-		/// A value exceeding the upper limit is not valid.</exception>
+		/// Values exceeding the exclusive upper limit are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsStrictlyLessThan(TimeSpan value, TimeSpan upperLimit, String paramName)
 		{
@@ -108,7 +108,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentExceedsUpperLimitException">
-			/// A value exceeding the upper limit is not valid.</exception>
+			/// Values exceeding the exclusive upper limit are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsStrictlyLessThan(Int32 value, Int32 upperLimit, String paramName)
@@ -129,7 +129,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentExceedsUpperLimitException">
-			/// A value exceeding the upper limit is not valid.</exception>
+			/// Values exceeding the exclusive upper limit are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsStrictlyLessThan(Int64 value, Int64 upperLimit, String paramName)
@@ -150,7 +150,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentExceedsUpperLimitException">
-			/// A value exceeding the upper limit is not valid.</exception>
+			/// Values exceeding the exclusive upper limit are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsStrictlyLessThan(Double value, Double upperLimit, String paramName)
@@ -171,7 +171,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentExceedsUpperLimitException">
-			/// A value exceeding the upper limit is not valid.</exception>
+			/// Values exceeding the exclusive upper limit are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsStrictlyLessThan(TimeSpan value, TimeSpan upperLimit, String paramName)

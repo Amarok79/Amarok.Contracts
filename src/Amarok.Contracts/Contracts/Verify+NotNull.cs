@@ -23,7 +23,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentNullException">
-		/// A null value is not valid.</exception>
+		/// Null values are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void NotNull(Object? value, String paramName)
 		{
@@ -44,7 +44,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentNullException">
-			/// A null value is not valid.</exception>
+			/// Null values are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void NotNull(Object? value, String paramName)

@@ -19,7 +19,7 @@ namespace Amarok.Contracts {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class ExceptionResources {
@@ -61,7 +61,7 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An empty collection is not valid..
+        ///   Looks up a localized string similar to Empty collections are invalid..
         /// </summary>
         internal static string ArgumentEmptyCollection {
             get {
@@ -70,7 +70,7 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An empty string is not valid..
+        ///   Looks up a localized string similar to Empty strings are invalid..
         /// </summary>
         internal static string ArgumentEmptyString {
             get {
@@ -79,7 +79,7 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A value exceeding the upper limit is not valid..
+        ///   Looks up a localized string similar to Values exceeding the inclusive upper limit are invalid..
         /// </summary>
         internal static string ArgumentIsLessThan {
             get {
@@ -88,7 +88,7 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A negative value is not valid..
+        ///   Looks up a localized string similar to Negative values are invalid..
         /// </summary>
         internal static string ArgumentIsPositive {
             get {
@@ -97,7 +97,7 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A value exceeding the upper limit is not valid..
+        ///   Looks up a localized string similar to Values exceeding the exclusive upper limit are invalid..
         /// </summary>
         internal static string ArgumentIsStrictlyLessThan {
             get {
@@ -106,7 +106,7 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Zero or a negative value are not valid..
+        ///   Looks up a localized string similar to Zero or negative values are invalid..
         /// </summary>
         internal static string ArgumentIsStrictlyPositive {
             get {
@@ -115,7 +115,7 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A null value is not valid..
+        ///   Looks up a localized string similar to Null values are invalid..
         /// </summary>
         internal static string ArgumentNull {
             get {

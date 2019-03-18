@@ -23,7 +23,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// A negative value is not valid.</exception>
+		/// Negative values are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsPositive(Int32 value, String paramName)
 		{
@@ -41,7 +41,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// A negative value is not valid.</exception>
+		/// Negative values are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsPositive(Int64 value, String paramName)
 		{
@@ -59,7 +59,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// A negative value is not valid.</exception>
+		/// Negative values are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsPositive(Double value, String paramName)
 		{
@@ -77,7 +77,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// A negative value is not valid.</exception>
+		/// Negative values are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsPositive(TimeSpan value, String paramName)
 		{
@@ -98,7 +98,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// A negative value is not valid.</exception>
+			/// Negative values are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsPositive(Int32 value, String paramName)
@@ -117,7 +117,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// A negative value is not valid.</exception>
+			/// Negative values are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsPositive(Int64 value, String paramName)
@@ -136,7 +136,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// A negative value is not valid.</exception>
+			/// Negative values are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsPositive(Double value, String paramName)
@@ -155,7 +155,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// A negative value is not valid.</exception>
+			/// Negative values are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsPositive(TimeSpan value, String paramName)

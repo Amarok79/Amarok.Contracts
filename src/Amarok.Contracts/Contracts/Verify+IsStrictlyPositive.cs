@@ -23,7 +23,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// Zero or a negative value are not valid.</exception>
+		/// Zero or negative values are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsStrictlyPositive(Int32 value, String paramName)
 		{
@@ -41,7 +41,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// Zero or a negative value are not valid.</exception>
+		/// Zero or negative values are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsStrictlyPositive(Int64 value, String paramName)
 		{
@@ -59,7 +59,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// Zero or a negative value are not valid.</exception>
+		/// Zero or negative values are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsStrictlyPositive(Double value, String paramName)
 		{
@@ -77,7 +77,7 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentOutOfRangeException">
-		/// Zero or a negative value are not valid.</exception>
+		/// Zero or negative values are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void IsStrictlyPositive(TimeSpan value, String paramName)
 		{
@@ -98,7 +98,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// Zero or a negative value are not valid.</exception>
+			/// Zero or negative values are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsStrictlyPositive(Int32 value, String paramName)
@@ -117,7 +117,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// Zero or a negative value are not valid.</exception>
+			/// Zero or negative values are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsStrictlyPositive(Int64 value, String paramName)
@@ -136,7 +136,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// Zero or a negative value are not valid.</exception>
+			/// Zero or negative values are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsStrictlyPositive(Double value, String paramName)
@@ -155,7 +155,7 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentOutOfRangeException">
-			/// Zero or a negative value are not valid.</exception>
+			/// Zero or negative values are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void IsStrictlyPositive(TimeSpan value, String paramName)

@@ -25,9 +25,9 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentNullException">
-		/// A null value is not valid.</exception>
+		/// Null values are invalid.</exception>
 		/// <exception cref="ArgumentException">
-		/// An empty string is not valid.</exception>
+		/// Empty strings are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void NotEmpty(String? value, String paramName)
 		{
@@ -47,9 +47,9 @@ namespace Amarok.Contracts
 		/// The name of the method parameter that is verified.</param>
 		/// 
 		/// <exception cref="ArgumentNullException">
-		/// A null value is not valid.</exception>
+		/// Null values are invalid.</exception>
 		/// <exception cref="ArgumentException">
-		/// An empty collection is not valid.</exception>
+		/// Empty collections are invalid.</exception>
 		[DebuggerStepThrough]
 		public static void NotEmpty<T>(IEnumerable<T>? collection, String paramName)
 		{
@@ -81,9 +81,9 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentNullException">
-			/// A null value is not valid.</exception>
+			/// Null values are invalid.</exception>
 			/// <exception cref="ArgumentException">
-			/// An empty string is not valid.</exception>
+			/// Empty strings are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void NotEmpty(String? value, String paramName)
@@ -104,9 +104,9 @@ namespace Amarok.Contracts
 			/// The name of the method parameter that is verified.</param>
 			/// 
 			/// <exception cref="ArgumentNullException">
-			/// A null value is not valid.</exception>
+			/// Null values are invalid.</exception>
 			/// <exception cref="ArgumentException">
-			/// An empty collection is not valid.</exception>
+			/// Empty collections are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
 			public static void NotEmpty<T>(IEnumerable<T>? collection, String paramName)

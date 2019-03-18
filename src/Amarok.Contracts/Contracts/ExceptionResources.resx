@@ -118,25 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ArgumentEmptyCollection" xml:space="preserve">
-    <value>An empty collection is not valid.</value>
+    <value>Empty collections are invalid.</value>
   </data>
   <data name="ArgumentEmptyString" xml:space="preserve">
-    <value>An empty string is not valid.</value>
+    <value>Empty strings are invalid.</value>
   </data>
   <data name="ArgumentIsLessThan" xml:space="preserve">
-    <value>A value exceeding the upper limit is not valid.</value>
+    <value>Values exceeding the inclusive upper limit are invalid.</value>
   </data>
   <data name="ArgumentIsPositive" xml:space="preserve">
-    <value>A negative value is not valid.</value>
+    <value>Negative values are invalid.</value>
   </data>
   <data name="ArgumentIsStrictlyLessThan" xml:space="preserve">
-    <value>A value exceeding the upper limit is not valid.</value>
+    <value>Values exceeding the exclusive upper limit are invalid.</value>
   </data>
   <data name="ArgumentIsStrictlyPositive" xml:space="preserve">
-    <value>Zero or a negative value are not valid.</value>
+    <value>Zero or negative values are invalid.</value>
   </data>
   <data name="ArgumentNull" xml:space="preserve">
-    <value>A null value is not valid.</value>
+    <value>Null values are invalid.</value>
   </data>
   <data name="UpperLimit" xml:space="preserve">
     <value>Upper limit: </value>
