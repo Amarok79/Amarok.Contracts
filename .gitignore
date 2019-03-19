@@ -6,3 +6,5 @@
 /.cr
 /bin
 obj
+*.user
+/_NCrunch_Amarok.Contracts

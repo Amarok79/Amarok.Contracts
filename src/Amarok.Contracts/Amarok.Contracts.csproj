@@ -1,12 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup Label="Globals">
-		<SccProjectName>PlasticSCM</SccProjectName>
-		<SccProvider>Plastic SCM Source Control Service:{774e58ba-f1b9-40a7-b676-834fa2c220fe}</SccProvider>
-		<SccAuxPath>PlasticSCM</SccAuxPath>
-		<SccLocalPath>PlasticSCM</SccLocalPath>
-	</PropertyGroup>
-
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<RootNamespace>Amarok</RootNamespace>
@@ -15,41 +8,42 @@
 		<Company>&lt;none&gt;</Company>
 		<Description>Simple helper methods for verifying argument values.</Description>
 		<Copyright>Copyright (c) 2019, Olaf Kober</Copyright>
+		<PackageLicenseExpression>LGPL-3.0-only</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/Amarok79/Amarok.Contracts</PackageProjectUrl>
 		<PackageIconUrl>https://amarok.blob.core.windows.net/public/amarok.ico</PackageIconUrl>
 		<RepositoryUrl>https://github.com/Amarok79/Amarok.Contracts</RepositoryUrl>
-		<PackageLicenseFile>license\LICENSE.txt</PackageLicenseFile>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<CodeAnalysisRuleSet>..\Global.ruleset</CodeAnalysisRuleSet>
-		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags></PackageTags>
 		<SignAssembly>true</SignAssembly>
 		<AssemblyOriginatorKeyFile>..\amarok.snk</AssemblyOriginatorKeyFile>
 		<DelaySign>false</DelaySign>
-		<PackageLicenseExpression></PackageLicenseExpression>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<IncludeSymbols>true</IncludeSymbols>
+		<IncludeSource>true</IncludeSource>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<OutputPath>..\..\bin\lib\</OutputPath>
-		<DocumentationFile>..\..\bin\lib\netstandard2.0\Amarok.Contracts.xml</DocumentationFile>
+		<DocumentationFile>..\..\bin\lib\Amarok.Contracts.xml</DocumentationFile>
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
 		<LangVersion>8.0</LangVersion>
 		<NullableContextOptions>enable</NullableContextOptions>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<WarningsAsErrors />
-		<NoWarn>1701;1702</NoWarn>
+		<NoWarn>1701;1702;NU5105</NoWarn>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<OutputPath>..\..\bin\lib\</OutputPath>
-		<DocumentationFile>..\..\bin\lib\netstandard2.0\Amarok.Contracts.xml</DocumentationFile>
+		<DocumentationFile>..\..\bin\lib\Amarok.Contracts.xml</DocumentationFile>
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
 		<LangVersion>8.0</LangVersion>
 		<NullableContextOptions>enable</NullableContextOptions>
-		<NoWarn>1701;1702</NoWarn>
+		<NoWarn>1701;1702;NU5105</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -59,10 +53,6 @@
 	<ItemGroup>
 		<None Include="..\Amarok.Contracts.licenseheader" Link="Amarok.Contracts.licenseheader" />
 		<None Include="..\amarok.snk" Link="amarok.snk" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Include="..\LICENSE.txt" Pack="true" PackagePath="license"/>
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,11 +1,6 @@
 ﻿<SolutionConfiguration>
   <Settings>
     <AllowParallelTestExecution>True</AllowParallelTestExecution>
-    <MetricsExclusionList>
-      <Value>src\Tests.Amarok.Contracts\Tests.Amarok.Contracts.csproj:netcoreapp2.1</Value>
-      <Value>src\Tests.Amarok.Contracts\Tests.Amarok.Contracts.csproj:net471</Value>
-      <Value>Contracts\ExceptionResources.Designer.cs:src\Amarok.Contracts\Amarok.Contracts.csproj</Value>
-    </MetricsExclusionList>
     <SolutionConfigured>True</SolutionConfigured>
   </Settings>
 </SolutionConfiguration>

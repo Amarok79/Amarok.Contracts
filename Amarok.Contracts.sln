@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{34C76F3A-BE4D-4DB9-B854-CC4EC86BFF16}"
 	ProjectSection(SolutionItems) = preProject
 		src\Amarok.Contracts.licenseheader = src\Amarok.Contracts.licenseheader
+		doc\Contracts.xmind = doc\Contracts.xmind
 		src\Global.ruleset = src\Global.ruleset
 		src\Minimal.ruleset = src\Minimal.ruleset
 		README.md = README.md
@@ -17,9 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{08E20F5F-9C3F-48D4-9607-C67CFE855A00}"
 	ProjectSection(SolutionItems) = preProject
-		doc\Contracts.xmind = doc\Contracts.xmind
 		doc\Documentation.md = doc\Documentation.md
-		doc\FAQ.md = doc\FAQ.md
 	EndProjectSection
 EndProject
 Global
