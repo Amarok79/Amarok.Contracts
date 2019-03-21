@@ -79,6 +79,15 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Types not assignable to a specific type are invalid..
+        /// </summary>
+        internal static string ArgumentIsAssignableTo {
+            get {
+                return ResourceManager.GetString("ArgumentIsAssignableTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Values exceeding the inclusive lower limit are invalid..
         /// </summary>
         internal static string ArgumentIsGreaterThan {

@@ -123,6 +123,9 @@
   <data name="ArgumentEmptyString" xml:space="preserve">
     <value>Empty strings are invalid.</value>
   </data>
+  <data name="ArgumentIsAssignableTo" xml:space="preserve">
+    <value>Types not assignable to a specific type are invalid.</value>
+  </data>
   <data name="ArgumentIsGreaterThan" xml:space="preserve">
     <value>Values exceeding the inclusive lower limit are invalid.</value>
   </data>
