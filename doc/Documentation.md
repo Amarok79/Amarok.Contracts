@@ -39,4 +39,5 @@ public void SomeMethod(String text)
 | IsStrictlyLessThan(..)      | Int32, Int64, Double, TimeSpan  | ArgumentExceedsUpperLimitException  |
 | IsGreaterThan(..)           | Int32, Int64, Double, TimeSpan  | ArgumentExceedsLowerLimitException  |
 | IsStrictlyGreaterThan(..)   | Int32, Int64, Double, TimeSpan  | ArgumentExceedsLowerLimitException  |
-
+| IsSubclassOf(..)            | Type                            | ArgumentNullException, ArgumentException |
+| IsAssignableTo(..)          | Type                            | ArgumentNullException, ArgumentException |
