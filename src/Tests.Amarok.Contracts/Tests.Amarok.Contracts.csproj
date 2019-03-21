@@ -14,7 +14,7 @@
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<OutputPath>..\..\bin\tests\</OutputPath>
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-		<LangVersion>8.0</LangVersion>
+		<LangVersion>latest</LangVersion>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<WarningsAsErrors />
 		<DefineConstants>TRACE</DefineConstants>
@@ -23,7 +23,7 @@
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<OutputPath>..\..\bin\tests\</OutputPath>
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-		<LangVersion>8.0</LangVersion>
+		<LangVersion>latest</LangVersion>
 		<DefineConstants>DEBUG;TRACE</DefineConstants>
 	</PropertyGroup>
 

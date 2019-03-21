@@ -21,7 +21,7 @@ namespace Amarok.Contracts
 		/// <summary>
 		/// Gets the upper limit that has been exceeded.
 		/// </summary>
-		public Object? UpperLimit { get; }
+		public Object UpperLimit { get; }
 
 		/// <summary>
 		/// Gets the error message and the string representation of the invalid argument value.

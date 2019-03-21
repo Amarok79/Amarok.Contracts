@@ -30,8 +30,7 @@
 		<OutputPath>..\..\bin\lib\</OutputPath>
 		<DocumentationFile>..\..\bin\lib\Amarok.Contracts.xml</DocumentationFile>
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-		<LangVersion>8.0</LangVersion>
-		<NullableContextOptions>enable</NullableContextOptions>
+		<LangVersion>latest</LangVersion>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<WarningsAsErrors />
 		<NoWarn>1701;1702;NU5105</NoWarn>
@@ -41,8 +40,7 @@
 		<OutputPath>..\..\bin\lib\</OutputPath>
 		<DocumentationFile>..\..\bin\lib\Amarok.Contracts.xml</DocumentationFile>
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-		<LangVersion>8.0</LangVersion>
-		<NullableContextOptions>enable</NullableContextOptions>
+		<LangVersion>latest</LangVersion>
 		<NoWarn>1701;1702;NU5105</NoWarn>
 	</PropertyGroup>
 
