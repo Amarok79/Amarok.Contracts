@@ -97,6 +97,15 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Types representing interface or abstract base classes are invalid..
+        /// </summary>
+        internal static string ArgumentIsInstantiable {
+            get {
+                return ResourceManager.GetString("ArgumentIsInstantiable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Types representing concrete classes or value types are invalid..
         /// </summary>
         internal static string ArgumentIsInterface {
