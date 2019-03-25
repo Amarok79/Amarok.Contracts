@@ -97,6 +97,15 @@ namespace Amarok.Contracts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Types representing concrete classes or value types are invalid..
+        /// </summary>
+        internal static string ArgumentIsInterface {
+            get {
+                return ResourceManager.GetString("ArgumentIsInterface", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Values exceeding the inclusive upper limit are invalid..
         /// </summary>
         internal static string ArgumentIsLessThan {
