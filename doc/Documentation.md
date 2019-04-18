@@ -39,5 +39,6 @@ public void SomeMethod(String text)
 | IsStrictlyLessThan(..)      | Int32, Int64, Double, TimeSpan  | ArgumentExceedsUpperLimitException  |
 | IsGreaterThan(..)           | Int32, Int64, Double, TimeSpan  | ArgumentExceedsLowerLimitException  |
 | IsStrictlyGreaterThan(..)   | Int32, Int64, Double, TimeSpan  | ArgumentExceedsLowerLimitException  |
+| IsInRange(..)               | Int32, Int64, Double, TimeSpan  | ArgumentExceedsLowerLimitException, ArgumentExceedsUpperLimitException  |
 | IsSubclassOf(..)            | Type                            | ArgumentNullException, ArgumentException |
 | IsAssignableTo(..)          | Type                            | ArgumentNullException, ArgumentException |
