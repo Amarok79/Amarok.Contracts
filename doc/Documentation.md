@@ -43,4 +43,4 @@ public void SomeMethod(String text)
 | IsStrictlyInRange(..)       | Int32, Int64, Double, TimeSpan  | ArgumentExceedsLowerLimitException, ArgumentExceedsUpperLimitException |
 | IsSubclassOf(..)            | Type                            | ArgumentNullException, ArgumentException |
 | IsAssignableTo(..)          | Type                            | ArgumentNullException, ArgumentException |
-| IsValid(..)                 | T[], Int32                      | ArgumentNullException, ArgumentOutOfRangeException, ArgumentExceedsUpperLimitException |
+| IsValid(..)                 | T[]                             | ArgumentNullException, ArgumentOutOfRangeException, ArgumentExceedsUpperLimitException |
