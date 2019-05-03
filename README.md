@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This library provides static helper methods for verifying argument values, for example, to verify that argument values are neither null nor empty strings, or that argument values are within a defined value range.
+This library provides static helper methods for verifying argument values, for example, to verify that string arguments are neither null nor empty, or that numeric argument are within a defined value range.
 
 ```cs
 public void SomeMethod(String text, Int32 value)
