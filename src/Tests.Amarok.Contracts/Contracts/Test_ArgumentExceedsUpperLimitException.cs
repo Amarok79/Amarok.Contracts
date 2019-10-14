@@ -46,7 +46,7 @@ namespace Amarok.Contracts
 				Check.That(exception.Message)
 					.Contains(
 						"Specified argument was out of the range of valid values.",
-						"Parameter name: PARAM");
+						"PARAM");
 				Check.That(exception.InnerException)
 					.IsNull();
 				Check.That(exception.ParamName)
@@ -87,7 +87,7 @@ namespace Amarok.Contracts
 				Check.That(exception.Message)
 					.Contains(
 						"MSG",
-						"Parameter name: PARAM");
+						"PARAM");
 				Check.That(exception.InnerException)
 					.IsNull();
 				Check.That(exception.ParamName)
@@ -108,7 +108,7 @@ namespace Amarok.Contracts
 				Check.That(exception.Message)
 					.Contains(
 						"MSG",
-						"Parameter name: PARAM",
+						"PARAM",
 						"Actual value was 123.",
 						"Upper limit: 100");
 				Check.That(exception.InnerException)
@@ -141,7 +141,7 @@ namespace Amarok.Contracts
 				Check.That(exception2.Message)
 					.Contains(
 						"MSG",
-						"Parameter name: PARAM",
+						"PARAM",
 						"Actual value was 123.",
 						"Upper limit: 100");
 				Check.That(exception2.InnerException)

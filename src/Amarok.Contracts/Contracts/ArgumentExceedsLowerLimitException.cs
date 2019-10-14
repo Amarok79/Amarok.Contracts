@@ -21,7 +21,7 @@ namespace Amarok.Contracts
 		/// <summary>
 		/// Gets the lower limit that has been exceeded.
 		/// </summary>
-		public Object LowerLimit { get; }
+		public Object? LowerLimit { get; }
 
 		/// <summary>
 		/// Gets the error message and the string representation of the invalid argument value.
@@ -33,7 +33,7 @@ namespace Amarok.Contracts
 				String msg = base.Message;
 				if (this.LowerLimit != null && msg != null)
 					msg = msg + Environment.NewLine + ExceptionResources.LowerLimit + this.LowerLimit;
-				return msg;
+				return msg!;
 			}
 		}
 

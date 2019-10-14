@@ -1,4 +1,4 @@
-﻿/* Copyright(c) 2018, Olaf Kober
+﻿/* Copyright(c) 2019, Olaf Kober
  * Licensed under GNU Lesser General Public License v3.0 (LPGL-3.0).
  * https://github.com/Amarok79/Amarok.Contracts
  */
@@ -21,7 +21,7 @@ namespace Amarok.Contracts
 		/// <summary>
 		/// Gets the upper limit that has been exceeded.
 		/// </summary>
-		public Object UpperLimit { get; }
+		public Object? UpperLimit { get; }
 
 		/// <summary>
 		/// Gets the error message and the string representation of the invalid argument value.
@@ -33,7 +33,7 @@ namespace Amarok.Contracts
 				String msg = base.Message;
 				if (this.UpperLimit != null && msg != null)
 					msg = msg + Environment.NewLine + ExceptionResources.UpperLimit + this.UpperLimit;
-				return msg;
+				return msg!;
 			}
 		}
 
