@@ -15,23 +15,23 @@ namespace Amarok.Contracts
 	public partial class Test_Verify
 	{
 		[TestFixture]
-		public class IsValid_Array_Count
+		public class ArraySegment_Array_Count
 		{
 			[Test]
 			public void DoesNotThrow()
 			{
-				Check.ThatCode(() => Verify.IsValid(new Byte[2], 0))
+				Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.IsValid(new Byte[2], 1))
+				Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.IsValid(new Byte[2], 2))
+				Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 2))
 					.DoesNotThrow();
 			}
 
 			[Test]
 			public void ThrowsForNull()
 			{
-				var exception = Check.ThatCode(() => Verify.IsValid((Byte[])null, 0))
+				var exception = Check.ThatCode(() => Verify.ArraySegment((Byte[])null, 0))
 					.Throws<ArgumentNullException>()
 					.Value;
 
@@ -46,7 +46,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForNegativeCount()
 			{
-				var exception = Check.ThatCode(() => Verify.IsValid(new Byte[2], -1))
+				var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], -1))
 					.Throws<ArgumentOutOfRangeException>()
 					.Value;
 
@@ -63,7 +63,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForCountTooBig()
 			{
-				var exception = Check.ThatCode(() => Verify.IsValid(new Byte[2], 3))
+				var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 3))
 					.Throws<ArgumentExceedsUpperLimitException>()
 					.Value;
 
@@ -81,35 +81,35 @@ namespace Amarok.Contracts
 		}
 
 		[TestFixture]
-		public class IsValid_Array_Offset_Count
+		public class ArraySegment_Array_Offset_Count
 		{
 			[Test]
 			public void DoesNotThrow()
 			{
-				Check.ThatCode(() => Verify.IsValid(new Byte[2], 0, 0))
+				Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 0))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.IsValid(new Byte[2], 0, 1))
+				Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 1))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.IsValid(new Byte[2], 0, 2))
+				Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 2))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.IsValid(new Byte[2], 0, 3))
+				Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 3))
 					.ThrowsAny();
 
-				Check.ThatCode(() => Verify.IsValid(new Byte[2], 1, 0))
+				Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 0))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.IsValid(new Byte[2], 1, 1))
+				Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 1))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.IsValid(new Byte[2], 1, 2))
+				Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 2))
 					.ThrowsAny();
 
-				Check.ThatCode(() => Verify.IsValid(new Byte[2], 2, 0))
+				Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 2, 0))
 					.ThrowsAny();
 			}
 
 			[Test]
 			public void ThrowsForNull()
 			{
-				var exception = Check.ThatCode(() => Verify.IsValid((Byte[])null, 0, 0))
+				var exception = Check.ThatCode(() => Verify.ArraySegment((Byte[])null, 0, 0))
 					.Throws<ArgumentNullException>()
 					.Value;
 
@@ -124,7 +124,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForNegativeOffset()
 			{
-				var exception = Check.ThatCode(() => Verify.IsValid(new Byte[2], -1, 0))
+				var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], -1, 0))
 					.Throws<ArgumentOutOfRangeException>()
 					.Value;
 
@@ -141,7 +141,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForNegativeCount()
 			{
-				var exception = Check.ThatCode(() => Verify.IsValid(new Byte[2], 0, -1))
+				var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, -1))
 					.Throws<ArgumentOutOfRangeException>()
 					.Value;
 
@@ -158,7 +158,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForOffsetTooBig()
 			{
-				var exception = Check.ThatCode(() => Verify.IsValid(new Byte[2], 2, 0))
+				var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 2, 0))
 					.Throws<ArgumentExceedsUpperLimitException>()
 					.Value;
 
@@ -177,7 +177,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForCountTooBig()
 			{
-				var exception = Check.ThatCode(() => Verify.IsValid(new Byte[2], 0, 3))
+				var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 3))
 					.Throws<ArgumentExceedsUpperLimitException>()
 					.Value;
 
@@ -196,7 +196,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForOffsetPlusCountTooBig()
 			{
-				var exception = Check.ThatCode(() => Verify.IsValid(new Byte[2], 1, 2))
+				var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 2))
 					.Throws<ArgumentExceedsUpperLimitException>()
 					.Value;
 
@@ -214,23 +214,23 @@ namespace Amarok.Contracts
 		}
 
 		[TestFixture]
-		public class Debug_IsValid_Array_Count
+		public class Debug_ArraySegment_Array_Count
 		{
 			[Test]
 			public void DoesNotThrow()
 			{
-				Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 0))
+				Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 1))
+				Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 2))
+				Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 2))
 					.DoesNotThrow();
 			}
 
 			[Test]
 			public void ThrowsForNull()
 			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsValid((Byte[])null, 0))
+				var exception = Check.ThatCode(() => Verify.Debug.ArraySegment((Byte[])null, 0))
 					.Throws<ArgumentNullException>()
 					.Value;
 
@@ -245,7 +245,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForNegativeCount()
 			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], -1))
+				var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], -1))
 					.Throws<ArgumentOutOfRangeException>()
 					.Value;
 
@@ -262,7 +262,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForCountTooBig()
 			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 3))
+				var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 3))
 					.Throws<ArgumentExceedsUpperLimitException>()
 					.Value;
 
@@ -280,35 +280,35 @@ namespace Amarok.Contracts
 		}
 
 		[TestFixture]
-		public class Debug_IsValid_Array_Offset_Count
+		public class Debug_ArraySegment_Array_Offset_Count
 		{
 			[Test]
 			public void DoesNotThrow()
 			{
-				Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 0, 0))
+				Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 0))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 0, 1))
+				Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 1))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 0, 2))
+				Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 2))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 0, 3))
+				Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 3))
 					.ThrowsAny();
 
-				Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 1, 0))
+				Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 0))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 1, 1))
+				Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 1))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 1, 2))
+				Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 2))
 					.ThrowsAny();
 
-				Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 2, 0))
+				Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 2, 0))
 					.ThrowsAny();
 			}
 
 			[Test]
 			public void ThrowsForNull()
 			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsValid((Byte[])null, 0, 0))
+				var exception = Check.ThatCode(() => Verify.Debug.ArraySegment((Byte[])null, 0, 0))
 					.Throws<ArgumentNullException>()
 					.Value;
 
@@ -323,7 +323,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForNegativeOffset()
 			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], -1, 0))
+				var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], -1, 0))
 					.Throws<ArgumentOutOfRangeException>()
 					.Value;
 
@@ -340,7 +340,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForNegativeCount()
 			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 0, -1))
+				var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, -1))
 					.Throws<ArgumentOutOfRangeException>()
 					.Value;
 
@@ -357,7 +357,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForOffsetTooBig()
 			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 2, 0))
+				var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 2, 0))
 					.Throws<ArgumentExceedsUpperLimitException>()
 					.Value;
 
@@ -376,7 +376,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForCountTooBig()
 			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 0, 3))
+				var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 3))
 					.Throws<ArgumentExceedsUpperLimitException>()
 					.Value;
 
@@ -395,7 +395,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void ThrowsForOffsetPlusCountTooBig()
 			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsValid(new Byte[2], 1, 2))
+				var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 2))
 					.Throws<ArgumentExceedsUpperLimitException>()
 					.Value;
 

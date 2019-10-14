@@ -1,4 +1,4 @@
-﻿/* Copyright(c) 2018, Olaf Kober
+﻿/* Copyright(c) 2019, Olaf Kober
  * Licensed under GNU Lesser General Public License v3.0 (LPGL-3.0).
  * https://github.com/Amarok79/Amarok.Contracts
  */
@@ -29,7 +29,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentExceedsUpperLimitException">
 		/// Values exceeding the inclusive upper limit are invalid.</exception>
 		[DebuggerStepThrough]
-		public static void IsValid<T>(T[] array, Int32 count)
+		public static void ArraySegment<T>(T[] array, Int32 count)
 		{
 			if (array is null)
 				throw new ArgumentNullException(nameof(array), ExceptionResources.ArgumentNull);
@@ -57,7 +57,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentExceedsUpperLimitException">
 		/// Values exceeding the inclusive upper limit are invalid.</exception>
 		[DebuggerStepThrough]
-		public static void IsValid<T>(T[] array, Int32 offset, Int32 count)
+		public static void ArraySegment<T>(T[] array, Int32 offset, Int32 count)
 		{
 			if (array is null)
 				throw new ArgumentNullException(nameof(array), ExceptionResources.ArgumentNull);
@@ -90,7 +90,7 @@ namespace Amarok.Contracts
 			/// Values exceeding the inclusive upper limit are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void IsValid<T>(T[] array, Int32 count)
+			public static void ArraySegment<T>(T[] array, Int32 count)
 			{
 				if (array is null)
 					throw new ArgumentNullException(nameof(array), ExceptionResources.ArgumentNull);
@@ -119,7 +119,7 @@ namespace Amarok.Contracts
 			/// Values exceeding the inclusive upper limit are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void IsValid<T>(T[] array, Int32 offset, Int32 count)
+			public static void ArraySegment<T>(T[] array, Int32 offset, Int32 count)
 			{
 				if (array is null)
 					throw new ArgumentNullException(nameof(array), ExceptionResources.ArgumentNull);
