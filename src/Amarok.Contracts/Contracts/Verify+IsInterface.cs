@@ -27,7 +27,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentNullException">
 		/// Types representing concrete classes or value types are invalid.</exception>
 		[DebuggerStepThrough]
-		public static void IsInterface(Type type, String paramName)
+		public static void IsInterface(Type? type, String paramName)
 		{
 			if (type is null)
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -53,7 +53,7 @@ namespace Amarok.Contracts
 			/// Types representing concrete classes or value types are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void IsInterface(Type type, String paramName)
+			public static void IsInterface(Type? type, String paramName)
 			{
 				if (type is null)
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);

@@ -27,7 +27,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentNullException">
 		/// Types representing interface or abstract base classes are invalid.</exception>
 		[DebuggerStepThrough]
-		public static void IsInstantiable(Type type, String paramName)
+		public static void IsInstantiable(Type? type, String paramName)
 		{
 			if (type is null)
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -53,7 +53,7 @@ namespace Amarok.Contracts
 			/// Types representing interface or abstract base classes are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void IsInstantiable(Type type, String paramName)
+			public static void IsInstantiable(Type? type, String paramName)
 			{
 				if (type is null)
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
