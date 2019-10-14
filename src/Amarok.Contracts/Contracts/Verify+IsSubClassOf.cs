@@ -29,7 +29,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentException">
 		/// Types not derived from a specific base class are invalid.</exception>
 		[DebuggerStepThrough]
-		public static void IsSubclassOf(Type type, Type baseType, String paramName)
+		public static void IsSubclassOf(Type? type, Type baseType, String paramName)
 		{
 			if (type is null)
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -57,7 +57,7 @@ namespace Amarok.Contracts
 			/// Types not derived from a specific base class are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void IsSubclassOf(Type type, Type baseType, String paramName)
+			public static void IsSubclassOf(Type? type, Type baseType, String paramName)
 			{
 				if (type is null)
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
