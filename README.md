@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This library provides static helper methods for verifying argument values, for example, to verify that string arguments are neither null nor empty, or that numeric argument are within a defined value range.
+This library provides static helper methods for verifying argument values, for example, to verify that string arguments are neither null nor empty, or that numeric arguments are within a defined value range.
 
 ```cs
 public void SomeMethod(String text, Int32 value)
@@ -24,7 +24,7 @@ If those contracts are violated, appropriate argument exceptions are thrown.
 
 The library is redistributed as NuGet package: [Amarok.Contracts](https://www.nuget.org/packages/Amarok.Contracts/)
 
-The package provides strong-named binaries for *.NET Standard 2.0* only. Tests are generally performed with *.NET Framework 4.7.1* and *.NET Core 2.1*.
+The package provides strong-named binaries for *.NET Standard 2.0* only. Tests are generally performed with *.NET Framework 4.7.1*, *.NET Framework 4.8*, *.NET Core 2.1* and *.NET Core 3.0*
 
 
 ## Further Links
