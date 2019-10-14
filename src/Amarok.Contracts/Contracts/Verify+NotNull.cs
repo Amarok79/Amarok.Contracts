@@ -1,4 +1,4 @@
-﻿/* Copyright(c) 2018, Olaf Kober
+﻿/* Copyright(c) 2019, Olaf Kober
  * Licensed under GNU Lesser General Public License v3.0 (LPGL-3.0).
  * https://github.com/Amarok79/Amarok.Contracts
  */
@@ -25,7 +25,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentNullException">
 		/// Null values are invalid.</exception>
 		[DebuggerStepThrough]
-		public static void NotNull(Object value, String paramName)
+		public static void NotNull(Object? value, String paramName)
 		{
 			if (value is null)
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -47,7 +47,7 @@ namespace Amarok.Contracts
 			/// Null values are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void NotNull(Object value, String paramName)
+			public static void NotNull(Object? value, String paramName)
 			{
 				if (value is null)
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
