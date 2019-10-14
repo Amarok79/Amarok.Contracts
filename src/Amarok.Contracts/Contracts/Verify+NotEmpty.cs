@@ -1,4 +1,4 @@
-﻿/* Copyright(c) 2018, Olaf Kober
+﻿/* Copyright(c) 2019, Olaf Kober
  * Licensed under GNU Lesser General Public License v3.0 (LPGL-3.0).
  * https://github.com/Amarok79/Amarok.Contracts
  */
@@ -29,7 +29,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentException">
 		/// Empty strings are invalid.</exception>
 		[DebuggerStepThrough]
-		public static void NotEmpty(String value, String paramName)
+		public static void NotEmpty(String? value, String paramName)
 		{
 			if (value is null)
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -51,7 +51,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentException">
 		/// Empty collections are invalid.</exception>
 		[DebuggerStepThrough]
-		public static void NotEmpty<T>(IEnumerable<T> collection, String paramName)
+		public static void NotEmpty<T>(IEnumerable<T>? collection, String paramName)
 		{
 			if (collection is null)
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -86,7 +86,7 @@ namespace Amarok.Contracts
 			/// Empty strings are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void NotEmpty(String value, String paramName)
+			public static void NotEmpty(String? value, String paramName)
 			{
 				if (value is null)
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -109,7 +109,7 @@ namespace Amarok.Contracts
 			/// Empty collections are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void NotEmpty<T>(IEnumerable<T> collection, String paramName)
+			public static void NotEmpty<T>(IEnumerable<T>? collection, String paramName)
 			{
 				if (collection is null)
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
