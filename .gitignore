@@ -8,3 +8,4 @@
 obj
 *.user
 /_NCrunch_Amarok.Contracts
+/src/Tests.Amarok.Contracts/nCrunchTemp_*.csproj
