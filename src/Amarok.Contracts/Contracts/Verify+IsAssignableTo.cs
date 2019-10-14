@@ -29,7 +29,7 @@ namespace Amarok.Contracts
 		/// <exception cref="ArgumentException">
 		/// Types not assignable to a specific type are invalid.</exception>
 		[DebuggerStepThrough]
-		public static void IsAssignableTo(Type type, Type targetType, String paramName)
+		public static void IsAssignableTo(Type? type, Type targetType, String paramName)
 		{
 			if (type is null || targetType is null)
 				throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
@@ -57,7 +57,7 @@ namespace Amarok.Contracts
 			/// Types not assignable to a specific type are invalid.</exception>
 			[Conditional("DEBUG")]
 			[DebuggerStepThrough]
-			public static void IsAssignableTo(Type type, Type targetType, String paramName)
+			public static void IsAssignableTo(Type? type, Type targetType, String paramName)
 			{
 				if (type is null || targetType is null)
 					throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
