@@ -33,6 +33,7 @@ public void SomeMethod(String text)
 | ---                         | ---                             | ---                                 |
 | NotNull(..)                 | Object                          | ArgumentNullException               |
 | NotEmpty(..)                | String, IEnumerable<T>          | ArgumentNullException, ArgumentException |
+| NotEmptyOrWhiteSpace(..)    | String                          | ArgumentNullException, ArgumentException |
 | IsPositive(..)              | Int32, Int64, Double, TimeSpan  | ArgumentOutOfRangeException         |
 | IsStrictlyPositive(..)      | Int32, Int64, Double, TimeSpan  | ArgumentOutOfRangeException         |
 | IsLessThan(..)              | Int32, Int64, Double, TimeSpan  | ArgumentExceedsUpperLimitException  |
@@ -43,4 +44,4 @@ public void SomeMethod(String text)
 | IsStrictlyInRange(..)       | Int32, Int64, Double, TimeSpan  | ArgumentExceedsLowerLimitException, ArgumentExceedsUpperLimitException |
 | IsSubclassOf(..)            | Type                            | ArgumentNullException, ArgumentException |
 | IsAssignableTo(..)          | Type                            | ArgumentNullException, ArgumentException |
-| IsValid(..)                 | T[]                             | ArgumentNullException, ArgumentOutOfRangeException, ArgumentExceedsUpperLimitException |
+| ArraySegment(..)            | T[]                             | ArgumentNullException, ArgumentOutOfRangeException, ArgumentExceedsUpperLimitException |
