@@ -30,7 +30,7 @@ using System.Diagnostics;
 
 namespace Amarok.Contracts
 {
-	public partial class Verify
+	internal partial class Verify
 	{
 		/// <summary>
 		/// Verifies that the given type is not null and derived from the specified base class.
@@ -57,7 +57,7 @@ namespace Amarok.Contracts
 		}
 
 
-		public static partial class Debug
+		internal static partial class Debug
 		{
 			/// <summary>
 			/// Verifies that the given type is not null and derived from the specified base class.

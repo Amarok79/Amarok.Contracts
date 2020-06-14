@@ -27,7 +27,7 @@ namespace Amarok.Contracts
 	/// <summary>
 	/// This type provides static methods for argument verification.
 	/// </summary>
-	public static partial class Verify
+	internal static partial class Verify
 	{
 		/// <summary>
 		/// This nested type provides the same static methods for argument verification as the parent type, 
@@ -35,7 +35,7 @@ namespace Amarok.Contracts
 		/// these methods are only compiled into the output assembly, if the compiler define <c>DEBUG</c> 
 		/// is present.
 		/// </summary>
-		public static partial class Debug
+		internal static partial class Debug
 		{
 		}
 	}

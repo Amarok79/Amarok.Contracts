@@ -30,7 +30,7 @@ using System.Diagnostics;
 
 namespace Amarok.Contracts
 {
-	public partial class Verify
+	internal partial class Verify
 	{
 		/// <summary>
 		/// Verifies that the given array and count represent a valid array segment.
@@ -90,7 +90,7 @@ namespace Amarok.Contracts
 				throw new ArgumentExceedsUpperLimitException(nameof(count), offset + count, array.Length, ExceptionResources.ArgumentIsLessThan);
 		}
 
-		public static partial class Debug
+		internal static partial class Debug
 		{
 			/// <summary>
 			/// Verifies that the given array and count represent a valid array segment.
