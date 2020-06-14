@@ -30,7 +30,7 @@ using System.Diagnostics;
 
 namespace Amarok.Contracts
 {
-	public partial class Verify
+	internal partial class Verify
 	{
 		/// <summary>
 		/// Verifies that the given value is equal to or greater than the given lower limit and 
@@ -141,7 +141,7 @@ namespace Amarok.Contracts
 		}
 
 
-		public static partial class Debug
+		internal static partial class Debug
 		{
 			/// <summary>
 			/// Verifies that the given value is equal to or greater than the given lower limit and 

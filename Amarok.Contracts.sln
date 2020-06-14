@@ -3,13 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amarok.Contracts", "src\Amarok.Contracts\Amarok.Contracts.csproj", "{1FCE1A28-F159-49EA-8F47-92A5FDFFAFDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amarok.Contracts", "src\Amarok.Contracts\Amarok.Contracts.csproj", "{321AC2A4-FC35-432E-9524-E7E4697967FC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Amarok.Contracts", "src\Tests.Amarok.Contracts\Tests.Amarok.Contracts.csproj", "{22B0507E-5916-435D-8D47-2E5E06C00FB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Amarok.Contracts", "src\Tests.Amarok.Contracts\Tests.Amarok.Contracts.csproj", "{310CB3B1-0954-4CE7-BBCF-AAA5A11DEC86}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{34C76F3A-BE4D-4DB9-B854-CC4EC86BFF16}"
 	ProjectSection(SolutionItems) = preProject
 		src\Amarok.Contracts.licenseheader = src\Amarok.Contracts.licenseheader
+		Amarok.Contracts.nuspec = Amarok.Contracts.nuspec
 		azure-pipelines.yml = azure-pipelines.yml
 		doc\Contracts.xmind = doc\Contracts.xmind
 		src\Global.ruleset = src\Global.ruleset
@@ -28,14 +29,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1FCE1A28-F159-49EA-8F47-92A5FDFFAFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FCE1A28-F159-49EA-8F47-92A5FDFFAFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1FCE1A28-F159-49EA-8F47-92A5FDFFAFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1FCE1A28-F159-49EA-8F47-92A5FDFFAFDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22B0507E-5916-435D-8D47-2E5E06C00FB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22B0507E-5916-435D-8D47-2E5E06C00FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22B0507E-5916-435D-8D47-2E5E06C00FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22B0507E-5916-435D-8D47-2E5E06C00FB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{321AC2A4-FC35-432E-9524-E7E4697967FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{321AC2A4-FC35-432E-9524-E7E4697967FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{321AC2A4-FC35-432E-9524-E7E4697967FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{321AC2A4-FC35-432E-9524-E7E4697967FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{310CB3B1-0954-4CE7-BBCF-AAA5A11DEC86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310CB3B1-0954-4CE7-BBCF-AAA5A11DEC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310CB3B1-0954-4CE7-BBCF-AAA5A11DEC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310CB3B1-0954-4CE7-BBCF-AAA5A11DEC86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

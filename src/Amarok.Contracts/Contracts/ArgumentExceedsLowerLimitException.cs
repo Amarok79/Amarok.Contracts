@@ -33,7 +33,7 @@ namespace Amarok.Contracts
 	/// An exception that is thrown when a value exceeds the defined lower limit.
 	/// </summary>
 	[Serializable]
-	public class ArgumentExceedsLowerLimitException : ArgumentOutOfRangeException
+	internal class ArgumentExceedsLowerLimitException : ArgumentOutOfRangeException
 	{
 		#region ++ Public Interface ++
 
