@@ -62,20 +62,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="Contracts\ExceptionResources.Designer.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>ExceptionResources.resx</DependentUpon>
-		</Compile>
-	</ItemGroup>
-	<ItemGroup>
-		<EmbeddedResource Update="Contracts\ExceptionResources.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>ExceptionResources.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
 		<PackageReference Include="SonarAnalyzer.CSharp" Version="8.8.0.18411">
 			<PrivateAssets>all</PrivateAssets>
