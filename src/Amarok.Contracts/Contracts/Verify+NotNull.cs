@@ -30,7 +30,7 @@ using System.Diagnostics;
 
 namespace Amarok.Contracts
 {
-	public partial class Verify
+	internal partial class Verify
 	{
 		/// <summary>
 		/// Verifies that the given value is not a null reference, hence, that it refers to a valid object.
@@ -51,7 +51,7 @@ namespace Amarok.Contracts
 		}
 
 
-		public static partial class Debug
+		internal static partial class Debug
 		{
 			/// <summary>
 			/// Verifies that the given value is not a null reference, hence, that it refers to a valid object.
