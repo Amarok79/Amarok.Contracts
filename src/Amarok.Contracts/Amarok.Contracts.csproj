@@ -34,7 +34,7 @@
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
 		<LangVersion>latest</LangVersion>
 		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-		<NoWarn>1701;1702</NoWarn>
+		<NoWarn>1701;1702;NU5105;NU5128</NoWarn>
 		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
 		<RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
 	</PropertyGroup>
@@ -46,7 +46,7 @@
 		<LangVersion>latest</LangVersion>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<WarningsAsErrors />
-		<NoWarn>1701;1702</NoWarn>
+		<NoWarn>1701;1702;NU5105;NU5128</NoWarn>
 		<RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
 		<RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
 	</PropertyGroup>
@@ -62,11 +62,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
 		<PackageReference Include="SonarAnalyzer.CSharp" Version="8.8.0.18411">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="&quot;$(SolutionDir)nuget.exe&quot; pack -OutputDirectory &quot;$(SolutionDir)bin\lib&quot;"
+			  Condition="'$(NCrunch)' != '1'"/>
+	</Target>
 
 </Project>

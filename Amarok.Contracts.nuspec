@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
 	<metadata>
 		<id>Amarok.Contracts</id>
-		<version>3.0.1</version>
+		<version>3.0.3</version>
 		<authors>Olaf Kober</authors>
 		<owners>Olaf Kober</owners>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -12,12 +12,9 @@
 		<description>Simple helper methods for verifying argument values.</description>
 		<copyright>Copyright (c) 2019-2020, Olaf Kober</copyright>
 		<tags>Verify Check Contract NotNull NotEmpty InRange IsPositive IsGreaterThan IsLessThan</tags>
-		<repository type="git" url="https://github.com/Amarok79/Amarok.Contracts" commit="693059e1f54457b280dd13ce34c8d2bba53a5d94" />
-		<dependencies>
-			<group targetFramework=".NETStandard2.0" />
-		</dependencies>
+		<repository type="git" url="https://github.com/Amarok79/Amarok.Contracts" />
 		<contentFiles>
-			<files include="cs/**/*.*" buildAction="Compile"/>
+			<files include="cs/**/*.cs" buildAction="Compile"/>
 		</contentFiles>
 	</metadata>
 	<files>
