@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{08E20F5F-9C3
 		doc\Documentation.md = doc\Documentation.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.Amarok.Contracts", "src\Benchmarks.Amarok.Contracts\Benchmarks.Amarok.Contracts.csproj", "{011F7E72-F62A-4040-B004-2FAA6D66FADA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{310CB3B1-0954-4CE7-BBCF-AAA5A11DEC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{310CB3B1-0954-4CE7-BBCF-AAA5A11DEC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{310CB3B1-0954-4CE7-BBCF-AAA5A11DEC86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{011F7E72-F62A-4040-B004-2FAA6D66FADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011F7E72-F62A-4040-B004-2FAA6D66FADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011F7E72-F62A-4040-B004-2FAA6D66FADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011F7E72-F62A-4040-B004-2FAA6D66FADA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
