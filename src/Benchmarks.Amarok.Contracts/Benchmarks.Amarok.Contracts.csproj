@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<ProjectGuid>{011F7E72-F62A-4040-B004-2FAA6D66FADA}</ProjectGuid>
-		<TargetFramework>net48</TargetFramework>
+		<TargetFrameworks>net48;netcoreapp3.1</TargetFrameworks>
 		<RootNamespace>Amarok</RootNamespace>
 		<SignAssembly>true</SignAssembly>
 		<AssemblyOriginatorKeyFile>..\amarok.snk</AssemblyOriginatorKeyFile>
@@ -17,7 +17,6 @@
 		<OutputPath>..\..\bin\benchmarks\</OutputPath>
 		<DocumentationFile></DocumentationFile>
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-		<LangVersion>latest</LangVersion>
 		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 		<NoWarn>1701;1702</NoWarn>
 		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
@@ -28,7 +27,6 @@
 		<OutputPath>..\..\bin\benchmarks\</OutputPath>
 		<DocumentationFile></DocumentationFile>
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-		<LangVersion>latest</LangVersion>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<WarningsAsErrors />
 		<NoWarn>1701;1702</NoWarn>
