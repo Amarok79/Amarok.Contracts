@@ -28,6 +28,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 
 namespace Amarok.Contracts
@@ -47,7 +48,7 @@ namespace Amarok.Contracts
 		/// Null values are invalid.</exception>
 		/// <exception cref="ArgumentException">
 		/// Empty strings are invalid.</exception>
-		[DebuggerStepThrough]
+		[DebuggerStepThrough, MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void NotEmpty(String? value, String paramName)
 		{
 			if (value is null)
@@ -104,7 +105,7 @@ namespace Amarok.Contracts
 			/// <exception cref="ArgumentException">
 			/// Empty strings are invalid.</exception>
 			[Conditional("DEBUG")]
-			[DebuggerStepThrough]
+			[DebuggerStepThrough, MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public static void NotEmpty(String? value, String paramName)
 			{
 				if (value is null)

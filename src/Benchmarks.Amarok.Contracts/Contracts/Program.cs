@@ -31,7 +31,8 @@ namespace Amarok.Contracts
 	{
 		public static void Main()
 		{
-			BenchmarkRunner.Run<NotNullBechmarks>();
+			//BenchmarkRunner.Run<NotNullBechmarks>();
+			BenchmarkRunner.Run<NotEmptyBechmarks>();
 		}
 	}
 }
