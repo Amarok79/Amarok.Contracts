@@ -12,16 +12,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		src\Amarok.Contracts.licenseheader = src\Amarok.Contracts.licenseheader
 		Amarok.Contracts.nuspec = Amarok.Contracts.nuspec
 		azure-pipelines.yml = azure-pipelines.yml
-		doc\Contracts.xmind = doc\Contracts.xmind
 		src\Global.ruleset = src\Global.ruleset
 		src\Minimal.ruleset = src\Minimal.ruleset
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{08E20F5F-9C3F-48D4-9607-C67CFE855A00}"
-	ProjectSection(SolutionItems) = preProject
-		doc\Documentation.md = doc\Documentation.md
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmarks.Amarok.Contracts", "src\Benchmarks.Amarok.Contracts\Benchmarks.Amarok.Contracts.csproj", "{011F7E72-F62A-4040-B004-2FAA6D66FADA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,12 +33,13 @@ Global
 		{310CB3B1-0954-4CE7-BBCF-AAA5A11DEC86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{310CB3B1-0954-4CE7-BBCF-AAA5A11DEC86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{310CB3B1-0954-4CE7-BBCF-AAA5A11DEC86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{011F7E72-F62A-4040-B004-2FAA6D66FADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011F7E72-F62A-4040-B004-2FAA6D66FADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011F7E72-F62A-4040-B004-2FAA6D66FADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011F7E72-F62A-4040-B004-2FAA6D66FADA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{08E20F5F-9C3F-48D4-9607-C67CFE855A00} = {34C76F3A-BE4D-4DB9-B854-CC4EC86BFF16}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {962AF89D-565D-4CF7-B021-EFCF696AFCF9}

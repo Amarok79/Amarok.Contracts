@@ -26,6 +26,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 
 namespace Amarok.Contracts
@@ -43,7 +44,7 @@ namespace Amarok.Contracts
 		/// 
 		/// <exception cref="ArgumentNullException">
 		/// Null values are invalid.</exception>
-		[DebuggerStepThrough]
+		[DebuggerStepThrough, MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static void NotNull(Object? value, String paramName)
 		{
 			if (value is null)
@@ -65,7 +66,7 @@ namespace Amarok.Contracts
 			/// <exception cref="ArgumentNullException">
 			/// Null values are invalid.</exception>
 			[Conditional("DEBUG")]
-			[DebuggerStepThrough]
+			[DebuggerStepThrough, MethodImpl(MethodImplOptions.AggressiveInlining)]
 			public static void NotNull(Object? value, String paramName)
 			{
 				if (value is null)
