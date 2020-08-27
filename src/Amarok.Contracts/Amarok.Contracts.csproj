@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<ProjectGuid>{321AC2A4-FC35-432E-9524-E7E4697967FC}</ProjectGuid>
 		<TargetFramework>netstandard2.0</TargetFramework>
 		<RootNamespace>Amarok</RootNamespace>
-		<Version>3.0.0</Version>
+		<Version>3.0.2</Version>
 		<Authors>Olaf Kober</Authors>
 		<Company>&lt;none&gt;</Company>
 		<Description>Simple helper methods for verifying argument values.</Description>
