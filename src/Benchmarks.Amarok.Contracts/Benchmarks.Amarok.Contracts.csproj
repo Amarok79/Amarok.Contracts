@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<ProjectGuid>{011F7E72-F62A-4040-B004-2FAA6D66FADA}</ProjectGuid>
