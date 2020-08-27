@@ -54,7 +54,7 @@ public void SomeMethod(String text)
 }
 ```
 
-## Supported Methods
+### Supported Methods
 
 | Method on Verify            | Operates on Types               | Potentially throws                  |
 | ---                         | ---                             | ---                                 |
