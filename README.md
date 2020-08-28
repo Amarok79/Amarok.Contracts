@@ -3,7 +3,7 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Amarok79_Contracts&metric=coverage)](https://sonarcloud.io/dashboard?id=Amarok79_Contracts)
 [![NuGet](https://img.shields.io/nuget/v/Amarok.Contracts.svg?logo=)](https://www.nuget.org/packages/Amarok.Contracts/)
 
-## Introduction
+# Introduction
 
 This library provides static helper methods for verifying argument values, for example, to verify that string arguments are neither null nor empty, or that numeric arguments are within a defined value range.
 
@@ -20,12 +20,12 @@ public void SomeMethod(String text, Int32 value)
 If those contracts are violated, appropriate argument exceptions are thrown.
 
 
-## Redistribution
+# Redistribution
 
 The library is redistributed as source-only NuGet package: [Amarok.Contracts](https://www.nuget.org/packages/Amarok.Contracts/)
 
 
-## Documentation
+# Documentation
 
 It's common practice to verify argument values on public types. This generally consists of a condition and a throw statement.
 
@@ -54,7 +54,7 @@ public void SomeMethod(String text)
 }
 ```
 
-### Supported Methods
+## Supported Methods
 
 | Method on Verify            | Operates on Types               | Potentially throws                  |
 | ---                         | ---                             | ---                                 |
