@@ -12,9 +12,10 @@
         "ignore-methods": [],
         "reporters": [
             "html",
-            "progress"
+            "progress",
+            "dashboard"
         ],
-        "dashboard-api-key": "254159ff-0b77-4e02-a356-54b7d98ecb31",
+        "dashboard-api-key": "f7a6ee95-2168-433c-9969-5c224553ad6b",
         "dashboard-project": "github.com/Amarok79/Amarok.Contracts",
         "dashboard-version": "master"
     }
