@@ -2,20 +2,15 @@
 
 	<PropertyGroup>
 		<ProjectGuid>{011F7E72-F62A-4040-B004-2FAA6D66FADA}</ProjectGuid>
-		<TargetFrameworks>net48;netcoreapp3.1</TargetFrameworks>
-		<RootNamespace>Amarok</RootNamespace>
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>..\amarok.snk</AssemblyOriginatorKeyFile>
-		<DelaySign>false</DelaySign>
-		<AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
-		<Nullable>disable</Nullable>
 		<OutputType>Exe</OutputType>
-		<StartupObject>Amarok.Contracts.Program</StartupObject>
+		<TargetFrameworks>netcoreapp2.1;netcoreapp3.1;net48</TargetFrameworks>
+		<RootNamespace>Amarok</RootNamespace>
+		<AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
+		<AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<OutputPath>..\..\bin\benchmarks\</OutputPath>
-		<DocumentationFile></DocumentationFile>
+		<OutputPath>..\..\bin\benchmark\</OutputPath>
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
 		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 		<NoWarn>1701;1702</NoWarn>
@@ -24,10 +19,10 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-		<OutputPath>..\..\bin\benchmarks\</OutputPath>
-		<DocumentationFile></DocumentationFile>
+		<OutputPath>..\..\bin\benchmark\</OutputPath>
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<LangVersion>latest</LangVersion>
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 		<WarningsAsErrors />
 		<NoWarn>1701;1702</NoWarn>
 		<RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
@@ -36,11 +31,12 @@
 
 	<ItemGroup>
 		<None Include="..\Amarok.Contracts.licenseheader" Link="Amarok.Contracts.licenseheader" />
-		<None Include="..\amarok.snk" Link="amarok.snk" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+		<PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
+		<PackageReference Include="System.CodeDom" Version="4.7.0" />
 	</ItemGroup>
 
 	<ItemGroup>

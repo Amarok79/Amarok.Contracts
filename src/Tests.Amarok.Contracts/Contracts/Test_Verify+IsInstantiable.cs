@@ -69,7 +69,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentIsInstantiable);
+					.StartsWith(ExceptionResources.ArgumentIsInstantiable)
+					.And
+					.Contains("Types representing interface or abstract base classes are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)

@@ -69,7 +69,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentEmptyString);
+					.StartsWith(ExceptionResources.ArgumentEmptyString)
+					.And
+					.Contains("Empty strings are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)
@@ -128,7 +130,7 @@ namespace Amarok.Contracts
 			{
 				Check.ThatCode(() => Verify.NotEmpty(new[] { 123, 456 }, "name"))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.NotEmpty(CreateNonEmptyEnumerable(), "name"))
+				Check.ThatCode(() => Verify.NotEmpty(_CreateNonEmptyEnumerable(), "name"))
 					.DoesNotThrow();
 			}
 
@@ -157,7 +159,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentEmptyCollection);
+					.StartsWith(ExceptionResources.ArgumentEmptyCollection)
+					.And
+					.Contains("Empty collections are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)
@@ -167,7 +171,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void Throws_For_EmptyEnumerable()
 			{
-				var collection = CreateEmptyEnumerable();
+				var collection = _CreateEmptyEnumerable();
 
 				var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name"))
 					.Throws<ArgumentException>()
@@ -190,7 +194,7 @@ namespace Amarok.Contracts
 			{
 				Check.ThatCode(() => Verify.Debug.NotEmpty(new[] { 123, 456 }, "name"))
 					.DoesNotThrow();
-				Check.ThatCode(() => Verify.Debug.NotEmpty(CreateNonEmptyEnumerable(), "name"))
+				Check.ThatCode(() => Verify.Debug.NotEmpty(_CreateNonEmptyEnumerable(), "name"))
 					.DoesNotThrow();
 			}
 
@@ -229,7 +233,7 @@ namespace Amarok.Contracts
 			[Test]
 			public void Throws_For_EmptyEnumerable()
 			{
-				var collection = CreateEmptyEnumerable();
+				var collection = _CreateEmptyEnumerable();
 
 				var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(collection, "name"))
 					.Throws<ArgumentException>()
@@ -245,11 +249,11 @@ namespace Amarok.Contracts
 		}
 
 
-		private static IEnumerable<Int32> CreateEmptyEnumerable()
+		private static IEnumerable<Int32> _CreateEmptyEnumerable()
 		{
 			yield break;
 		}
-		private static IEnumerable<Int32> CreateNonEmptyEnumerable()
+		private static IEnumerable<Int32> _CreateNonEmptyEnumerable()
 		{
 			yield return 123;
 			yield return 456;

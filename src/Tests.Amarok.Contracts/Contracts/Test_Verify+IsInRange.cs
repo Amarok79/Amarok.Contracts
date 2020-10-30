@@ -24,6 +24,8 @@
 
 #define DEBUG
 
+#pragma warning disable S1905 // Redundant casts should not be used
+
 using System;
 using NFluent;
 using NUnit.Framework;
@@ -53,7 +55,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentIsGreaterThan);
+					.StartsWith(ExceptionResources.ArgumentIsGreaterThan)
+					.And
+					.Contains("Values exceeding the inclusive lower limit are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)

@@ -1,0 +1,22 @@
+{
+    "stryker-config": {
+        "solution-path": "Amarok.Contracts.sln",
+        "project-file": "Amarok.Contracts.csproj",
+        "test-projects": [
+            "src/Tests.Amarok.Contracts/Tests.Amarok.Contracts.csproj"
+        ],
+        "mutate-level": "Standard",
+        "coverage-analysis": "perTest",
+        "log-level": "info",
+        "log-file": true,
+        "ignore-methods": [],
+        "reporters": [
+            "html",
+            "progress",
+            "dashboard"
+        ],
+        "dashboard-api-key": "f7a6ee95-2168-433c-9969-5c224553ad6b",
+        "dashboard-project": "github.com/Amarok79/Amarok.Contracts",
+        "dashboard-version": "master"
+    }
+}
