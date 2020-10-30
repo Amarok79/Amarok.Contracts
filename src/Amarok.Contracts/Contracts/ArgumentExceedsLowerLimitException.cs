@@ -49,7 +49,7 @@ namespace Amarok.Contracts
 		{
 			get
 			{
-				String msg = base.Message;
+				var msg = base.Message;
 				if (this.LowerLimit != null && msg != null)
 					msg = msg + Environment.NewLine + ExceptionResources.LowerLimit + this.LowerLimit;
 				return msg!;
