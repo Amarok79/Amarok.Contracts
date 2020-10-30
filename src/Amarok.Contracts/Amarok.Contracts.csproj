@@ -64,8 +64,4 @@
 		</PackageReference>
 	</ItemGroup>
 
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="&quot;$(SolutionDir)nuget.exe&quot; pack &quot;$(SolutionDir)Amarok.Contracts.nuspec&quot; -OutputDirectory &quot;$(SolutionDir)bin\lib&quot;" Condition="'$(NCrunch)' != '1'" />
-	</Target>
-
 </Project>
