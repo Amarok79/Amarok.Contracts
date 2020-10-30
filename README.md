@@ -1,3 +1,4 @@
+![CI](https://github.com/Amarok79/Amarok.Contracts/workflows/CI/badge.svg)
 [![Build Status](https://dev.azure.com/amarok79/Amarok/_apis/build/status/Amarok.Contracts?branchName=master)](https://dev.azure.com/amarok79/Amarok/_build/latest?definitionId=19&branchName=master)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Amarok79_Contracts&metric=alert_status)](https://sonarcloud.io/dashboard?id=Amarok79_Contracts)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Amarok79_Contracts&metric=coverage)](https://sonarcloud.io/dashboard?id=Amarok79_Contracts)
