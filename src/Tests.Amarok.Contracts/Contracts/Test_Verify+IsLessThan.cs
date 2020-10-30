@@ -55,7 +55,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentIsLessThan);
+					.StartsWith(ExceptionResources.ArgumentIsLessThan)
+					.And
+					.Contains("Values exceeding the inclusive upper limit are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)

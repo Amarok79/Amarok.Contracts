@@ -53,7 +53,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentNull);
+					.StartsWith(ExceptionResources.ArgumentNull)
+					.And
+					.Contains("Null values are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)

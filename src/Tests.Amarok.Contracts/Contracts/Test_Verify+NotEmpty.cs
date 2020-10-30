@@ -69,7 +69,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentEmptyString);
+					.StartsWith(ExceptionResources.ArgumentEmptyString)
+					.And
+					.Contains("Empty strings are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)
@@ -157,7 +159,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentEmptyCollection);
+					.StartsWith(ExceptionResources.ArgumentEmptyCollection)
+					.And
+					.Contains("Empty collections are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)

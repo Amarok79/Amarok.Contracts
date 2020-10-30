@@ -87,7 +87,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentIsSubclassOf);
+					.StartsWith(ExceptionResources.ArgumentIsSubclassOf)
+					.And
+					.Contains("Types not derived from a specific base class are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)

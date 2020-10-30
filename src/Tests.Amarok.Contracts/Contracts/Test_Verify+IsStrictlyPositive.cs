@@ -55,7 +55,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+					.StartsWith(ExceptionResources.ArgumentIsStrictlyPositive)
+					.And
+					.Contains("Zero or negative values are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)

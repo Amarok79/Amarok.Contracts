@@ -53,7 +53,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
+					.StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan)
+					.And
+					.Contains("Values exceeding the exclusive lower limit are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)

@@ -66,7 +66,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentIsInterface);
+					.StartsWith(ExceptionResources.ArgumentIsInterface)
+					.And
+					.Contains("Types representing concrete classes or value types are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)

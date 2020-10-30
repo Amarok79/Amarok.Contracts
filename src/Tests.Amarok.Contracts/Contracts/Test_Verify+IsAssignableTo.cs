@@ -83,7 +83,9 @@ namespace Amarok.Contracts
 					.Value;
 
 				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentIsAssignableTo);
+					.StartsWith(ExceptionResources.ArgumentIsAssignableTo)
+					.And
+					.Contains("Types not assignable to a specific type are invalid.");
 				Check.That(exception.ParamName)
 					.IsEqualTo("name");
 				Check.That(exception.InnerException)
