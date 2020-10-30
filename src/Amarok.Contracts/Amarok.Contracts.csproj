@@ -8,24 +8,21 @@
 		<Authors>Olaf Kober</Authors>
 		<Company>&lt;none&gt;</Company>
 		<Description>Simple helper methods for verifying argument values.</Description>
-		<Copyright>Copyright (c) 2019-2020, Olaf Kober</Copyright>
+		<Copyright>Copyright (c) 2019, Olaf Kober</Copyright>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/Amarok79/Amarok.Contracts</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/Amarok79/Amarok.Contracts</RepositoryUrl>
 		<PackageIcon>amarok.png</PackageIcon>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
-		<CodeAnalysisRuleSet>..\Global.ruleset</CodeAnalysisRuleSet>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>Verify Check Contract NotNull NotEmpty InRange IsPositive IsGreaterThan IsLessThan</PackageTags>
-		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>..\amarok.snk</AssemblyOriginatorKeyFile>
-		<DelaySign>false</DelaySign>
 		<AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
 		<IncludeSymbols>true</IncludeSymbols>
 		<IncludeSource>true</IncludeSource>
 		<Nullable>enable</Nullable>
+		<DevelopmentDependency>true</DevelopmentDependency>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -57,12 +54,11 @@
 
 	<ItemGroup>
 		<None Include="..\Amarok.Contracts.licenseheader" Link="Amarok.Contracts.licenseheader" />
-		<None Include="..\amarok.snk" Link="amarok.snk" />
 		<None Include="..\amarok.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="SonarAnalyzer.CSharp" Version="8.12.0.21095">
+		<PackageReference Include="SonarAnalyzer.CSharp" Version="8.14.0.22654">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
