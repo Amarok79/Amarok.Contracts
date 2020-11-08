@@ -20,19 +20,19 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
-*/
+ */
 
 using BenchmarkDotNet.Running;
 
 
 namespace Amarok.Contracts
 {
-	public static class Program
-	{
-		public static void Main()
-		{
-			BenchmarkRunner.Run<NotNullBechmarks>();
-			BenchmarkRunner.Run<NotEmptyBechmarks>();
-		}
-	}
+    public static class Program
+    {
+        public static void Main()
+        {
+            BenchmarkRunner.Run<NotNullBechmarks>();
+            BenchmarkRunner.Run<NotEmptyBechmarks>();
+        }
+    }
 }

@@ -20,7 +20,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
-*/
+ */
 
 using System;
 using System.Runtime.CompilerServices;
@@ -30,53 +30,53 @@ using BenchmarkDotNet.Jobs;
 
 namespace Amarok.Contracts
 {
-	[SimpleJob(RuntimeMoniker.Net48)]
-	[SimpleJob(RuntimeMoniker.NetCoreApp31)]
-	public class NotEmptyBechmarks
-	{
-		[Benchmark(Baseline = true)]
-		public void Baseline()
-		{
-			for (Int32 i = 0; i < 1000; i++)
-				_BaselineCore("abc");
-		}
+    [SimpleJob(RuntimeMoniker.Net48), SimpleJob(RuntimeMoniker.NetCoreApp31)]
+    public class NotEmptyBechmarks
+    {
+        [Benchmark(Baseline = true)]
+        public void Baseline()
+        {
+            for (var i = 0; i < 1000; i++)
+                _BaselineCore("abc");
+        }
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
-		private void _BaselineCore(String text)
-		{
-		}
-
-
-		[Benchmark]
-		public void Throw()
-		{
-			for (Int32 i = 0; i < 1000; i++)
-				_ThrowCore("abc");
-		}
-
-		[MethodImpl(MethodImplOptions.NoInlining)]
-		private void _ThrowCore(String abc)
-		{
-			if (abc is null)
-				throw new ArgumentNullException(nameof(abc));
-			if (abc.Length == 0)
-				throw new ArgumentException(nameof(abc));
-		}
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private void _BaselineCore(String text)
+        {
+        }
 
 
-		[Benchmark]
-		public void Verify()
-		{
-			for (Int32 i = 0; i < 1000; i++)
-				_VerifyCore("abc");
-		}
+        [Benchmark]
+        public void Throw()
+        {
+            for (var i = 0; i < 1000; i++)
+                _ThrowCore("abc");
+        }
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
-		private void _VerifyCore(String abc)
-		{
-			Amarok.Contracts.Verify.NotEmpty(abc, nameof(abc));
-		}
-	}
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private void _ThrowCore(String abc)
+        {
+            if (abc is null)
+                throw new ArgumentNullException(nameof(abc));
+
+            if (abc.Length == 0)
+                throw new ArgumentException(nameof(abc));
+        }
+
+
+        [Benchmark]
+        public void Verify()
+        {
+            for (var i = 0; i < 1000; i++)
+                _VerifyCore("abc");
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private void _VerifyCore(String abc)
+        {
+            Contracts.Verify.NotEmpty(abc, nameof(abc));
+        }
+    }
 }
 
 /*

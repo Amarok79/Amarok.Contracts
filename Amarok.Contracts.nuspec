@@ -14,7 +14,7 @@
 		<tags>Verify Check Contract NotNull NotEmpty InRange IsPositive IsGreaterThan IsLessThan</tags>
 		<repository type="git" url="https://github.com/Amarok79/Amarok.Contracts" />
 		<contentFiles>
-			<files include="cs/**/*.cs" buildAction="Compile"/>
+			<files include="cs/**/*.cs" buildAction="Compile" />
 		</contentFiles>
 	</metadata>
 	<files>

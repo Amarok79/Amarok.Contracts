@@ -20,7 +20,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
-*/
+ */
 
 #define DEBUG
 
@@ -32,231 +32,196 @@ using NUnit.Framework;
 
 namespace Amarok.Contracts
 {
-	public partial class Test_Verify
-	{
-		[TestFixture]
-		public class NotEmpty_String
-		{
-			[Test]
-			public void DoesNotThrow()
-			{
-				Check.ThatCode(() => Verify.NotEmpty("foo", "name"))
-					.DoesNotThrow();
-				Check.ThatCode(() => Verify.NotEmpty(" ", "name"))
-					.DoesNotThrow();
-			}
+    public partial class Test_Verify
+    {
+        [TestFixture]
+        public class NotEmpty_String
+        {
+            [Test]
+            public void DoesNotThrow()
+            {
+                Check.ThatCode(() => Verify.NotEmpty("foo", "name")).DoesNotThrow();
+                Check.ThatCode(() => Verify.NotEmpty(" ", "name")).DoesNotThrow();
+            }
 
-			[Test]
-			public void Throws_For_Null()
-			{
-				var exception = Check.ThatCode(() => Verify.NotEmpty((String)null, "name"))
-					.Throws<ArgumentNullException>()
-					.Value;
+            [Test]
+            public void Throws_For_Null()
+            {
+                var exception = Check.ThatCode(() => Verify.NotEmpty(null, "name"))
+                                     .Throws<ArgumentNullException>()
+                                     .Value;
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentNull);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
 
-			[Test]
-			public void Throws_For_EmptyString()
-			{
-				var exception = Check.ThatCode(() => Verify.NotEmpty(String.Empty, "name"))
-					.Throws<ArgumentException>()
-					.Value;
+            [Test]
+            public void Throws_For_EmptyString()
+            {
+                var exception = Check.ThatCode(() => Verify.NotEmpty(String.Empty, "name"))
+                                     .Throws<ArgumentException>()
+                                     .Value;
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentEmptyString)
-					.And
-					.Contains("Empty strings are invalid.");
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
-		}
+                Check.That(exception.Message)
+                     .StartsWith(ExceptionResources.ArgumentEmptyString)
+                     .And.Contains("Empty strings are invalid.");
 
-		[TestFixture]
-		public class Debug_NotEmpty_String
-		{
-			[Test]
-			public void DoesNotThrow()
-			{
-				Check.ThatCode(() => Verify.Debug.NotEmpty("foo", "name"))
-					.DoesNotThrow();
-				Check.ThatCode(() => Verify.Debug.NotEmpty(" ", "name"))
-					.DoesNotThrow();
-			}
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
+        }
 
-			[Test]
-			public void Throws_For_Null()
-			{
-				var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(null, "name"))
-					.Throws<ArgumentNullException>()
-					.Value;
+        [TestFixture]
+        public class Debug_NotEmpty_String
+        {
+            [Test]
+            public void DoesNotThrow()
+            {
+                Check.ThatCode(() => Verify.Debug.NotEmpty("foo", "name")).DoesNotThrow();
+                Check.ThatCode(() => Verify.Debug.NotEmpty(" ", "name")).DoesNotThrow();
+            }
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentNull);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+            [Test]
+            public void Throws_For_Null()
+            {
+                var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(null, "name"))
+                                     .Throws<ArgumentNullException>()
+                                     .Value;
 
-			[Test]
-			public void Throws_For_EmptyString()
-			{
-				var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(String.Empty, "name"))
-					.Throws<ArgumentException>()
-					.Value;
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentEmptyString);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
-		}
+            [Test]
+            public void Throws_For_EmptyString()
+            {
+                var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(String.Empty, "name"))
+                                     .Throws<ArgumentException>()
+                                     .Value;
 
-		[TestFixture]
-		public class NotEmpty_Enumerable
-		{
-			[Test]
-			public void DoesNotThrow()
-			{
-				Check.ThatCode(() => Verify.NotEmpty(new[] { 123, 456 }, "name"))
-					.DoesNotThrow();
-				Check.ThatCode(() => Verify.NotEmpty(_CreateNonEmptyEnumerable(), "name"))
-					.DoesNotThrow();
-			}
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyString);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
+        }
 
-			[Test]
-			public void Throws_For_Null()
-			{
-				var exception = Check.ThatCode(() => Verify.NotEmpty((IEnumerable<Int32>)null, "name"))
-					.Throws<ArgumentNullException>()
-					.Value;
+        [TestFixture]
+        public class NotEmpty_Enumerable
+        {
+            [Test]
+            public void DoesNotThrow()
+            {
+                Check.ThatCode(() => Verify.NotEmpty(new[] { 123, 456 }, "name")).DoesNotThrow();
+                Check.ThatCode(() => Verify.NotEmpty(_CreateNonEmptyEnumerable(), "name")).DoesNotThrow();
+            }
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentNull);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+            [Test]
+            public void Throws_For_Null()
+            {
+                var exception = Check.ThatCode(() => Verify.NotEmpty((IEnumerable<Int32>) null, "name"))
+                                     .Throws<ArgumentNullException>()
+                                     .Value;
 
-			[Test]
-			public void Throws_For_EmptyReadOnlyCollection()
-			{
-				var collection = new Int32[0];
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
 
-				var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name"))
-					.Throws<ArgumentException>()
-					.Value;
+            [Test]
+            public void Throws_For_EmptyReadOnlyCollection()
+            {
+                var collection = new Int32[0];
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentEmptyCollection)
-					.And
-					.Contains("Empty collections are invalid.");
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+                var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name"))
+                                     .Throws<ArgumentException>()
+                                     .Value;
 
-			[Test]
-			public void Throws_For_EmptyEnumerable()
-			{
-				var collection = _CreateEmptyEnumerable();
+                Check.That(exception.Message)
+                     .StartsWith(ExceptionResources.ArgumentEmptyCollection)
+                     .And.Contains("Empty collections are invalid.");
 
-				var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name"))
-					.Throws<ArgumentException>()
-					.Value;
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentEmptyCollection);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
-		}
+            [Test]
+            public void Throws_For_EmptyEnumerable()
+            {
+                IEnumerable<Int32> collection = _CreateEmptyEnumerable();
 
-		[TestFixture]
-		public class Debug_NotEmpty_Enumerable
-		{
-			[Test]
-			public void DoesNotThrow()
-			{
-				Check.ThatCode(() => Verify.Debug.NotEmpty(new[] { 123, 456 }, "name"))
-					.DoesNotThrow();
-				Check.ThatCode(() => Verify.Debug.NotEmpty(_CreateNonEmptyEnumerable(), "name"))
-					.DoesNotThrow();
-			}
+                var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name"))
+                                     .Throws<ArgumentException>()
+                                     .Value;
 
-			[Test]
-			public void Throws_For_Null()
-			{
-				var exception = Check.ThatCode(() => Verify.Debug.NotEmpty((IEnumerable<Int32>)null, "name"))
-					.Throws<ArgumentNullException>()
-					.Value;
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyCollection);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
+        }
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentNull);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+        [TestFixture]
+        public class Debug_NotEmpty_Enumerable
+        {
+            [Test]
+            public void DoesNotThrow()
+            {
+                Check.ThatCode(() => Verify.Debug.NotEmpty(new[] { 123, 456 }, "name")).DoesNotThrow();
+                Check.ThatCode(() => Verify.Debug.NotEmpty(_CreateNonEmptyEnumerable(), "name")).DoesNotThrow();
+            }
 
-			[Test]
-			public void Throws_For_EmptyReadOnlyCollection()
-			{
-				var collection = new Int32[0];
+            [Test]
+            public void Throws_For_Null()
+            {
+                var exception = Check.ThatCode(() => Verify.Debug.NotEmpty((IEnumerable<Int32>) null, "name"))
+                                     .Throws<ArgumentNullException>()
+                                     .Value;
 
-				var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(collection, "name"))
-					.Throws<ArgumentException>()
-					.Value;
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentEmptyCollection);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+            [Test]
+            public void Throws_For_EmptyReadOnlyCollection()
+            {
+                var collection = new Int32[0];
 
-			[Test]
-			public void Throws_For_EmptyEnumerable()
-			{
-				var collection = _CreateEmptyEnumerable();
+                var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(collection, "name"))
+                                     .Throws<ArgumentException>()
+                                     .Value;
 
-				var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(collection, "name"))
-					.Throws<ArgumentException>()
-					.Value;
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyCollection);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentEmptyCollection);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
-		}
+            [Test]
+            public void Throws_For_EmptyEnumerable()
+            {
+                IEnumerable<Int32> collection = _CreateEmptyEnumerable();
+
+                var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(collection, "name"))
+                                     .Throws<ArgumentException>()
+                                     .Value;
+
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyCollection);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
+        }
 
 
-		private static IEnumerable<Int32> _CreateEmptyEnumerable()
-		{
-			yield break;
-		}
-		private static IEnumerable<Int32> _CreateNonEmptyEnumerable()
-		{
-			yield return 123;
-			yield return 456;
-		}
-	}
+        private static IEnumerable<Int32> _CreateEmptyEnumerable()
+        {
+            yield break;
+        }
+
+        private static IEnumerable<Int32> _CreateNonEmptyEnumerable()
+        {
+            yield return 123;
+            yield return 456;
+        }
+    }
 }

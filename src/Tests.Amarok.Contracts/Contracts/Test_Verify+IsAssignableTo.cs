@@ -20,7 +20,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
-*/
+ */
 
 #define DEBUG
 
@@ -31,124 +31,103 @@ using NUnit.Framework;
 
 namespace Amarok.Contracts
 {
-	public partial class Test_Verify
-	{
-		[TestFixture]
-		public class IsAssignableTo
-		{
-			[Test]
-			public void DoesNotThrow_For_Instance()
-			{
-				Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), typeof(Animal), "name"))
-					.DoesNotThrow();
-				Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), typeof(Dog), "name"))
-					.DoesNotThrow();
-			}
+    public partial class Test_Verify
+    {
+        [TestFixture]
+        public class IsAssignableTo
+        {
+            [Test]
+            public void DoesNotThrow_For_Instance()
+            {
+                Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), typeof(Animal), "name")).DoesNotThrow();
+                Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), typeof(Dog), "name")).DoesNotThrow();
+            }
 
-			[Test]
-			public void Throws_For_Null()
-			{
-				var exception = Check.ThatCode(() => Verify.IsAssignableTo(null, typeof(Animal), "name"))
-					.Throws<ArgumentNullException>()
-					.Value;
+            [Test]
+            public void Throws_For_Null()
+            {
+                var exception = Check.ThatCode(() => Verify.IsAssignableTo(null, typeof(Animal), "name"))
+                                     .Throws<ArgumentNullException>()
+                                     .Value;
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentNull);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
 
-			[Test]
-			public void Throws_For_NullBaseType()
-			{
-				var exception = Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), null, "name"))
-					.Throws<ArgumentNullException>()
-					.Value;
+            [Test]
+            public void Throws_For_NullBaseType()
+            {
+                var exception = Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), null, "name"))
+                                     .Throws<ArgumentNullException>()
+                                     .Value;
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentNull);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
 
-			[Test]
-			public void Throws()
-			{
-				var exception = Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), typeof(Int32), "name"))
-					.Throws<ArgumentException>()
-					.Value;
+            [Test]
+            public void Throws()
+            {
+                var exception = Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), typeof(Int32), "name"))
+                                     .Throws<ArgumentException>()
+                                     .Value;
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentIsAssignableTo)
-					.And
-					.Contains("Types not assignable to a specific type are invalid.");
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
-		}
+                Check.That(exception.Message)
+                     .StartsWith(ExceptionResources.ArgumentIsAssignableTo)
+                     .And.Contains("Types not assignable to a specific type are invalid.");
 
-		[TestFixture]
-		public class Debug_IsAssignableTo
-		{
-			[Test]
-			public void DoesNotThrow_For_Instance()
-			{
-				Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), typeof(Animal), "name"))
-					.DoesNotThrow();
-				Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), typeof(Dog), "name"))
-					.DoesNotThrow();
-			}
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
+        }
 
-			[Test]
-			public void Throws_For_Null()
-			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(null, typeof(Animal), "name"))
-					.Throws<ArgumentNullException>()
-					.Value;
+        [TestFixture]
+        public class Debug_IsAssignableTo
+        {
+            [Test]
+            public void DoesNotThrow_For_Instance()
+            {
+                Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), typeof(Animal), "name")).DoesNotThrow();
+                Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), typeof(Dog), "name")).DoesNotThrow();
+            }
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentNull);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+            [Test]
+            public void Throws_For_Null()
+            {
+                var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(null, typeof(Animal), "name"))
+                                     .Throws<ArgumentNullException>()
+                                     .Value;
 
-			[Test]
-			public void Throws_For_NullBaseType()
-			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), null, "name"))
-					.Throws<ArgumentNullException>()
-					.Value;
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentNull);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
+            [Test]
+            public void Throws_For_NullBaseType()
+            {
+                var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), null, "name"))
+                                     .Throws<ArgumentNullException>()
+                                     .Value;
 
-			[Test]
-			public void Throws()
-			{
-				var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), typeof(Int32), "name"))
-					.Throws<ArgumentException>()
-					.Value;
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
 
-				Check.That(exception.Message)
-					.StartsWith(ExceptionResources.ArgumentIsAssignableTo);
-				Check.That(exception.ParamName)
-					.IsEqualTo("name");
-				Check.That(exception.InnerException)
-					.IsNull();
-			}
-		}
-	}
+            [Test]
+            public void Throws()
+            {
+                var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), typeof(Int32), "name"))
+                                     .Throws<ArgumentException>()
+                                     .Value;
+
+                Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsAssignableTo);
+                Check.That(exception.ParamName).IsEqualTo("name");
+                Check.That(exception.InnerException).IsNull();
+            }
+        }
+    }
 }
