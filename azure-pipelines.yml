@@ -12,6 +12,12 @@ steps:
 
 # Prepare
 
+- task: UseDotNet@2
+  displayName: Install .NET 5.0
+  inputs:
+    version: 5.0.x
+    packageType: sdk
+
 - task: DotNetCoreCLI@2
   displayName: 'Restoring packages...'
   inputs:
