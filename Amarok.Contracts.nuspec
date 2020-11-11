@@ -19,6 +19,7 @@
 	</metadata>
 	<files>
 		<file src="src\Amarok.Contracts\Contracts\*.cs" target="contentFiles\cs\netstandard2.0\Amarok.Contracts" />
+		<file src="src\Amarok.Contracts\Contracts\*.cs" target="contentFiles\cs\net5.0\Amarok.Contracts" />
 		<file src="src\amarok.png" target="amarok.png" />
 	</files>
 </package>
