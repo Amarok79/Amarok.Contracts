@@ -23,6 +23,7 @@
 		<IncludeSource>true</IncludeSource>
 		<Nullable>enable</Nullable>
 		<DevelopmentDependency>true</DevelopmentDependency>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
