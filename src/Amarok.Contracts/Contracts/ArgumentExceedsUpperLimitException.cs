@@ -24,7 +24,6 @@
 
 using System;
 using System.Runtime.Serialization;
-using System.Security.Permissions;
 
 
 namespace Amarok.Contracts
@@ -169,7 +168,6 @@ namespace Amarok.Contracts
         /// <exception cref="System.ArgumentNullException">
         ///     The info parameter is a null reference (Nothing in Visual Basic).
         /// </exception>
-        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);
