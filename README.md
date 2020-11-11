@@ -24,9 +24,9 @@ If those contracts are violated, appropriate argument exceptions are thrown.
 
 # Redistribution
 
-The library is redistributed as source-only NuGet package: [Amarok.Contracts](https://www.nuget.org/packages/Amarok.Contracts/).
+The library is redistributed as source-only NuGet package: [Amarok.Contracts](https://www.nuget.org/packages/Amarok.Contracts/). The package targets .NET Standard 2.0 and .NET 5.0.
 
-Tests are generally performed with .NET Framework 4.8, .NET Core 2.1 and .NET Core 3.1.
+Tests are performed on .NET Framework 4.8, .NET Core 2.1, .NET Core 3.1 and .NET 5.0.
 
 
 # Documentation
