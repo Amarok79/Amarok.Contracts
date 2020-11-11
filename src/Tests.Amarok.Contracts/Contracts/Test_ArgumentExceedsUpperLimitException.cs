@@ -26,7 +26,7 @@
 
 using System;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 using NFluent;
 using NUnit.Framework;
 
@@ -115,15 +115,15 @@ namespace Amarok.Contracts
         public class Serialization
         {
             [Test]
-            public void Succeed_With_BinarySerialization()
+            public void Succeed_With_Serialization()
             {
                 // arrange
                 var exception1 = new ArgumentExceedsUpperLimitException("PARAM", 123, 100, "MSG");
-                var formatter  = new BinaryFormatter();
+                var formatter  = new DataContractSerializer(typeof(ArgumentExceedsUpperLimitException));
                 var stream     = new MemoryStream();
-                formatter.Serialize(stream, exception1);
+                formatter.WriteObject(stream, exception1);
                 stream.Position = 0;
-                var exception2 = (ArgumentExceedsUpperLimitException) formatter.Deserialize(stream);
+                var exception2 = (ArgumentExceedsUpperLimitException) formatter.ReadObject(stream);
 
                 // assert
                 Check.That(exception2).Not.IsSameReferenceAs(exception1);
@@ -135,16 +135,21 @@ namespace Amarok.Contracts
             }
 
             [Test]
-            public void Succeed_With_BinarySerialization_2()
+            public void Succeed_With_Serialization_2()
             {
                 // arrange
                 var inner      = new ApplicationException();
                 var exception1 = new ArgumentExceedsUpperLimitException("MSG", inner);
-                var formatter  = new BinaryFormatter();
-                var stream     = new MemoryStream();
-                formatter.Serialize(stream, exception1);
+
+                var formatter = new DataContractSerializer(
+                    typeof(ArgumentExceedsUpperLimitException),
+                    new[] { typeof(ApplicationException) }
+                );
+
+                var stream = new MemoryStream();
+                formatter.WriteObject(stream, exception1);
                 stream.Position = 0;
-                var exception2 = (ArgumentExceedsUpperLimitException) formatter.Deserialize(stream);
+                var exception2 = (ArgumentExceedsUpperLimitException) formatter.ReadObject(stream);
 
                 // assert
                 Check.That(exception2).Not.IsSameReferenceAs(exception1);
