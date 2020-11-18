@@ -46,7 +46,7 @@ jobs:
     # Build and Test (Debug) with Sonar Scanner
 
       - name: Prepare SonarScanner
-        run: dotnet sonarscanner begin /k:"Amarok79_Contracts" /d:sonar.login=cc0118f2a848e16c2c12b82e11293aba4c779016
+        run: dotnet sonarscanner begin /k:"Amarok79_Contracts" /o:"amarok79-github" /v:"1.0.0" /d:sonar.login="cc0118f2a848e16c2c12b82e11293aba4c779016" /d:sonar.host.url="https://sonarcloud.io"
 
       - name: Build Debug
         run: dotnet build --configuration Debug
@@ -65,6 +65,13 @@ jobs:
 
       - name: Run mutation tests
         run: dotnet stryker
+
+      - name: Upload Stryker Output
+        uses: actions/upload-artifact@v2
+        with:
+          name: mutation-tests
+          path: '**/mutation-report.html'
+          if-no-files-found: error
 
 
     # Build and Publish (Release)
