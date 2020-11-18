@@ -15,50 +15,50 @@ jobs:
 
     # Prepare
       
-      - name: Installing .NET Core 2.1...
+      - name: Install .NET Core 2.1
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 2.1.x        
 
-      - name: Installing .NET Core 3.1...
+      - name: Install .NET Core 3.1
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1.x        
       
-      - name: Installing .NET 5.0...
+      - name: Install .NET 5.0
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 5.0.x        
 
-      - name: Getting sources...
+      - name: Get sources
         uses: actions/checkout@v2
 
-      - name: Restoring packages...
+      - name: Restore packages
         run: dotnet restore
 
 
     # Build and Test (Debug)
 
-      - name: Building Debug...
-        run: dotnet build --configuration Debug --no-incremental
+      - name: Build Debug
+        run: dotnet build --configuration Debug
 
-      - name: Running tests...
+      - name: Run tests
         run: dotnet test --no-build
 
 
     # Build and Publish (Release)
 
-      - name: Cleaning up...
+      - name: Clean up
         run: git clean -d -x -f
 
-      - name: Building Release...
-        run: dotnet build --configuration Release --no-incremental
+      - name: Build Release
+        run: dotnet build --configuration Release
 
-      - name: Building NuGet package...
+      - name: Build NuGet package
         run: _pack.cmd
         shell: cmd
 
-      - name: Uploading NuGet package...
+      - name: Upload NuGet package
         uses: actions/upload-artifact@v2
         with:
           name: nuget
