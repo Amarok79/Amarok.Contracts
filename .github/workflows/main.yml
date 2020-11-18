@@ -46,7 +46,10 @@ jobs:
     # Build and Test (Debug) with Sonar Scanner
 
       - name: Prepare SonarScanner
-        run: dotnet sonarscanner begin /k:"Amarok79_Contracts" /o:"amarok79-github" /v:"1.0.0" /d:sonar.login="cc0118f2a848e16c2c12b82e11293aba4c779016" /d:sonar.host.url="https://sonarcloud.io"
+        run: dotnet sonarscanner begin /k:"Amarok79_Contracts" /o:"amarok79-github" /v:"1.0.0" /d:sonar.host.url="https://sonarcloud.io"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Build Debug
         run: dotnet build --configuration Debug
@@ -55,7 +58,10 @@ jobs:
         run: dotnet test --no-build --collect "Code Coverage"
       
       - name: Finish SonarScanner
-        run: dotnet sonarscanner end /d:sonar.login=cc0118f2a848e16c2c12b82e11293aba4c779016
+        run: dotnet sonarscanner end
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 
     # Run Mutation Tests
