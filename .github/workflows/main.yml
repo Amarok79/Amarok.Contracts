@@ -30,6 +30,12 @@ jobs:
         with:
           dotnet-version: 5.0.x        
 
+      - name: Install SonarScanner
+        run: dotnet tool install --global dotnet-sonarscanner
+
+      - name: Install Stryker
+        run: dotnet tool install --global dotnet-stryker
+
       - name: Get sources
         uses: actions/checkout@v2
 
@@ -37,13 +43,28 @@ jobs:
         run: dotnet restore
 
 
-    # Build and Test (Debug)
+    # Build and Test (Debug) with Sonar Scanner
+
+      - name: Prepare SonarScanner
+        run: dotnet sonarscanner begin /k:"Amarok79_Contracts" /d:sonar.login=cc0118f2a848e16c2c12b82e11293aba4c779016
 
       - name: Build Debug
         run: dotnet build --configuration Debug
 
       - name: Run tests
-        run: dotnet test --no-build
+        run: dotnet test --no-build --collect "Code Coverage"
+      
+      - name: Finish SonarScanner
+        run: dotnet sonarscanner end /d:sonar.login=cc0118f2a848e16c2c12b82e11293aba4c779016
+
+
+    # Run Mutation Tests
+
+      - name: Clean up
+        run: git clean -d -x -f
+
+      - name: Run mutation tests
+        run: dotnet stryker
 
 
     # Build and Publish (Release)
