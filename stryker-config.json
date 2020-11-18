@@ -5,7 +5,6 @@
     "test-projects": [
       "src/Tests.Amarok.Contracts/Tests.Amarok.Contracts.csproj"
     ],
-    "test-runner": "dotnettest",
     "mutate-level": "Standard",
     "coverage-analysis": "perTest",
     "log-level": "info",
