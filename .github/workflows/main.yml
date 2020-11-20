@@ -28,7 +28,7 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - name: Install Java 11.0.x
+      - name: Install Java 13.0.x
         uses: actions/setup-java@v1
         with:
           java-version: 11.0.x
@@ -51,7 +51,7 @@ jobs:
       # Build and Test (Debug) with Sonar Scanner
 
       - name: Prepare SonarScanner
-        run: dotnet sonarscanner begin /k:"Amarok79_Contracts" /o:"amarok79-github" /v:"1.0.0" /d:sonar.host.url="https://sonarcloud.io"
+        run: dotnet sonarscanner begin /k:"Amarok.Contracts" /o:"amarok79-github" /v:"1.0.0" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -63,18 +63,18 @@ jobs:
         run: dotnet test --no-build --collect "Code Coverage"
 
       - name: Finish SonarScanner
-        run: dotnet sonarscanner end
+        run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-      # Run Mutation Tests
 
       - name: Shut down build server
         run: dotnet build-server shutdown
 
       - name: Clean up
         run: git clean -d -x -f
+
+      # Run Mutation Tests
 
       - name: Run mutation tests
         run: dotnet stryker
@@ -86,13 +86,13 @@ jobs:
           path: "**/mutation-report.html"
           if-no-files-found: error
 
-      # Build and Publish (Release)
-
       - name: Shut down build server
         run: dotnet build-server shutdown
 
       - name: Clean up
         run: git clean -d -x -f
+
+      # Build and Publish (Release)
 
       - name: Build Release
         run: dotnet build --configuration Release
