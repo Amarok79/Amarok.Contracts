@@ -45,16 +45,7 @@ jobs:
       - name: Run tests
         run: dotnet test --no-build --collect "Code Coverage"
 
-      - name: Shut down build server
-        run: dotnet build-server shutdown
-
-      - name: Clean up
-        run: git clean -d -x -f
-
       # Run Mutation Tests
-
-      - name: Restore packages
-        run: dotnet restore
 
       - name: Run mutation tests
         run: dotnet stryker
@@ -66,16 +57,7 @@ jobs:
           path: "**/mutation-report.html"
           if-no-files-found: error
 
-      - name: Shut down build server
-        run: dotnet build-server shutdown
-
-      - name: Clean up
-        run: git clean -d -x -f
-
       # Build and Publish (Release)
-
-      - name: Restore packages
-        run: dotnet restore
 
       - name: Build Release
         run: dotnet build --configuration Release
