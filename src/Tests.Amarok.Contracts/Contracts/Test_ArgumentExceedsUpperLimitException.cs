@@ -22,8 +22,6 @@
  * SOFTWARE.
  */
 
-#pragma warning disable S2187 // TestCases should contain tests
-
 using System;
 using System.IO;
 using System.Runtime.Serialization;

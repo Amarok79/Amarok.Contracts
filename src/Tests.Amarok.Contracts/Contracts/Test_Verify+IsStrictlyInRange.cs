@@ -24,8 +24,6 @@
 
 #define DEBUG
 
-#pragma warning disable S1905 // Redundant casts should not be used
-
 using System;
 using NFluent;
 using NUnit.Framework;

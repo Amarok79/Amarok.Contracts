@@ -61,7 +61,7 @@ namespace Amarok.Contracts
                 throw new ArgumentNullException(nameof(abc));
 
             if (abc.Length == 0)
-                throw new ArgumentException(nameof(abc));
+                throw new ArgumentException("msg", nameof(abc));
         }
 
 
