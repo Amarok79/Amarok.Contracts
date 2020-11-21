@@ -15,7 +15,7 @@
 		<GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
 		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 		<NoWarn>1701;1702</NoWarn>
-		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
 		<RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
 	</PropertyGroup>
 
