@@ -58,7 +58,7 @@ namespace Amarok.Contracts
 
                 // assert
                 Check.That(exception.Message)
-                     .Contains("Specified argument was out of the range of valid values.", "PARAM");
+                   .Contains("Specified argument was out of the range of valid values.", "PARAM");
 
                 Check.That(exception.InnerException).IsNull();
                 Check.That(exception.ParamName).IsEqualTo("PARAM");

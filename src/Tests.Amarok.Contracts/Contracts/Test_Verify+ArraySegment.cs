@@ -48,8 +48,8 @@ namespace Amarok.Contracts
             public void ThrowsForNull()
             {
                 var exception = Check.ThatCode(() => Verify.ArraySegment((Byte[]) null, 0))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("array");
@@ -60,8 +60,8 @@ namespace Amarok.Contracts
             public void ThrowsForNegativeCount()
             {
                 var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], -1))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
                 Check.That(exception.ParamName).IsEqualTo("count");
@@ -73,8 +73,8 @@ namespace Amarok.Contracts
             public void ThrowsForCountTooBig()
             {
                 var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 3))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
                 Check.That(exception.ParamName).IsEqualTo("count");
@@ -106,8 +106,8 @@ namespace Amarok.Contracts
             public void ThrowsForNull()
             {
                 var exception = Check.ThatCode(() => Verify.ArraySegment((Byte[]) null, 0, 0))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("array");
@@ -118,8 +118,8 @@ namespace Amarok.Contracts
             public void ThrowsForNegativeOffset()
             {
                 var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], -1, 0))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
                 Check.That(exception.ParamName).IsEqualTo("offset");
@@ -131,8 +131,8 @@ namespace Amarok.Contracts
             public void ThrowsForNegativeCount()
             {
                 var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, -1))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
                 Check.That(exception.ParamName).IsEqualTo("count");
@@ -144,8 +144,8 @@ namespace Amarok.Contracts
             public void ThrowsForOffsetTooBig()
             {
                 var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 2, 0))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
                 Check.That(exception.ParamName).IsEqualTo("offset");
@@ -158,8 +158,8 @@ namespace Amarok.Contracts
             public void ThrowsForCountTooBig()
             {
                 var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 3))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
                 Check.That(exception.ParamName).IsEqualTo("count");
@@ -172,8 +172,8 @@ namespace Amarok.Contracts
             public void ThrowsForOffsetPlusCountTooBig()
             {
                 var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 2))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
                 Check.That(exception.ParamName).IsEqualTo("count");
@@ -198,8 +198,8 @@ namespace Amarok.Contracts
             public void ThrowsForNull()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.ArraySegment((Byte[]) null, 0))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("array");
@@ -210,8 +210,8 @@ namespace Amarok.Contracts
             public void ThrowsForNegativeCount()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], -1))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
                 Check.That(exception.ParamName).IsEqualTo("count");
@@ -223,8 +223,8 @@ namespace Amarok.Contracts
             public void ThrowsForCountTooBig()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 3))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
                 Check.That(exception.ParamName).IsEqualTo("count");
@@ -256,8 +256,8 @@ namespace Amarok.Contracts
             public void ThrowsForNull()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.ArraySegment((Byte[]) null, 0, 0))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("array");
@@ -268,8 +268,8 @@ namespace Amarok.Contracts
             public void ThrowsForNegativeOffset()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], -1, 0))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
                 Check.That(exception.ParamName).IsEqualTo("offset");
@@ -281,8 +281,8 @@ namespace Amarok.Contracts
             public void ThrowsForNegativeCount()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, -1))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
                 Check.That(exception.ParamName).IsEqualTo("count");
@@ -294,8 +294,8 @@ namespace Amarok.Contracts
             public void ThrowsForOffsetTooBig()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 2, 0))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
                 Check.That(exception.ParamName).IsEqualTo("offset");
@@ -308,8 +308,8 @@ namespace Amarok.Contracts
             public void ThrowsForCountTooBig()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 3))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
                 Check.That(exception.ParamName).IsEqualTo("count");
@@ -322,8 +322,8 @@ namespace Amarok.Contracts
             public void ThrowsForOffsetPlusCountTooBig()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 2))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
                 Check.That(exception.ParamName).IsEqualTo("count");

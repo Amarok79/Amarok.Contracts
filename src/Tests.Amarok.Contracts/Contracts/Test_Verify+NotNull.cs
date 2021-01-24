@@ -47,12 +47,12 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.NotNull(null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message)
-                     .StartsWith(ExceptionResources.ArgumentNull)
-                     .And.Contains("Null values are invalid.");
+                   .StartsWith(ExceptionResources.ArgumentNull)
+                   .And.Contains("Null values are invalid.");
 
                 Check.That(exception.ParamName).IsEqualTo("name");
                 Check.That(exception.InnerException).IsNull();
@@ -73,8 +73,8 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.NotNull(null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");

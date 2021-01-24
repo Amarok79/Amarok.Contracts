@@ -48,8 +48,8 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.IsInstantiable(null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -60,12 +60,12 @@ namespace Amarok.Contracts
             public void Throws_For_Interface()
             {
                 var exception = Check.ThatCode(() => Verify.IsInstantiable(typeof(IComparable), "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message)
-                     .StartsWith(ExceptionResources.ArgumentIsInstantiable)
-                     .And.Contains("Types representing interface or abstract base classes are invalid.");
+                   .StartsWith(ExceptionResources.ArgumentIsInstantiable)
+                   .And.Contains("Types representing interface or abstract base classes are invalid.");
 
                 Check.That(exception.ParamName).IsEqualTo("name");
                 Check.That(exception.InnerException).IsNull();
@@ -75,8 +75,8 @@ namespace Amarok.Contracts
             public void Throws_For_AbstractClass()
             {
                 var exception = Check.ThatCode(() => Verify.IsInstantiable(typeof(Stream), "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsInstantiable);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -87,8 +87,8 @@ namespace Amarok.Contracts
             public void Throws_For_GenericTypeDefinition()
             {
                 var exception = Check.ThatCode(() => Verify.IsInstantiable(typeof(Action<>), "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsInstantiable);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -110,8 +110,8 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsInstantiable(null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -122,8 +122,8 @@ namespace Amarok.Contracts
             public void Throws_For_Interface()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsInstantiable(typeof(IComparable), "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsInstantiable);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -134,8 +134,8 @@ namespace Amarok.Contracts
             public void Throws_For_AbstractClass()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsInstantiable(typeof(Stream), "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsInstantiable);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -146,8 +146,8 @@ namespace Amarok.Contracts
             public void Throws_For_GenericTypeDefinition()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsInstantiable(typeof(Action<>), "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsInstantiable);
                 Check.That(exception.ParamName).IsEqualTo("name");

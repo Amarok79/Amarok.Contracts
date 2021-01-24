@@ -47,8 +47,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsLowerLimit()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(100, 100, 200, "name"))
-                                     .Throws<ArgumentExceedsLowerLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsLowerLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -61,8 +61,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsUpperLimit()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(200, 100, 200, "name"))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -86,8 +86,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsLowerLimit()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(100, 100, (Int64) 200, "name"))
-                                     .Throws<ArgumentExceedsLowerLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsLowerLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -100,8 +100,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsUpperLimit()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(200, 100, (Int64) 200, "name"))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -125,8 +125,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsLowerLimit()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(100, 100, (Double) 200, "name"))
-                                     .Throws<ArgumentExceedsLowerLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsLowerLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -139,8 +139,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsUpperLimit()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(200, 100, (Double) 200, "name"))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -157,40 +157,40 @@ namespace Amarok.Contracts
             public void DoesNotThrow()
             {
                 Check.ThatCode(
-                          () => Verify.IsStrictlyInRange(
-                              TimeSpan.FromTicks(101),
-                              TimeSpan.FromTicks(100),
-                              TimeSpan.FromTicks(200),
-                              "name"
-                          )
-                      )
-                     .DoesNotThrow();
+                        () => Verify.IsStrictlyInRange(
+                            TimeSpan.FromTicks(101),
+                            TimeSpan.FromTicks(100),
+                            TimeSpan.FromTicks(200),
+                            "name"
+                        )
+                    )
+                   .DoesNotThrow();
 
                 Check.ThatCode(
-                          () => Verify.IsStrictlyInRange(
-                              TimeSpan.FromTicks(199),
-                              TimeSpan.FromTicks(100),
-                              TimeSpan.FromTicks(200),
-                              "name"
-                          )
-                      )
-                     .DoesNotThrow();
+                        () => Verify.IsStrictlyInRange(
+                            TimeSpan.FromTicks(199),
+                            TimeSpan.FromTicks(100),
+                            TimeSpan.FromTicks(200),
+                            "name"
+                        )
+                    )
+                   .DoesNotThrow();
             }
 
             [Test]
             public void Throws_ExceedsLowerLimit()
             {
                 var exception = Check
-                               .ThatCode(
-                                    () => Verify.IsStrictlyInRange(
-                                        TimeSpan.FromTicks(100),
-                                        TimeSpan.FromTicks(100),
-                                        TimeSpan.FromTicks(200),
-                                        "name"
-                                    )
-                                )
-                               .Throws<ArgumentExceedsLowerLimitException>()
-                               .Value;
+                   .ThatCode(
+                        () => Verify.IsStrictlyInRange(
+                            TimeSpan.FromTicks(100),
+                            TimeSpan.FromTicks(100),
+                            TimeSpan.FromTicks(200),
+                            "name"
+                        )
+                    )
+                   .Throws<ArgumentExceedsLowerLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -203,16 +203,16 @@ namespace Amarok.Contracts
             public void Throws_ExceedsUpperLimit()
             {
                 var exception = Check
-                               .ThatCode(
-                                    () => Verify.IsStrictlyInRange(
-                                        TimeSpan.FromTicks(200),
-                                        TimeSpan.FromTicks(100),
-                                        TimeSpan.FromTicks(200),
-                                        "name"
-                                    )
-                                )
-                               .Throws<ArgumentExceedsUpperLimitException>()
-                               .Value;
+                   .ThatCode(
+                        () => Verify.IsStrictlyInRange(
+                            TimeSpan.FromTicks(200),
+                            TimeSpan.FromTicks(100),
+                            TimeSpan.FromTicks(200),
+                            "name"
+                        )
+                    )
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -236,8 +236,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsLowerLimit()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(100, 100, 200, "name"))
-                                     .Throws<ArgumentExceedsLowerLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsLowerLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -250,8 +250,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsUpperLimit()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(200, 100, 200, "name"))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -275,8 +275,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsLowerLimit()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(100, 100, (Int64) 200, "name"))
-                                     .Throws<ArgumentExceedsLowerLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsLowerLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -289,8 +289,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsUpperLimit()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(200, 100, (Int64) 200, "name"))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -314,8 +314,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsLowerLimit()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(100, 100, (Double) 200, "name"))
-                                     .Throws<ArgumentExceedsLowerLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsLowerLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -328,8 +328,8 @@ namespace Amarok.Contracts
             public void Throws_ExceedsUpperLimit()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(200, 100, (Double) 200, "name"))
-                                     .Throws<ArgumentExceedsUpperLimitException>()
-                                     .Value;
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -346,40 +346,40 @@ namespace Amarok.Contracts
             public void DoesNotThrow()
             {
                 Check.ThatCode(
-                          () => Verify.Debug.IsStrictlyInRange(
-                              TimeSpan.FromTicks(101),
-                              TimeSpan.FromTicks(100),
-                              TimeSpan.FromTicks(200),
-                              "name"
-                          )
-                      )
-                     .DoesNotThrow();
+                        () => Verify.Debug.IsStrictlyInRange(
+                            TimeSpan.FromTicks(101),
+                            TimeSpan.FromTicks(100),
+                            TimeSpan.FromTicks(200),
+                            "name"
+                        )
+                    )
+                   .DoesNotThrow();
 
                 Check.ThatCode(
-                          () => Verify.Debug.IsStrictlyInRange(
-                              TimeSpan.FromTicks(199),
-                              TimeSpan.FromTicks(100),
-                              TimeSpan.FromTicks(200),
-                              "name"
-                          )
-                      )
-                     .DoesNotThrow();
+                        () => Verify.Debug.IsStrictlyInRange(
+                            TimeSpan.FromTicks(199),
+                            TimeSpan.FromTicks(100),
+                            TimeSpan.FromTicks(200),
+                            "name"
+                        )
+                    )
+                   .DoesNotThrow();
             }
 
             [Test]
             public void Throws_ExceedsLowerLimit()
             {
                 var exception = Check
-                               .ThatCode(
-                                    () => Verify.Debug.IsStrictlyInRange(
-                                        TimeSpan.FromTicks(100),
-                                        TimeSpan.FromTicks(100),
-                                        TimeSpan.FromTicks(200),
-                                        "name"
-                                    )
-                                )
-                               .Throws<ArgumentExceedsLowerLimitException>()
-                               .Value;
+                   .ThatCode(
+                        () => Verify.Debug.IsStrictlyInRange(
+                            TimeSpan.FromTicks(100),
+                            TimeSpan.FromTicks(100),
+                            TimeSpan.FromTicks(200),
+                            "name"
+                        )
+                    )
+                   .Throws<ArgumentExceedsLowerLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -392,16 +392,16 @@ namespace Amarok.Contracts
             public void Throws_ExceedsUpperLimit()
             {
                 var exception = Check
-                               .ThatCode(
-                                    () => Verify.Debug.IsStrictlyInRange(
-                                        TimeSpan.FromTicks(200),
-                                        TimeSpan.FromTicks(100),
-                                        TimeSpan.FromTicks(200),
-                                        "name"
-                                    )
-                                )
-                               .Throws<ArgumentExceedsUpperLimitException>()
-                               .Value;
+                   .ThatCode(
+                        () => Verify.Debug.IsStrictlyInRange(
+                            TimeSpan.FromTicks(200),
+                            TimeSpan.FromTicks(100),
+                            TimeSpan.FromTicks(200),
+                            "name"
+                        )
+                    )
+                   .Throws<ArgumentExceedsUpperLimitException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
                 Check.That(exception.ParamName).IsEqualTo("name");

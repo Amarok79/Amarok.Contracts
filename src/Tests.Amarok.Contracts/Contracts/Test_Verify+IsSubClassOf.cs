@@ -55,8 +55,8 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.IsSubclassOf(null, typeof(Animal), "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -67,8 +67,8 @@ namespace Amarok.Contracts
             public void Throws_For_NullBaseType()
             {
                 var exception = Check.ThatCode(() => Verify.IsSubclassOf(typeof(Dog), null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.ParamName).IsEqualTo("type");
                 Check.That(exception.InnerException).IsNull();
@@ -78,12 +78,12 @@ namespace Amarok.Contracts
             public void Throws()
             {
                 var exception = Check.ThatCode(() => Verify.IsSubclassOf(typeof(Dog), typeof(Dog), "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message)
-                     .StartsWith(ExceptionResources.ArgumentIsSubclassOf)
-                     .And.Contains("Types not derived from a specific base class are invalid.");
+                   .StartsWith(ExceptionResources.ArgumentIsSubclassOf)
+                   .And.Contains("Types not derived from a specific base class are invalid.");
 
                 Check.That(exception.ParamName).IsEqualTo("name");
                 Check.That(exception.InnerException).IsNull();
@@ -103,8 +103,8 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsSubclassOf(null, typeof(Animal), "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -115,8 +115,8 @@ namespace Amarok.Contracts
             public void Throws_For_NullBaseType()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsSubclassOf(typeof(Dog), null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.ParamName).IsEqualTo("type");
                 Check.That(exception.InnerException).IsNull();
@@ -126,8 +126,8 @@ namespace Amarok.Contracts
             public void Throws()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsSubclassOf(typeof(Dog), typeof(Dog), "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsSubclassOf);
                 Check.That(exception.ParamName).IsEqualTo("name");

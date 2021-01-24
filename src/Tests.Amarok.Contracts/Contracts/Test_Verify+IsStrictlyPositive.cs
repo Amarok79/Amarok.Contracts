@@ -47,12 +47,12 @@ namespace Amarok.Contracts
             public void Throws_For_Zero()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyPositive(0, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message)
-                     .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive)
-                     .And.Contains("Zero or negative values are invalid.");
+                   .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive)
+                   .And.Contains("Zero or negative values are invalid.");
 
                 Check.That(exception.ParamName).IsEqualTo("name");
                 Check.That(exception.InnerException).IsNull();
@@ -63,8 +63,8 @@ namespace Amarok.Contracts
             public void Throws_For_Negative()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyPositive(-1, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -87,8 +87,8 @@ namespace Amarok.Contracts
             public void Throws_For_Zero()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyPositive((Int64) 0, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -100,8 +100,8 @@ namespace Amarok.Contracts
             public void Throws_For_Negative()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyPositive((Int64) ( -1 ), "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -124,8 +124,8 @@ namespace Amarok.Contracts
             public void Throws_For_Zero()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyPositive(0.0, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -137,8 +137,8 @@ namespace Amarok.Contracts
             public void Throws_For_Negative()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyPositive(-0.1, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -161,8 +161,8 @@ namespace Amarok.Contracts
             public void Throws_For_Zero()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyPositive(TimeSpan.Zero, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -174,8 +174,8 @@ namespace Amarok.Contracts
             public void Throws_For_Negative()
             {
                 var exception = Check.ThatCode(() => Verify.IsStrictlyPositive(TimeSpan.FromTicks(-1), "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -199,8 +199,8 @@ namespace Amarok.Contracts
             public void Throws_For_Zero()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(0, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -212,8 +212,8 @@ namespace Amarok.Contracts
             public void Throws_For_Negative()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(-1, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -236,8 +236,8 @@ namespace Amarok.Contracts
             public void Throws_For_Zero()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive((Int64) 0, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -249,8 +249,8 @@ namespace Amarok.Contracts
             public void Throws_For_Negative()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive((Int64) ( -1 ), "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -273,8 +273,8 @@ namespace Amarok.Contracts
             public void Throws_For_Zero()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(0.0, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -286,8 +286,8 @@ namespace Amarok.Contracts
             public void Throws_For_Negative()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(-0.1, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -303,7 +303,7 @@ namespace Amarok.Contracts
             public void DoesNotThrow()
             {
                 Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(TimeSpan.FromMilliseconds(1), "name"))
-                     .DoesNotThrow();
+                   .DoesNotThrow();
 
                 Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(TimeSpan.MaxValue, "name")).DoesNotThrow();
             }
@@ -312,8 +312,8 @@ namespace Amarok.Contracts
             public void Throws_For_Zero()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(TimeSpan.Zero, "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -325,8 +325,8 @@ namespace Amarok.Contracts
             public void Throws_For_Negative()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(TimeSpan.FromTicks(-1), "name"))
-                                     .Throws<ArgumentOutOfRangeException>()
-                                     .Value;
+                   .Throws<ArgumentOutOfRangeException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
                 Check.That(exception.ParamName).IsEqualTo("name");

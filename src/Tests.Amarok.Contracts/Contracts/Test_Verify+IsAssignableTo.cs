@@ -47,8 +47,8 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.IsAssignableTo(null, typeof(Animal), "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -59,8 +59,8 @@ namespace Amarok.Contracts
             public void Throws_For_NullBaseType()
             {
                 var exception = Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -71,12 +71,12 @@ namespace Amarok.Contracts
             public void Throws()
             {
                 var exception = Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), typeof(Int32), "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message)
-                     .StartsWith(ExceptionResources.ArgumentIsAssignableTo)
-                     .And.Contains("Types not assignable to a specific type are invalid.");
+                   .StartsWith(ExceptionResources.ArgumentIsAssignableTo)
+                   .And.Contains("Types not assignable to a specific type are invalid.");
 
                 Check.That(exception.ParamName).IsEqualTo("name");
                 Check.That(exception.InnerException).IsNull();
@@ -97,8 +97,8 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(null, typeof(Animal), "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -109,8 +109,8 @@ namespace Amarok.Contracts
             public void Throws_For_NullBaseType()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -121,8 +121,8 @@ namespace Amarok.Contracts
             public void Throws()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), typeof(Int32), "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsAssignableTo);
                 Check.That(exception.ParamName).IsEqualTo("name");

@@ -48,8 +48,8 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.NotEmpty(null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -60,12 +60,12 @@ namespace Amarok.Contracts
             public void Throws_For_EmptyString()
             {
                 var exception = Check.ThatCode(() => Verify.NotEmpty(String.Empty, "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message)
-                     .StartsWith(ExceptionResources.ArgumentEmptyString)
-                     .And.Contains("Empty strings are invalid.");
+                   .StartsWith(ExceptionResources.ArgumentEmptyString)
+                   .And.Contains("Empty strings are invalid.");
 
                 Check.That(exception.ParamName).IsEqualTo("name");
                 Check.That(exception.InnerException).IsNull();
@@ -86,8 +86,8 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -98,8 +98,8 @@ namespace Amarok.Contracts
             public void Throws_For_EmptyString()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(String.Empty, "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyString);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -121,8 +121,8 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.NotEmpty((IEnumerable<Int32>) null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -135,12 +135,12 @@ namespace Amarok.Contracts
                 var collection = new Int32[0];
 
                 var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message)
-                     .StartsWith(ExceptionResources.ArgumentEmptyCollection)
-                     .And.Contains("Empty collections are invalid.");
+                   .StartsWith(ExceptionResources.ArgumentEmptyCollection)
+                   .And.Contains("Empty collections are invalid.");
 
                 Check.That(exception.ParamName).IsEqualTo("name");
                 Check.That(exception.InnerException).IsNull();
@@ -152,8 +152,8 @@ namespace Amarok.Contracts
                 IEnumerable<Int32> collection = _CreateEmptyEnumerable();
 
                 var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyCollection);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -175,8 +175,8 @@ namespace Amarok.Contracts
             public void Throws_For_Null()
             {
                 var exception = Check.ThatCode(() => Verify.Debug.NotEmpty((IEnumerable<Int32>) null, "name"))
-                                     .Throws<ArgumentNullException>()
-                                     .Value;
+                   .Throws<ArgumentNullException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -189,8 +189,8 @@ namespace Amarok.Contracts
                 var collection = new Int32[0];
 
                 var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(collection, "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyCollection);
                 Check.That(exception.ParamName).IsEqualTo("name");
@@ -203,8 +203,8 @@ namespace Amarok.Contracts
                 IEnumerable<Int32> collection = _CreateEmptyEnumerable();
 
                 var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(collection, "name"))
-                                     .Throws<ArgumentException>()
-                                     .Value;
+                   .Throws<ArgumentException>()
+                   .Value;
 
                 Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyCollection);
                 Check.That(exception.ParamName).IsEqualTo("name");
