@@ -30,8 +30,7 @@ using BenchmarkDotNet.Jobs;
 
 namespace Amarok.Contracts
 {
-    [SimpleJob(RuntimeMoniker.NetCoreApp50), SimpleJob(RuntimeMoniker.Net48),
-     SimpleJob(RuntimeMoniker.NetCoreApp31)]
+    [SimpleJob(RuntimeMoniker.NetCoreApp50), SimpleJob(RuntimeMoniker.Net48), SimpleJob(RuntimeMoniker.NetCoreApp31)]
     public class NotNullBechmarks
     {
         [Benchmark(Baseline = true)]
