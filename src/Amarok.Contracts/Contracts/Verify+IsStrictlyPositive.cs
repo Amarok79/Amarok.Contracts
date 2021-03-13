@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+#pragma warning disable S3218 // Inner class members should not shadow outer class "static" or type members
+
 using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;

@@ -132,7 +132,7 @@ namespace Amarok.Contracts
             [Test]
             public void Throws_For_EmptyReadOnlyCollection()
             {
-                var collection = new Int32[0];
+                var collection = Array.Empty<Int32>();
 
                 var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name"))
                    .Throws<ArgumentException>()
@@ -186,7 +186,7 @@ namespace Amarok.Contracts
             [Test]
             public void Throws_For_EmptyReadOnlyCollection()
             {
-                var collection = new Int32[0];
+                var collection = Array.Empty<Int32>();
 
                 var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(collection, "name"))
                    .Throws<ArgumentException>()
