@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+#pragma warning disable CA1822 // Mark members as static
+
 using System;
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
@@ -31,7 +33,7 @@ using BenchmarkDotNet.Jobs;
 namespace Amarok.Contracts
 {
     [SimpleJob(RuntimeMoniker.NetCoreApp50), SimpleJob(RuntimeMoniker.Net48), SimpleJob(RuntimeMoniker.NetCoreApp31)]
-    public class NotNullBechmarks
+    public class NotNullBenchmarks
     {
         [Benchmark(Baseline = true)]
         public void Baseline()
@@ -41,7 +43,9 @@ namespace Amarok.Contracts
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
+#pragma warning disable IDE0060 // Remove unused parameter
         private void _BaselineCore(String text)
+#pragma warning restore IDE0060 // Remove unused parameter
         {
         }
 
