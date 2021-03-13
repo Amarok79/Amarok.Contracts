@@ -4,7 +4,7 @@
 		<ProjectGuid>{321AC2A4-FC35-432E-9524-E7E4697967FC}</ProjectGuid>
 		<TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
 		<RootNamespace>Amarok</RootNamespace>
-		<Version>3.0.4</Version>
+		<Version>3.0.3</Version>
 		<Authors>Olaf Kober</Authors>
 		<Company>&lt;none&gt;</Company>
 		<Description>Simple helper methods for verifying argument values.</Description>
