@@ -6,7 +6,7 @@
       "src/Tests.Amarok.Contracts/Tests.Amarok.Contracts.csproj"
     ],
     "mutate-level": "Standard",
-    "coverage-analysis": "perTest",
+    "coverage-analysis": "perTestInIsolation",
     "log-level": "info",
     "log-file": true,
     "ignore-methods": [],
