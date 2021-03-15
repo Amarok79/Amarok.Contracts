@@ -7,12 +7,21 @@ on:
     branches: [master]
 
 jobs:
-  build:
-    runs-on: windows-latest
-
+  sonarcloud:
+    runs-on: ubuntu-latest
     steps:
-      # Prepare
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+  stryker:
+    runs-on: windows-latest
+    steps:
       - name: Install .NET Core 2.1
         uses: actions/setup-dotnet@v1
         with:
@@ -33,28 +42,6 @@ jobs:
 
       - name: Get sources
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      # Build and Test
-
-      - name: Restore packages
-        run: dotnet restore
-
-      - name: SonarScanner for .NET 5
-        uses: highbyte/sonarscan-dotnet@2.0
-        with:
-          sonarProjectKey: Amarok79_Amarok.Contracts
-          sonarProjectName: Amarok.Contracts
-          sonarOrganization: amarok79-github
-          dotnetBuildArguments: --configuration Debug
-          dotnetTestArguments: --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
-          sonarBeginArguments: /d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml" -d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-      # Run Mutation Tests
 
       - name: Run mutation tests
         run: dotnet stryker
@@ -66,7 +53,59 @@ jobs:
           path: "**/mutation-report.html"
           if-no-files-found: error
 
-      # Build and Publish (Release)
+  buildtest:
+    runs-on: windows-latest
+    steps:
+      - name: Install .NET Core 2.1
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 2.1.x
+
+      - name: Install .NET Core 3.1
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
+
+      - name: Install .NET 5.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - name: Get sources
+        uses: actions/checkout@v2
+
+      - name: Restore packages
+        run: dotnet restore
+
+      - name: Build Debug
+        run: dotnet build --configuration Debug
+
+      - name: Run tests
+        run: dotnet test --no-build --collect "Code Coverage"
+
+  buildrelease:
+    runs-on: windows-latest
+    steps:
+      - name: Install .NET Core 2.1
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 2.1.x
+
+      - name: Install .NET Core 3.1
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
+
+      - name: Install .NET 5.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
+      - name: Get sources
+        uses: actions/checkout@v2
+
+      - name: Restore packages
+        run: dotnet restore
 
       - name: Build Release
         run: dotnet build --configuration Release
