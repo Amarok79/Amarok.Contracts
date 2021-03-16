@@ -1,6 +1,8 @@
 ![CI](https://github.com/Amarok79/Amarok.Contracts/workflows/CI/badge.svg)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FAmarok79%2FAmarok.Contracts%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/Amarok79/Amarok.Contracts/master)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Amarok79_Amarok.Contracts&metric=alert_status)](https://sonarcloud.io/dashboard?id=Amarok79_Amarok.Contracts)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Amarok79_Amarok.Contracts&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=Amarok79_Amarok.Contracts)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Amarok79_Amarok.Contracts&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=Amarok79_Amarok.Contracts)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Amarok79_Amarok.Contracts&metric=security_rating)](https://sonarcloud.io/dashboard?id=Amarok79_Amarok.Contracts)
 [![NuGet](https://img.shields.io/nuget/v/Amarok.Contracts.svg?logo=)](https://www.nuget.org/packages/Amarok.Contracts/)
 
 # Introduction
