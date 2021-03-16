@@ -15,7 +15,8 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - uses: actions/checkout@v2
+      - name: Checkout Sources
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
@@ -53,7 +54,7 @@ jobs:
       - name: Install Stryker
         run: dotnet tool install --global dotnet-stryker
 
-      - name: Get sources
+      - name: Checkout sources
         uses: actions/checkout@v2
 
       - name: Run mutation tests
@@ -84,7 +85,7 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - name: Get sources
+      - name: Checkout sources
         uses: actions/checkout@v2
 
       - name: Restore packages
@@ -114,7 +115,7 @@ jobs:
         with:
           dotnet-version: 5.0.x
 
-      - name: Get sources
+      - name: Checkout sources
         uses: actions/checkout@v2
 
       - name: Restore packages
