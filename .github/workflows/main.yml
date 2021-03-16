@@ -10,6 +10,11 @@ jobs:
   sonarcloud:
     runs-on: ubuntu-latest
     steps:
+      - name: Install .NET 5.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -20,8 +25,8 @@ jobs:
           sonarProjectKey: Amarok79_Amarok.Contracts
           sonarProjectName: Amarok.Contracts
           sonarOrganization: amarok79-github
-          dotnetBuildArguments: --configuration Debug
-          dotnetTestArguments: --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+          dotnetBuildArguments: --configuration Debug --framework net5.0
+          dotnetTestArguments: --configuration Debug --framework net5.0 --logger trx --collect:"XPlat Code Coverage" -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
           sonarBeginArguments: /d:sonar.cs.opencover.reportsPaths="**/TestResults/**/coverage.opencover.xml" -d:sonar.cs.vstest.reportsPaths="**/TestResults/*.trx"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
