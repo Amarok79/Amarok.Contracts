@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
-	<metadata>
-		<id>Amarok.Contracts</id>
-		<version>3.1.3</version>
-		<authors>Olaf Kober</authors>
-		<owners>Olaf Kober</owners>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<license type="expression">MIT</license>
-		<icon>amarok.png</icon>
-		<projectUrl>https://github.com/Amarok79/Amarok.Contracts</projectUrl>
-		<description>Simple helper methods for verifying argument values.</description>
-		<copyright>Copyright (c) 2019-2021, Olaf Kober</copyright>
-		<tags>Verify Check Contract NotNull NotEmpty InRange IsPositive IsGreaterThan IsLessThan</tags>
-		<repository type="git" url="https://github.com/Amarok79/Amarok.Contracts" />
-		<contentFiles>
-			<files include="cs/**/*.cs" buildAction="Compile" />
-		</contentFiles>
-	</metadata>
-	<files>
-		<file src="src\Amarok.Contracts\Contracts\*.cs" target="contentFiles\cs\any\Amarok.Contracts" />
-		<file src="src\amarok.png" target="amarok.png" />
-	</files>
+    <metadata>
+        <id>Amarok.Contracts</id>
+        <version>$version$</version>
+        <authors>Olaf Kober</authors>
+        <owners>Olaf Kober</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <license type="expression">MIT</license>
+        <icon>amarok.png</icon>
+        <projectUrl>https://github.com/Amarok79/Amarok.Contracts</projectUrl>
+        <description>Simple helper methods for verifying argument values.</description>
+        <copyright>Copyright (c) 2019-2021, Olaf Kober</copyright>
+        <tags>Verify Check Contract NotNull NotEmpty InRange IsPositive IsGreaterThan IsLessThan</tags>
+        <repository type="git" url="https://github.com/Amarok79/Amarok.Contracts" />
+        <contentFiles>
+            <files include="cs/**/*.cs" buildAction="Compile" />
+        </contentFiles>
+    </metadata>
+    <files>
+        <file src="src\Amarok.Contracts\Contracts\*.cs" target="contentFiles\cs\any\Amarok.Contracts" />
+        <file src="src\amarok.png" target="amarok.png" />
+    </files>
 </package>
