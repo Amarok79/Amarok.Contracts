@@ -4,6 +4,7 @@
         <TargetFrameworks>netcoreapp3.1;net48;net5.0;net6.0</TargetFrameworks>
         <RootNamespace>Amarok</RootNamespace>
         <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
+        <IsPackable>false</IsPackable>
     </PropertyGroup>
 
     <PropertyGroup>
