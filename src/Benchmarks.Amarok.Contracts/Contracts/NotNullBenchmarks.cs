@@ -11,8 +11,9 @@ using BenchmarkDotNet.Jobs;
 namespace Amarok.Contracts;
 
 
-[SimpleJob(RuntimeMoniker.Net60), SimpleJob(RuntimeMoniker.Net50), SimpleJob(RuntimeMoniker.Net48),
- SimpleJob(RuntimeMoniker.NetCoreApp31)]
+[SimpleJob(RuntimeMoniker.Net70)]
+[SimpleJob(RuntimeMoniker.Net60)]
+[SimpleJob(RuntimeMoniker.Net48)]
 public class NotNullBenchmarks
 {
     [Benchmark(Baseline = true)]
@@ -68,20 +69,25 @@ public class NotNullBenchmarks
 }
 
 /*
-BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19041.450 (2004/?/20H1)
-Intel Core i7-8750H CPU 2.20GHz (Coffee Lake), 1 CPU, 12 logical and 6 physical cores
-  [Host]        : .NET Framework 4.8 (4.8.4200.0), X64 RyuJIT
-  .NET 4.8      : .NET Framework 4.8 (4.8.4200.0), X64 RyuJIT
-  .NET Core 3.1 : .NET Core 3.1.7 (CoreCLR 4.700.20.36602, CoreFX 4.700.20.37001), X64 RyuJIT
+BenchmarkDotNet=v0.13.2, OS=Windows 11 (10.0.22621.819)
+Intel Core i7-10875H CPU 2.30GHz, 1 CPU, 16 logical and 8 physical cores
+  [Host]             : .NET Framework 4.8.1 (4.8.9105.0), X64 RyuJIT VectorSize=256
+  .NET 6.0           : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
+  .NET 7.0           : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+  .NET Framework 4.8 : .NET Framework 4.8.1 (4.8.9105.0), X64 RyuJIT VectorSize=256
 
 
-|   Method |           Job |       Runtime |     Mean |     Error |    StdDev | Ratio |
-|--------- |-------------- |-------------- |---------:|----------:|----------:|------:|
-| Baseline |      .NET 4.8 |      .NET 4.8 | 1.277 us | 0.0037 us | 0.0034 us |  1.00 |
-|    Throw |      .NET 4.8 |      .NET 4.8 | 1.531 us | 0.0033 us | 0.0029 us |  1.20 |
-|   Verify |      .NET 4.8 |      .NET 4.8 | 1.802 us | 0.0017 us | 0.0015 us |  1.41 |
-|          |               |               |          |           |           |       |
-| Baseline | .NET Core 3.1 | .NET Core 3.1 | 1.278 us | 0.0038 us | 0.0035 us |  1.00 |
-|    Throw | .NET Core 3.1 | .NET Core 3.1 | 1.277 us | 0.0034 us | 0.0032 us |  1.00 |
-|   Verify | .NET Core 3.1 | .NET Core 3.1 | 1.532 us | 0.0041 us | 0.0038 us |  1.20 |
+|   Method |                Job |            Runtime |     Mean |     Error |    StdDev | Ratio | RatioSD |
+|--------- |------------------- |------------------- |---------:|----------:|----------:|------:|--------:|
+| Baseline |           .NET 6.0 |           .NET 6.0 | 1.551 us | 0.0060 us | 0.0053 us |  1.00 |    0.00 |
+|    Throw |           .NET 6.0 |           .NET 6.0 | 1.335 us | 0.0063 us | 0.0056 us |  0.86 |    0.00 |
+|   Verify |           .NET 6.0 |           .NET 6.0 | 1.333 us | 0.0058 us | 0.0054 us |  0.86 |    0.01 |
+|          |                    |                    |          |           |           |       |         |
+| Baseline |           .NET 7.0 |           .NET 7.0 | 1.109 us | 0.0054 us | 0.0048 us |  1.00 |    0.00 |
+|    Throw |           .NET 7.0 |           .NET 7.0 | 1.352 us | 0.0216 us | 0.0191 us |  1.22 |    0.02 |
+|   Verify |           .NET 7.0 |           .NET 7.0 | 1.149 us | 0.0134 us | 0.0126 us |  1.04 |    0.01 |
+|          |                    |                    |          |           |           |       |         |
+| Baseline | .NET Framework 4.8 | .NET Framework 4.8 | 1.590 us | 0.0116 us | 0.0108 us |  1.00 |    0.00 |
+|    Throw | .NET Framework 4.8 | .NET Framework 4.8 | 1.110 us | 0.0042 us | 0.0037 us |  0.70 |    0.00 |
+|   Verify | .NET Framework 4.8 | .NET Framework 4.8 | 1.334 us | 0.0053 us | 0.0047 us |  0.84 |    0.01 |
 */
