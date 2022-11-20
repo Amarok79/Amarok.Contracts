@@ -20,9 +20,9 @@ If those contracts are violated, appropriate argument exceptions are thrown.
 
 # Redistribution
 
-The library is redistributed as source-only NuGet package: [Amarok.Contracts](https://www.nuget.org/packages/Amarok.Contracts/). The package targets .NET Standard 2.0, .NET 5.0, or .NET 6.0 projects developed with Visual Studio 2022.
+The library is redistributed as source-only NuGet package: [Amarok.Contracts](https://www.nuget.org/packages/Amarok.Contracts/). The package targets .NET Standard 2.0, .NET 6.0, and .NET 7.0 projects developed with Visual Studio 2022.
 
-Tests are performed on .NET Framework 4.8, .NET Core 3.1, .NET 5.0, and .NET 6.0.
+Tests are performed on .NET Framework 4.8, .NET 6.0, and .NET 7.0.
 
 
 # Documentation
