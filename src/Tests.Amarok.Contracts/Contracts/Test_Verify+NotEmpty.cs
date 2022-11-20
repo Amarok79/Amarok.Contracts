@@ -19,28 +19,21 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.NotEmpty("foo", "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.NotEmpty("foo", "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.NotEmpty(" ", "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.NotEmpty(" ", "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws_For_Null()
         {
-            var exception = Check.ThatCode(() => Verify.NotEmpty(null, "name"))
-               .Throws<ArgumentNullException>()
-               .Value;
+            var exception = Check.ThatCode(() => Verify.NotEmpty(null, "name")).Throws<ArgumentNullException>().Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -54,11 +47,9 @@ public partial class Test_Verify
                .StartsWith(ExceptionResources.ArgumentEmptyString)
                .And.Contains("Empty strings are invalid.");
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
     }
 
@@ -68,11 +59,9 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.NotEmpty("foo", "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.NotEmpty("foo", "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.NotEmpty(" ", "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.NotEmpty(" ", "name")).DoesNotThrow();
         }
 
         [Test]
@@ -82,14 +71,11 @@ public partial class Test_Verify
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -99,14 +85,11 @@ public partial class Test_Verify
                .Throws<ArgumentException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentEmptyString);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyString);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
     }
 
@@ -116,28 +99,23 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.NotEmpty(new[] { 123, 456 }, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.NotEmpty(new[] { 123, 456 }, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.NotEmpty(_CreateNonEmptyEnumerable(), "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.NotEmpty(_CreateNonEmptyEnumerable(), "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws_For_Null()
         {
-            var exception = Check.ThatCode(() => Verify.NotEmpty((IEnumerable<Int32>) null, "name"))
+            var exception = Check.ThatCode(() => Verify.NotEmpty((IEnumerable<Int32>)null, "name"))
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -145,19 +123,15 @@ public partial class Test_Verify
         {
             var collection = Array.Empty<Int32>();
 
-            var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name"))
-               .Throws<ArgumentException>()
-               .Value;
+            var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name")).Throws<ArgumentException>().Value;
 
             Check.That(exception.Message)
                .StartsWith(ExceptionResources.ArgumentEmptyCollection)
                .And.Contains("Empty collections are invalid.");
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -165,18 +139,13 @@ public partial class Test_Verify
         {
             var collection = _CreateEmptyEnumerable();
 
-            var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name"))
-               .Throws<ArgumentException>()
-               .Value;
+            var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name")).Throws<ArgumentException>().Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentEmptyCollection);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyCollection);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
     }
 
@@ -186,29 +155,23 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.NotEmpty(new[] { 123, 456 }, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.NotEmpty(new[] { 123, 456 }, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.NotEmpty(_CreateNonEmptyEnumerable(), "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.NotEmpty(_CreateNonEmptyEnumerable(), "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws_For_Null()
         {
-            var exception = Check
-               .ThatCode(() => Verify.Debug.NotEmpty((IEnumerable<Int32>) null, "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.NotEmpty((IEnumerable<Int32>)null, "name"))
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -220,14 +183,11 @@ public partial class Test_Verify
                .Throws<ArgumentException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentEmptyCollection);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyCollection);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -239,14 +199,11 @@ public partial class Test_Verify
                .Throws<ArgumentException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentEmptyCollection);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyCollection);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
     }
 

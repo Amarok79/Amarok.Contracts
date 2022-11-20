@@ -133,12 +133,7 @@ internal partial class Verify
     ///     Values exceeding the inclusive upper limit are invalid.
     /// </exception>
     [DebuggerStepThrough]
-    public static void IsInRange(
-        Double value,
-        Double lowerLimit,
-        Double upperLimit,
-        String paramName
-    )
+    public static void IsInRange(Double value, Double lowerLimit, Double upperLimit, String paramName)
     {
         if (value < lowerLimit)
         {
@@ -186,12 +181,7 @@ internal partial class Verify
     ///     Values exceeding the inclusive upper limit are invalid.
     /// </exception>
     [DebuggerStepThrough]
-    public static void IsInRange(
-        TimeSpan value,
-        TimeSpan lowerLimit,
-        TimeSpan upperLimit,
-        String paramName
-    )
+    public static void IsInRange(TimeSpan value, TimeSpan lowerLimit, TimeSpan upperLimit, String paramName)
     {
         if (value < lowerLimit)
         {
@@ -243,12 +233,7 @@ internal partial class Verify
         ///     Values exceeding the inclusive upper limit are invalid.
         /// </exception>
         [Conditional("DEBUG"), DebuggerStepThrough]
-        public static void IsInRange(
-            Int32 value,
-            Int32 lowerLimit,
-            Int32 upperLimit,
-            String paramName
-        )
+        public static void IsInRange(Int32 value, Int32 lowerLimit, Int32 upperLimit, String paramName)
         {
             if (value < lowerLimit)
             {
@@ -296,12 +281,7 @@ internal partial class Verify
         ///     Values exceeding the inclusive upper limit are invalid.
         /// </exception>
         [Conditional("DEBUG"), DebuggerStepThrough]
-        public static void IsInRange(
-            Int64 value,
-            Int64 lowerLimit,
-            Int64 upperLimit,
-            String paramName
-        )
+        public static void IsInRange(Int64 value, Int64 lowerLimit, Int64 upperLimit, String paramName)
         {
             if (value < lowerLimit)
             {
@@ -349,12 +329,7 @@ internal partial class Verify
         ///     Values exceeding the inclusive upper limit are invalid.
         /// </exception>
         [Conditional("DEBUG"), DebuggerStepThrough]
-        public static void IsInRange(
-            Double value,
-            Double lowerLimit,
-            Double upperLimit,
-            String paramName
-        )
+        public static void IsInRange(Double value, Double lowerLimit, Double upperLimit, String paramName)
         {
             if (value < lowerLimit)
             {
@@ -402,12 +377,7 @@ internal partial class Verify
         ///     Values exceeding the inclusive upper limit are invalid.
         /// </exception>
         [Conditional("DEBUG"), DebuggerStepThrough]
-        public static void IsInRange(
-            TimeSpan value,
-            TimeSpan lowerLimit,
-            TimeSpan upperLimit,
-            String paramName
-        )
+        public static void IsInRange(TimeSpan value, TimeSpan lowerLimit, TimeSpan upperLimit, String paramName)
         {
             if (value < lowerLimit)
             {

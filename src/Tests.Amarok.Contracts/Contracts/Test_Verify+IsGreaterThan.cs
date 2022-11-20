@@ -18,11 +18,9 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsGreaterThan(101, 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsGreaterThan(101, 100, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsGreaterThan(100, 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsGreaterThan(100, 100, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -32,20 +30,15 @@ public partial class Test_Verify
                .Throws<ArgumentExceedsLowerLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsGreaterThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(99);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(99);
 
-            Check.That((Int32) exception.LowerLimit)
-               .IsEqualTo(100);
+            Check.That((Int32)exception.LowerLimit).IsEqualTo(100);
         }
     }
 
@@ -55,34 +48,27 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsGreaterThan(101, (Int64) 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsGreaterThan(101, (Int64)100, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsGreaterThan(100, (Int64) 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsGreaterThan(100, (Int64)100, "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws()
         {
-            var exception = Check.ThatCode(() => Verify.IsGreaterThan(99, (Int64) 100, "name"))
+            var exception = Check.ThatCode(() => Verify.IsGreaterThan(99, (Int64)100, "name"))
                .Throws<ArgumentExceedsLowerLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsGreaterThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int64) exception.ActualValue)
-               .IsEqualTo(99);
+            Check.That((Int64)exception.ActualValue).IsEqualTo(99);
 
-            Check.That((Int64) exception.LowerLimit)
-               .IsEqualTo(100);
+            Check.That((Int64)exception.LowerLimit).IsEqualTo(100);
         }
     }
 
@@ -92,34 +78,27 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsGreaterThan(101, (Double) 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsGreaterThan(101, (Double)100, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsGreaterThan(100, (Double) 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsGreaterThan(100, (Double)100, "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws()
         {
-            var exception = Check.ThatCode(() => Verify.IsGreaterThan(99, (Double) 100, "name"))
+            var exception = Check.ThatCode(() => Verify.IsGreaterThan(99, (Double)100, "name"))
                .Throws<ArgumentExceedsLowerLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsGreaterThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Double) exception.ActualValue)
-               .IsEqualTo(99);
+            Check.That((Double)exception.ActualValue).IsEqualTo(99);
 
-            Check.That((Double) exception.LowerLimit)
-               .IsEqualTo(100);
+            Check.That((Double)exception.LowerLimit).IsEqualTo(100);
         }
     }
 
@@ -129,22 +108,10 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(
-                    () => Verify.IsGreaterThan(
-                        TimeSpan.FromTicks(101),
-                        TimeSpan.FromTicks(100),
-                        "name"
-                    )
-                )
+            Check.ThatCode(() => Verify.IsGreaterThan(TimeSpan.FromTicks(101), TimeSpan.FromTicks(100), "name"))
                .DoesNotThrow();
 
-            Check.ThatCode(
-                    () => Verify.IsGreaterThan(
-                        TimeSpan.FromTicks(100),
-                        TimeSpan.FromTicks(100),
-                        "name"
-                    )
-                )
+            Check.ThatCode(() => Verify.IsGreaterThan(TimeSpan.FromTicks(100), TimeSpan.FromTicks(100), "name"))
                .DoesNotThrow();
         }
 
@@ -152,29 +119,20 @@ public partial class Test_Verify
         public void Throws()
         {
             var exception = Check.ThatCode(
-                    () => Verify.IsGreaterThan(
-                        TimeSpan.FromTicks(99),
-                        TimeSpan.FromTicks(100),
-                        "name"
-                    )
+                    () => Verify.IsGreaterThan(TimeSpan.FromTicks(99), TimeSpan.FromTicks(100), "name")
                 )
                .Throws<ArgumentExceedsLowerLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsGreaterThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((TimeSpan) exception.ActualValue)
-               .IsEqualTo(TimeSpan.FromTicks(99));
+            Check.That((TimeSpan)exception.ActualValue).IsEqualTo(TimeSpan.FromTicks(99));
 
-            Check.That((TimeSpan) exception.LowerLimit)
-               .IsEqualTo(TimeSpan.FromTicks(100));
+            Check.That((TimeSpan)exception.LowerLimit).IsEqualTo(TimeSpan.FromTicks(100));
         }
     }
 
@@ -185,11 +143,9 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.IsGreaterThan(101, 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsGreaterThan(101, 100, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsGreaterThan(100, 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsGreaterThan(100, 100, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -199,20 +155,15 @@ public partial class Test_Verify
                .Throws<ArgumentExceedsLowerLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsGreaterThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(99);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(99);
 
-            Check.That((Int32) exception.LowerLimit)
-               .IsEqualTo(100);
+            Check.That((Int32)exception.LowerLimit).IsEqualTo(100);
         }
     }
 
@@ -222,35 +173,27 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.IsGreaterThan(101, (Int64) 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsGreaterThan(101, (Int64)100, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsGreaterThan(100, (Int64) 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsGreaterThan(100, (Int64)100, "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws()
         {
-            var exception = Check
-               .ThatCode(() => Verify.Debug.IsGreaterThan(99, (Int64) 100, "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.IsGreaterThan(99, (Int64)100, "name"))
                .Throws<ArgumentExceedsLowerLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsGreaterThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int64) exception.ActualValue)
-               .IsEqualTo(99);
+            Check.That((Int64)exception.ActualValue).IsEqualTo(99);
 
-            Check.That((Int64) exception.LowerLimit)
-               .IsEqualTo(100);
+            Check.That((Int64)exception.LowerLimit).IsEqualTo(100);
         }
     }
 
@@ -260,35 +203,27 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.IsGreaterThan(101, (Double) 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsGreaterThan(101, (Double)100, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsGreaterThan(100, (Double) 100, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsGreaterThan(100, (Double)100, "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws()
         {
-            var exception = Check
-               .ThatCode(() => Verify.Debug.IsGreaterThan(99, (Double) 100, "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.IsGreaterThan(99, (Double)100, "name"))
                .Throws<ArgumentExceedsLowerLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsGreaterThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Double) exception.ActualValue)
-               .IsEqualTo(99);
+            Check.That((Double)exception.ActualValue).IsEqualTo(99);
 
-            Check.That((Double) exception.LowerLimit)
-               .IsEqualTo(100);
+            Check.That((Double)exception.LowerLimit).IsEqualTo(100);
         }
     }
 
@@ -298,22 +233,10 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(
-                    () => Verify.Debug.IsGreaterThan(
-                        TimeSpan.FromTicks(101),
-                        TimeSpan.FromTicks(100),
-                        "name"
-                    )
-                )
+            Check.ThatCode(() => Verify.Debug.IsGreaterThan(TimeSpan.FromTicks(101), TimeSpan.FromTicks(100), "name"))
                .DoesNotThrow();
 
-            Check.ThatCode(
-                    () => Verify.Debug.IsGreaterThan(
-                        TimeSpan.FromTicks(100),
-                        TimeSpan.FromTicks(100),
-                        "name"
-                    )
-                )
+            Check.ThatCode(() => Verify.Debug.IsGreaterThan(TimeSpan.FromTicks(100), TimeSpan.FromTicks(100), "name"))
                .DoesNotThrow();
         }
 
@@ -321,29 +244,20 @@ public partial class Test_Verify
         public void Throws()
         {
             var exception = Check.ThatCode(
-                    () => Verify.Debug.IsGreaterThan(
-                        TimeSpan.FromTicks(99),
-                        TimeSpan.FromTicks(100),
-                        "name"
-                    )
+                    () => Verify.Debug.IsGreaterThan(TimeSpan.FromTicks(99), TimeSpan.FromTicks(100), "name")
                 )
                .Throws<ArgumentExceedsLowerLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsGreaterThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((TimeSpan) exception.ActualValue)
-               .IsEqualTo(TimeSpan.FromTicks(99));
+            Check.That((TimeSpan)exception.ActualValue).IsEqualTo(TimeSpan.FromTicks(99));
 
-            Check.That((TimeSpan) exception.LowerLimit)
-               .IsEqualTo(TimeSpan.FromTicks(100));
+            Check.That((TimeSpan)exception.LowerLimit).IsEqualTo(TimeSpan.FromTicks(100));
         }
     }
 }

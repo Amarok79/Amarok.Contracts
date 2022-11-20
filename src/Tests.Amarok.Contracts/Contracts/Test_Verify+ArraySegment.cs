@@ -18,31 +18,25 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 2))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 2)).DoesNotThrow();
         }
 
         [Test]
         public void ThrowsForNull()
         {
-            var exception = Check.ThatCode(() => Verify.ArraySegment((Byte[]) null, 0))
+            var exception = Check.ThatCode(() => Verify.ArraySegment((Byte[])null, 0))
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("array");
+            Check.That(exception.ParamName).IsEqualTo("array");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -52,17 +46,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("count");
+            Check.That(exception.ParamName).IsEqualTo("count");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(-1);
         }
 
         [Test]
@@ -72,20 +62,15 @@ public partial class Test_Verify
                .Throws<ArgumentExceedsUpperLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsLessThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("count");
+            Check.That(exception.ParamName).IsEqualTo("count");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(3);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(3);
 
-            Check.That((Int32) exception.UpperLimit)
-               .IsEqualTo(2);
+            Check.That((Int32)exception.UpperLimit).IsEqualTo(2);
         }
     }
 
@@ -95,46 +80,35 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 0))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 0)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 1))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 1)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 2))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 2)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 3))
-               .ThrowsAny();
+            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 3)).ThrowsAny();
 
-            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 0))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 0)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 1))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 1)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 2))
-               .ThrowsAny();
+            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 2)).ThrowsAny();
 
-            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 2, 0))
-               .ThrowsAny();
+            Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 2, 0)).ThrowsAny();
         }
 
         [Test]
         public void ThrowsForNull()
         {
-            var exception = Check.ThatCode(() => Verify.ArraySegment((Byte[]) null, 0, 0))
+            var exception = Check.ThatCode(() => Verify.ArraySegment((Byte[])null, 0, 0))
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("array");
+            Check.That(exception.ParamName).IsEqualTo("array");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -144,17 +118,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("offset");
+            Check.That(exception.ParamName).IsEqualTo("offset");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(-1);
         }
 
         [Test]
@@ -164,17 +134,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("count");
+            Check.That(exception.ParamName).IsEqualTo("count");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(-1);
         }
 
         [Test]
@@ -184,20 +150,15 @@ public partial class Test_Verify
                .Throws<ArgumentExceedsUpperLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsLessThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("offset");
+            Check.That(exception.ParamName).IsEqualTo("offset");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(2);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(2);
 
-            Check.That((Int32) exception.UpperLimit)
-               .IsEqualTo(2);
+            Check.That((Int32)exception.UpperLimit).IsEqualTo(2);
         }
 
         [Test]
@@ -207,20 +168,15 @@ public partial class Test_Verify
                .Throws<ArgumentExceedsUpperLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsLessThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("count");
+            Check.That(exception.ParamName).IsEqualTo("count");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(3);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(3);
 
-            Check.That((Int32) exception.UpperLimit)
-               .IsEqualTo(2);
+            Check.That((Int32)exception.UpperLimit).IsEqualTo(2);
         }
 
         [Test]
@@ -230,20 +186,15 @@ public partial class Test_Verify
                .Throws<ArgumentExceedsUpperLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsLessThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("count");
+            Check.That(exception.ParamName).IsEqualTo("count");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(3);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(3);
 
-            Check.That((Int32) exception.UpperLimit)
-               .IsEqualTo(2);
+            Check.That((Int32)exception.UpperLimit).IsEqualTo(2);
         }
     }
 
@@ -253,31 +204,25 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 2))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 2)).DoesNotThrow();
         }
 
         [Test]
         public void ThrowsForNull()
         {
-            var exception = Check.ThatCode(() => Verify.Debug.ArraySegment((Byte[]) null, 0))
+            var exception = Check.ThatCode(() => Verify.Debug.ArraySegment((Byte[])null, 0))
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("array");
+            Check.That(exception.ParamName).IsEqualTo("array");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -287,17 +232,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("count");
+            Check.That(exception.ParamName).IsEqualTo("count");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(-1);
         }
 
         [Test]
@@ -307,20 +248,15 @@ public partial class Test_Verify
                .Throws<ArgumentExceedsUpperLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsLessThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("count");
+            Check.That(exception.ParamName).IsEqualTo("count");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(3);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(3);
 
-            Check.That((Int32) exception.UpperLimit)
-               .IsEqualTo(2);
+            Check.That((Int32)exception.UpperLimit).IsEqualTo(2);
         }
     }
 
@@ -330,46 +266,35 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 0))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 0)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 1))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 1)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 2))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 2)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 3))
-               .ThrowsAny();
+            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 3)).ThrowsAny();
 
-            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 0))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 0)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 1))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 1)).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 2))
-               .ThrowsAny();
+            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 2)).ThrowsAny();
 
-            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 2, 0))
-               .ThrowsAny();
+            Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 2, 0)).ThrowsAny();
         }
 
         [Test]
         public void ThrowsForNull()
         {
-            var exception = Check.ThatCode(() => Verify.Debug.ArraySegment((Byte[]) null, 0, 0))
+            var exception = Check.ThatCode(() => Verify.Debug.ArraySegment((Byte[])null, 0, 0))
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("array");
+            Check.That(exception.ParamName).IsEqualTo("array");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -379,17 +304,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("offset");
+            Check.That(exception.ParamName).IsEqualTo("offset");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(-1);
         }
 
         [Test]
@@ -399,17 +320,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("count");
+            Check.That(exception.ParamName).IsEqualTo("count");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(-1);
         }
 
         [Test]
@@ -419,20 +336,15 @@ public partial class Test_Verify
                .Throws<ArgumentExceedsUpperLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsLessThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("offset");
+            Check.That(exception.ParamName).IsEqualTo("offset");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(2);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(2);
 
-            Check.That((Int32) exception.UpperLimit)
-               .IsEqualTo(2);
+            Check.That((Int32)exception.UpperLimit).IsEqualTo(2);
         }
 
         [Test]
@@ -442,20 +354,15 @@ public partial class Test_Verify
                .Throws<ArgumentExceedsUpperLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsLessThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("count");
+            Check.That(exception.ParamName).IsEqualTo("count");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(3);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(3);
 
-            Check.That((Int32) exception.UpperLimit)
-               .IsEqualTo(2);
+            Check.That((Int32)exception.UpperLimit).IsEqualTo(2);
         }
 
         [Test]
@@ -465,20 +372,15 @@ public partial class Test_Verify
                .Throws<ArgumentExceedsUpperLimitException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsLessThan);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("count");
+            Check.That(exception.ParamName).IsEqualTo("count");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(3);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(3);
 
-            Check.That((Int32) exception.UpperLimit)
-               .IsEqualTo(2);
+            Check.That((Int32)exception.UpperLimit).IsEqualTo(2);
         }
     }
 }

@@ -27,8 +27,7 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow_For_Instance()
         {
-            Check.ThatCode(() => Verify.IsSubclassOf(typeof(Dog), typeof(Animal), "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsSubclassOf(typeof(Dog), typeof(Animal), "name")).DoesNotThrow();
         }
 
         [Test]
@@ -38,14 +37,11 @@ public partial class Test_Verify
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -55,18 +51,15 @@ public partial class Test_Verify
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("type");
+            Check.That(exception.ParamName).IsEqualTo("type");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
         public void Throws()
         {
-            var exception = Check
-               .ThatCode(() => Verify.IsSubclassOf(typeof(Dog), typeof(Dog), "name"))
+            var exception = Check.ThatCode(() => Verify.IsSubclassOf(typeof(Dog), typeof(Dog), "name"))
                .Throws<ArgumentException>()
                .Value;
 
@@ -74,11 +67,9 @@ public partial class Test_Verify
                .StartsWith(ExceptionResources.ArgumentIsSubclassOf)
                .And.Contains("Types not derived from a specific base class are invalid.");
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
     }
 
@@ -88,59 +79,47 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow_For_Instance()
         {
-            Check.ThatCode(() => Verify.Debug.IsSubclassOf(typeof(Dog), typeof(Animal), "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsSubclassOf(typeof(Dog), typeof(Animal), "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws_For_Null()
         {
-            var exception = Check
-               .ThatCode(() => Verify.Debug.IsSubclassOf(null, typeof(Animal), "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.IsSubclassOf(null, typeof(Animal), "name"))
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
         public void Throws_For_NullBaseType()
         {
-            var exception = Check
-               .ThatCode(() => Verify.Debug.IsSubclassOf(typeof(Dog), null, "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.IsSubclassOf(typeof(Dog), null, "name"))
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("type");
+            Check.That(exception.ParamName).IsEqualTo("type");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
         public void Throws()
         {
-            var exception = Check
-               .ThatCode(() => Verify.Debug.IsSubclassOf(typeof(Dog), typeof(Dog), "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.IsSubclassOf(typeof(Dog), typeof(Dog), "name"))
                .Throws<ArgumentException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsSubclassOf);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsSubclassOf);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
     }
 }

@@ -32,11 +32,7 @@ internal partial class Verify
     {
         if (value < 0)
         {
-            throw new ArgumentOutOfRangeException(
-                paramName,
-                value,
-                ExceptionResources.ArgumentIsPositive
-            );
+            throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
         }
     }
 
@@ -60,11 +56,7 @@ internal partial class Verify
     {
         if (value < 0L)
         {
-            throw new ArgumentOutOfRangeException(
-                paramName,
-                value,
-                ExceptionResources.ArgumentIsPositive
-            );
+            throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
         }
     }
 
@@ -88,11 +80,7 @@ internal partial class Verify
     {
         if (value < 0.0d)
         {
-            throw new ArgumentOutOfRangeException(
-                paramName,
-                value,
-                ExceptionResources.ArgumentIsPositive
-            );
+            throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
         }
     }
 
@@ -116,11 +104,7 @@ internal partial class Verify
     {
         if (value.Ticks < 0L)
         {
-            throw new ArgumentOutOfRangeException(
-                paramName,
-                value,
-                ExceptionResources.ArgumentIsPositive
-            );
+            throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
         }
     }
 
@@ -148,11 +132,7 @@ internal partial class Verify
         {
             if (value < 0)
             {
-                throw new ArgumentOutOfRangeException(
-                    paramName,
-                    value,
-                    ExceptionResources.ArgumentIsPositive
-                );
+                throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
             }
         }
 
@@ -176,11 +156,7 @@ internal partial class Verify
         {
             if (value < 0L)
             {
-                throw new ArgumentOutOfRangeException(
-                    paramName,
-                    value,
-                    ExceptionResources.ArgumentIsPositive
-                );
+                throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
             }
         }
 
@@ -204,11 +180,7 @@ internal partial class Verify
         {
             if (value < 0.0d)
             {
-                throw new ArgumentOutOfRangeException(
-                    paramName,
-                    value,
-                    ExceptionResources.ArgumentIsPositive
-                );
+                throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
             }
         }
 
@@ -232,11 +204,7 @@ internal partial class Verify
         {
             if (value.Ticks < 0L)
             {
-                throw new ArgumentOutOfRangeException(
-                    paramName,
-                    value,
-                    ExceptionResources.ArgumentIsPositive
-                );
+                throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
             }
         }
     }

@@ -54,8 +54,7 @@ internal partial class Verify
         /// <exception cref="ArgumentNullException">
         ///     Null values are invalid.
         /// </exception>
-        [Conditional("DEBUG"), DebuggerStepThrough,
-         MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [Conditional("DEBUG"), DebuggerStepThrough, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void NotNull(Object? value, String paramName)
         {
             if (value is null)

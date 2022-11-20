@@ -108,8 +108,7 @@ internal partial class Verify
         /// <exception cref="ArgumentException">
         ///     Empty strings are invalid.
         /// </exception>
-        [Conditional("DEBUG"), DebuggerStepThrough,
-         MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [Conditional("DEBUG"), DebuggerStepThrough, MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void NotEmpty(String? value, String paramName)
         {
             if (value is null)
@@ -152,20 +151,14 @@ internal partial class Verify
             {
                 if (readOnlyCollection.Count == 0)
                 {
-                    throw new ArgumentException(
-                        ExceptionResources.ArgumentEmptyCollection,
-                        paramName
-                    );
+                    throw new ArgumentException(ExceptionResources.ArgumentEmptyCollection, paramName);
                 }
             }
             else
             {
                 if (!collection.Any())
                 {
-                    throw new ArgumentException(
-                        ExceptionResources.ArgumentEmptyCollection,
-                        paramName
-                    );
+                    throw new ArgumentException(ExceptionResources.ArgumentEmptyCollection, paramName);
                 }
             }
         }

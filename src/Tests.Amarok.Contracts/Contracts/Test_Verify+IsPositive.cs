@@ -18,14 +18,11 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsPositive(0, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive(0, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsPositive(1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive(1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsPositive(Int32.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive(Int32.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -39,14 +36,11 @@ public partial class Test_Verify
                .StartsWith(ExceptionResources.ArgumentIsPositive)
                .And.Contains("Negative values are invalid.");
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(-1);
         }
     }
 
@@ -56,34 +50,27 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsPositive((Int64) 0, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive((Int64)0, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsPositive((Int64) 1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive((Int64)1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsPositive(Int64.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive(Int64.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws_For_Negative()
         {
-            var exception = Check.ThatCode(() => Verify.IsPositive((Int64) ( -1 ), "name"))
+            var exception = Check.ThatCode(() => Verify.IsPositive((Int64)( -1 ), "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int64) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int64)exception.ActualValue).IsEqualTo(-1);
         }
     }
 
@@ -93,14 +80,11 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsPositive(0.0, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive(0.0, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsPositive(0.1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive(0.1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsPositive(Double.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive(Double.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -110,17 +94,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Double) exception.ActualValue)
-               .IsEqualTo(-0.1);
+            Check.That((Double)exception.ActualValue).IsEqualTo(-0.1);
         }
     }
 
@@ -130,14 +110,11 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsPositive(TimeSpan.Zero, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive(TimeSpan.Zero, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsPositive(TimeSpan.FromMilliseconds(1), "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive(TimeSpan.FromMilliseconds(1), "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsPositive(TimeSpan.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsPositive(TimeSpan.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -147,17 +124,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((TimeSpan) exception.ActualValue)
-               .IsEqualTo(TimeSpan.FromTicks(-1));
+            Check.That((TimeSpan)exception.ActualValue).IsEqualTo(TimeSpan.FromTicks(-1));
         }
     }
 
@@ -168,14 +141,11 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.IsPositive(0, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive(0, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsPositive(1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive(1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsPositive(Int32.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive(Int32.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -185,17 +155,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(-1);
         }
     }
 
@@ -205,34 +171,27 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.IsPositive((Int64) 0, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive((Int64)0, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsPositive((Int64) 1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive((Int64)1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsPositive(Int64.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive(Int64.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws_For_Negative()
         {
-            var exception = Check.ThatCode(() => Verify.Debug.IsPositive((Int64) ( -1 ), "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.IsPositive((Int64)( -1 ), "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int64) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int64)exception.ActualValue).IsEqualTo(-1);
         }
     }
 
@@ -242,14 +201,11 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.IsPositive(0.0, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive(0.0, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsPositive(0.1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive(0.1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsPositive(Double.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive(Double.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -259,17 +215,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Double) exception.ActualValue)
-               .IsEqualTo(-0.1);
+            Check.That((Double)exception.ActualValue).IsEqualTo(-0.1);
         }
     }
 
@@ -279,35 +231,27 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.IsPositive(TimeSpan.Zero, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive(TimeSpan.Zero, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsPositive(TimeSpan.FromMilliseconds(1), "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive(TimeSpan.FromMilliseconds(1), "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsPositive(TimeSpan.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsPositive(TimeSpan.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws_For_Negative()
         {
-            var exception = Check
-               .ThatCode(() => Verify.Debug.IsPositive(TimeSpan.FromTicks(-1), "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.IsPositive(TimeSpan.FromTicks(-1), "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((TimeSpan) exception.ActualValue)
-               .IsEqualTo(TimeSpan.FromTicks(-1));
+            Check.That((TimeSpan)exception.ActualValue).IsEqualTo(TimeSpan.FromTicks(-1));
         }
     }
 }

@@ -24,14 +24,12 @@ internal static class ExceptionResources
     /// <summary>
     ///     Looks up a localized string similar to Types not assignable to a specific type are invalid..
     /// </summary>
-    internal static String ArgumentIsAssignableTo =>
-        "Types not assignable to a specific type are invalid.";
+    internal static String ArgumentIsAssignableTo => "Types not assignable to a specific type are invalid.";
 
     /// <summary>
     ///     Looks up a localized string similar to Values exceeding the inclusive lower limit are invalid..
     /// </summary>
-    internal static String ArgumentIsGreaterThan =>
-        "Values exceeding the inclusive lower limit are invalid.";
+    internal static String ArgumentIsGreaterThan => "Values exceeding the inclusive lower limit are invalid.";
 
     /// <summary>
     ///     Looks up a localized string similar to Types representing interface or abstract base classes
@@ -44,14 +42,12 @@ internal static class ExceptionResources
     ///     Looks up a localized string similar to Types representing concrete classes or value types are
     ///     invalid..
     /// </summary>
-    internal static String ArgumentIsInterface =>
-        "Types representing concrete classes or value types are invalid.";
+    internal static String ArgumentIsInterface => "Types representing concrete classes or value types are invalid.";
 
     /// <summary>
     ///     Looks up a localized string similar to Values exceeding the inclusive upper limit are invalid..
     /// </summary>
-    internal static String ArgumentIsLessThan =>
-        "Values exceeding the inclusive upper limit are invalid.";
+    internal static String ArgumentIsLessThan => "Values exceeding the inclusive upper limit are invalid.";
 
     /// <summary>
     ///     Looks up a localized string similar to Negative values are invalid..
@@ -61,14 +57,12 @@ internal static class ExceptionResources
     /// <summary>
     ///     Looks up a localized string similar to Values exceeding the exclusive lower limit are invalid..
     /// </summary>
-    internal static String ArgumentIsStrictlyGreaterThan =>
-        "Values exceeding the exclusive lower limit are invalid.";
+    internal static String ArgumentIsStrictlyGreaterThan => "Values exceeding the exclusive lower limit are invalid.";
 
     /// <summary>
     ///     Looks up a localized string similar to Values exceeding the exclusive upper limit are invalid..
     /// </summary>
-    internal static String ArgumentIsStrictlyLessThan =>
-        "Values exceeding the exclusive upper limit are invalid.";
+    internal static String ArgumentIsStrictlyLessThan => "Values exceeding the exclusive upper limit are invalid.";
 
     /// <summary>
     ///     Looks up a localized string similar to Zero or negative values are invalid..
@@ -79,8 +73,7 @@ internal static class ExceptionResources
     ///     Looks up a localized string similar to Types not derived from a specific base class are
     ///     invalid..
     /// </summary>
-    internal static String ArgumentIsSubclassOf =>
-        "Types not derived from a specific base class are invalid.";
+    internal static String ArgumentIsSubclassOf => "Types not derived from a specific base class are invalid.";
 
     /// <summary>
     ///     Looks up a localized string similar to Null values are invalid..

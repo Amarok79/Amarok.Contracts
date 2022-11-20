@@ -18,11 +18,9 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsStrictlyPositive(1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsStrictlyPositive(1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsStrictlyPositive(Int32.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsStrictlyPositive(Int32.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -36,14 +34,11 @@ public partial class Test_Verify
                .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive)
                .And.Contains("Zero or negative values are invalid.");
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(0);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(0);
         }
 
         [Test]
@@ -53,17 +48,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(-1);
         }
     }
 
@@ -73,51 +64,41 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsStrictlyPositive((Int64) 1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsStrictlyPositive((Int64)1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsStrictlyPositive(Int64.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsStrictlyPositive(Int64.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws_For_Zero()
         {
-            var exception = Check.ThatCode(() => Verify.IsStrictlyPositive((Int64) 0, "name"))
+            var exception = Check.ThatCode(() => Verify.IsStrictlyPositive((Int64)0, "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int64) exception.ActualValue)
-               .IsEqualTo(0);
+            Check.That((Int64)exception.ActualValue).IsEqualTo(0);
         }
 
         [Test]
         public void Throws_For_Negative()
         {
-            var exception = Check.ThatCode(() => Verify.IsStrictlyPositive((Int64) ( -1 ), "name"))
+            var exception = Check.ThatCode(() => Verify.IsStrictlyPositive((Int64)( -1 ), "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int64) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int64)exception.ActualValue).IsEqualTo(-1);
         }
     }
 
@@ -127,11 +108,9 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsStrictlyPositive(0.1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsStrictlyPositive(0.1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsStrictlyPositive(Double.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsStrictlyPositive(Double.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -141,17 +120,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Double) exception.ActualValue)
-               .IsEqualTo(0.0);
+            Check.That((Double)exception.ActualValue).IsEqualTo(0.0);
         }
 
         [Test]
@@ -161,17 +136,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Double) exception.ActualValue)
-               .IsEqualTo(-0.1);
+            Check.That((Double)exception.ActualValue).IsEqualTo(-0.1);
         }
     }
 
@@ -181,11 +152,9 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsStrictlyPositive(TimeSpan.FromMilliseconds(1), "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsStrictlyPositive(TimeSpan.FromMilliseconds(1), "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.IsStrictlyPositive(TimeSpan.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsStrictlyPositive(TimeSpan.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -195,38 +164,29 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((TimeSpan) exception.ActualValue)
-               .IsEqualTo(TimeSpan.Zero);
+            Check.That((TimeSpan)exception.ActualValue).IsEqualTo(TimeSpan.Zero);
         }
 
         [Test]
         public void Throws_For_Negative()
         {
-            var exception = Check
-               .ThatCode(() => Verify.IsStrictlyPositive(TimeSpan.FromTicks(-1), "name"))
+            var exception = Check.ThatCode(() => Verify.IsStrictlyPositive(TimeSpan.FromTicks(-1), "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((TimeSpan) exception.ActualValue)
-               .IsEqualTo(TimeSpan.FromTicks(-1));
+            Check.That((TimeSpan)exception.ActualValue).IsEqualTo(TimeSpan.FromTicks(-1));
         }
     }
 
@@ -237,11 +197,9 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(Int32.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(Int32.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -251,17 +209,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(0);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(0);
         }
 
         [Test]
@@ -271,17 +225,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int32) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int32)exception.ActualValue).IsEqualTo(-1);
         }
     }
 
@@ -291,52 +241,41 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive((Int64) 1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive((Int64)1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(Int64.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(Int64.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws_For_Zero()
         {
-            var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive((Int64) 0, "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive((Int64)0, "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int64) exception.ActualValue)
-               .IsEqualTo(0);
+            Check.That((Int64)exception.ActualValue).IsEqualTo(0);
         }
 
         [Test]
         public void Throws_For_Negative()
         {
-            var exception = Check
-               .ThatCode(() => Verify.Debug.IsStrictlyPositive((Int64) ( -1 ), "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive((Int64)( -1 ), "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Int64) exception.ActualValue)
-               .IsEqualTo(-1);
+            Check.That((Int64)exception.ActualValue).IsEqualTo(-1);
         }
     }
 
@@ -346,11 +285,9 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(0.1, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(0.1, "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(Double.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(Double.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
@@ -360,17 +297,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Double) exception.ActualValue)
-               .IsEqualTo(0.0);
+            Check.That((Double)exception.ActualValue).IsEqualTo(0.0);
         }
 
         [Test]
@@ -380,17 +313,13 @@ public partial class Test_Verify
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((Double) exception.ActualValue)
-               .IsEqualTo(-0.1);
+            Check.That((Double)exception.ActualValue).IsEqualTo(-0.1);
         }
     }
 
@@ -400,56 +329,41 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(
-                    () => Verify.Debug.IsStrictlyPositive(TimeSpan.FromMilliseconds(1), "name")
-                )
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(TimeSpan.FromMilliseconds(1), "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(TimeSpan.MaxValue, "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(TimeSpan.MaxValue, "name")).DoesNotThrow();
         }
 
         [Test]
         public void Throws_For_Zero()
         {
-            var exception = Check
-               .ThatCode(() => Verify.Debug.IsStrictlyPositive(TimeSpan.Zero, "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(TimeSpan.Zero, "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((TimeSpan) exception.ActualValue)
-               .IsEqualTo(TimeSpan.Zero);
+            Check.That((TimeSpan)exception.ActualValue).IsEqualTo(TimeSpan.Zero);
         }
 
         [Test]
         public void Throws_For_Negative()
         {
-            var exception = Check.ThatCode(
-                    () => Verify.Debug.IsStrictlyPositive(TimeSpan.FromTicks(-1), "name")
-                )
+            var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive(TimeSpan.FromTicks(-1), "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyPositive);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
 
-            Check.That((TimeSpan) exception.ActualValue)
-               .IsEqualTo(TimeSpan.FromTicks(-1));
+            Check.That((TimeSpan)exception.ActualValue).IsEqualTo(TimeSpan.FromTicks(-1));
         }
     }
 }

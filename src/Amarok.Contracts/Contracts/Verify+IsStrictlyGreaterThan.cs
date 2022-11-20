@@ -251,11 +251,7 @@ internal partial class Verify
         ///     Values exceeding the exclusive lower limit are invalid.
         /// </exception>
         [Conditional("DEBUG"), DebuggerStepThrough]
-        public static void IsStrictlyGreaterThan(
-            TimeSpan value,
-            TimeSpan lowerLimit,
-            String paramName
-        )
+        public static void IsStrictlyGreaterThan(TimeSpan value, TimeSpan lowerLimit, String paramName)
         {
             if (value <= lowerLimit)
             {

@@ -104,12 +104,7 @@ internal class ArgumentExceedsUpperLimitException : ArgumentOutOfRangeException
     /// <param name="message">
     ///     The error message that explains the reason for the exception.
     /// </param>
-    public ArgumentExceedsUpperLimitException(
-        String paramName,
-        Object actualValue,
-        Object upperLimit,
-        String message
-    )
+    public ArgumentExceedsUpperLimitException(String paramName, Object actualValue, Object upperLimit, String message)
         : base(paramName, actualValue, message)
     {
         UpperLimit = upperLimit;

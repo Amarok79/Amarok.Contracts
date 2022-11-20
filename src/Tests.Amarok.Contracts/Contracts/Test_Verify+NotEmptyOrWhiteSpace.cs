@@ -18,11 +18,9 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.NotEmptyOrWhiteSpace("foo", "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.NotEmptyOrWhiteSpace("foo", "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.NotEmptyOrWhiteSpace(" x ", "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.NotEmptyOrWhiteSpace(" x ", "name")).DoesNotThrow();
         }
 
         [Test]
@@ -32,14 +30,11 @@ public partial class Test_Verify
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -49,14 +44,11 @@ public partial class Test_Verify
                .Throws<ArgumentException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentEmptyString);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyString);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -66,14 +58,11 @@ public partial class Test_Verify
                .Throws<ArgumentException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentEmptyString);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyString);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
     }
 
@@ -83,11 +72,9 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.NotEmptyOrWhiteSpace("foo", "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.NotEmptyOrWhiteSpace("foo", "name")).DoesNotThrow();
 
-            Check.ThatCode(() => Verify.Debug.NotEmptyOrWhiteSpace(" x ", "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.NotEmptyOrWhiteSpace(" x ", "name")).DoesNotThrow();
         }
 
         [Test]
@@ -97,32 +84,25 @@ public partial class Test_Verify
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
         public void Throws_For_EmptyString()
         {
-            var exception = Check
-               .ThatCode(() => Verify.Debug.NotEmptyOrWhiteSpace(String.Empty, "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.NotEmptyOrWhiteSpace(String.Empty, "name"))
                .Throws<ArgumentException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentEmptyString);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyString);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -132,14 +112,11 @@ public partial class Test_Verify
                .Throws<ArgumentException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentEmptyString);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyString);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
     }
 }

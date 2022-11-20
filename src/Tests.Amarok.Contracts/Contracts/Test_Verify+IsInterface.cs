@@ -18,8 +18,7 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.IsInterface(typeof(IComparable), "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.IsInterface(typeof(IComparable), "name")).DoesNotThrow();
         }
 
         [Test]
@@ -29,14 +28,11 @@ public partial class Test_Verify
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -50,11 +46,9 @@ public partial class Test_Verify
                .StartsWith(ExceptionResources.ArgumentIsInterface)
                .And.Contains("Types representing concrete classes or value types are invalid.");
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -64,14 +58,11 @@ public partial class Test_Verify
                .Throws<ArgumentException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsInterface);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsInterface);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
     }
 
@@ -81,8 +72,7 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(() => Verify.Debug.IsInterface(typeof(IComparable), "name"))
-               .DoesNotThrow();
+            Check.ThatCode(() => Verify.Debug.IsInterface(typeof(IComparable), "name")).DoesNotThrow();
         }
 
         [Test]
@@ -92,14 +82,11 @@ public partial class Test_Verify
                .Throws<ArgumentNullException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -109,14 +96,11 @@ public partial class Test_Verify
                .Throws<ArgumentException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsInterface);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsInterface);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
 
         [Test]
@@ -126,14 +110,11 @@ public partial class Test_Verify
                .Throws<ArgumentException>()
                .Value;
 
-            Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsInterface);
+            Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsInterface);
 
-            Check.That(exception.ParamName)
-               .IsEqualTo("name");
+            Check.That(exception.ParamName).IsEqualTo("name");
 
-            Check.That(exception.InnerException)
-               .IsNull();
+            Check.That(exception.InnerException).IsNull();
         }
     }
 }
