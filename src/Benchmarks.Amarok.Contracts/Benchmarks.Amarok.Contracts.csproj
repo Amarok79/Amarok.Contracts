@@ -3,28 +3,6 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFrameworks>net48;net6.0;net7.0</TargetFrameworks>
-        <RootNamespace>Amarok</RootNamespace>
-        <AutoGenerateBindingRedirects>True</AutoGenerateBindingRedirects>
-        <IsPackable>false</IsPackable>
-    </PropertyGroup>
-
-    <PropertyGroup>
-        <OutputPath>..\..\bin\benchmark\</OutputPath>
-        <LangVersion>latest</LangVersion>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-        <NoWarn>1701;1702</NoWarn>
-        <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-        <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-        <WarningsAsErrors />
-        <NoWarn>1701;1702</NoWarn>
-        <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-        <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
     </PropertyGroup>
 
     <ItemGroup>

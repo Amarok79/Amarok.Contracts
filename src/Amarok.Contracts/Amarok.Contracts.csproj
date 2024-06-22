@@ -1,15 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Version>5.0.0</Version>
         <TargetFrameworks>netstandard2.0;net6.0;net7.0</TargetFrameworks>
-        <RootNamespace>Amarok</RootNamespace>
-        <Authors>Olaf Kober</Authors>
-        <Company>&lt;none&gt;</Company>
-        <Description>Simple helper methods for verifying argument values.</Description>
-        <Copyright>Copyright (c) 2019, Olaf Kober</Copyright>
-        <Nullable>enable</Nullable>
-        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <NoWarn>1701;1702;NU5105;NU5128</NoWarn>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -17,42 +10,16 @@
         <PackageProjectUrl>https://github.com/Amarok79/Amarok.Contracts</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Amarok79/Amarok.Contracts</RepositoryUrl>
         <PackageIcon>amarok.png</PackageIcon>
-        <PublishRepositoryUrl>true</PublishRepositoryUrl>
-        <EmbedUntrackedSources>true</EmbedUntrackedSources>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PublishRepositoryUrl>True</PublishRepositoryUrl>
+        <EmbedUntrackedSources>True</EmbedUntrackedSources>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
         <PackageTags>Verify Check Contract NotNull NotEmpty InRange IsPositive IsGreaterThan IsLessThan</PackageTags>
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-        <DevelopmentDependency>true</DevelopmentDependency>
+        <DevelopmentDependency>True</DevelopmentDependency>
         <NuspecFile>..\..\Amarok.Contracts.nuspec</NuspecFile>
         <NuspecProperties>Version=$(Version)</NuspecProperties>
-        <NuspecBasePath></NuspecBasePath>
     </PropertyGroup>
-
-    <PropertyGroup>
-        <OutputPath>..\..\bin\lib\</OutputPath>
-        <DocumentationFile>..\..\bin\lib\Amarok.Contracts.xml</DocumentationFile>
-        <LangVersion>latest</LangVersion>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
-        <NoWarn>1701;1702;NU5105;NU5128</NoWarn>
-        <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-        <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-        <WarningsAsErrors />
-        <NoWarn>1701;1702;NU5105;NU5128</NoWarn>
-        <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-        <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <None Remove="Amarok.Contracts.v3.ncrunchproject" />
-    </ItemGroup>
 
     <ItemGroup>
         <None Include="..\amarok.png" Pack="true" PackagePath="\" />
