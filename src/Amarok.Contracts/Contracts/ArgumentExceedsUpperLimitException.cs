@@ -1,7 +1,6 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 using System;
-using System.Runtime.Serialization;
 
 
 namespace Amarok.Contracts;
@@ -10,11 +9,8 @@ namespace Amarok.Contracts;
 /// <summary>
 ///     An exception that is thrown when a value exceeds the defined upper limit.
 /// </summary>
-[Serializable]
 internal class ArgumentExceedsUpperLimitException : ArgumentOutOfRangeException
 {
-    #region ++ Public Interface ++
-
     /// <summary>
     ///     Gets the upper limit that has been exceeded.
     /// </summary>
@@ -29,7 +25,7 @@ internal class ArgumentExceedsUpperLimitException : ArgumentOutOfRangeException
         {
             var msg = base.Message;
 
-            if (UpperLimit != null && msg != null)
+            if (UpperLimit != null)
             {
                 msg = msg + Environment.NewLine + ExceptionResources.UpperLimit + UpperLimit;
             }
@@ -109,47 +105,4 @@ internal class ArgumentExceedsUpperLimitException : ArgumentOutOfRangeException
     {
         UpperLimit = upperLimit;
     }
-
-    #endregion
-
-    #region ++ Serialization Interface ++
-
-    /// <summary>
-    ///     Initializes a new instance.
-    /// </summary>
-    /// 
-    /// <param name="info">
-    ///     The object that holds the serialized object data.
-    /// </param>
-    /// <param name="context">
-    ///     The contextual information about the source or destination.
-    /// </param>
-    protected ArgumentExceedsUpperLimitException(SerializationInfo info, StreamingContext context)
-        : base(info, context)
-    {
-        UpperLimit = info.GetValue("UpperLimit", typeof(Object));
-    }
-
-    /// <summary>
-    ///     The method sets the SerializationInfo with information about the exception.
-    /// </summary>
-    /// 
-    /// <param name="info">
-    ///     The object that holds the serialized object data.
-    /// </param>
-    /// <param name="context">
-    ///     The contextual information about the source or destination.
-    /// </param>
-    /// 
-    /// <exception cref="System.ArgumentNullException">
-    ///     The info parameter is a null reference (Nothing in Visual Basic).
-    /// </exception>
-    public override void GetObjectData(SerializationInfo info, StreamingContext context)
-    {
-        base.GetObjectData(info, context);
-
-        info.AddValue("UpperLimit", UpperLimit, typeof(Object));
-    }
-
-    #endregion
 }

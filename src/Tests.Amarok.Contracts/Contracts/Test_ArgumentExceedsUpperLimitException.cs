@@ -1,8 +1,6 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 using System;
-using System.IO;
-using System.Runtime.Serialization;
 using NFluent;
 using NUnit.Framework;
 
@@ -104,65 +102,6 @@ public class Test_ArgumentExceedsUpperLimitException
             Check.That(exception.ActualValue).IsEqualTo(123);
 
             Check.That(exception.UpperLimit).IsEqualTo(100);
-        }
-    }
-
-    public class Serialization
-    {
-        [Test]
-        public void Succeed_With_Serialization()
-        {
-            // arrange
-            var exception1 = new ArgumentExceedsUpperLimitException("PARAM", 123, 100, "MSG");
-            var formatter = new DataContractSerializer(typeof(ArgumentExceedsUpperLimitException));
-            var stream = new MemoryStream();
-            formatter.WriteObject(stream, exception1);
-            stream.Position = 0;
-            var exception2 = (ArgumentExceedsUpperLimitException)formatter.ReadObject(stream);
-
-            // assert
-            Check.That(exception2).Not.IsSameReferenceAs(exception1);
-
-            Check.That(exception2.Message).Contains("MSG", "PARAM", "Actual value was 123.", "Upper limit: 100");
-
-            Check.That(exception2.InnerException).IsNull();
-
-            Check.That(exception2.ParamName).IsEqualTo("PARAM");
-
-            Check.That(exception2.ActualValue).IsEqualTo(123);
-
-            Check.That(exception2.UpperLimit).IsEqualTo(100);
-        }
-
-        [Test]
-        public void Succeed_With_Serialization_2()
-        {
-            // arrange
-            var inner = new ApplicationException();
-            var exception1 = new ArgumentExceedsUpperLimitException("MSG", inner);
-
-            var formatter = new DataContractSerializer(
-                typeof(ArgumentExceedsUpperLimitException),
-                new[] { typeof(ApplicationException) }
-            );
-
-            var stream = new MemoryStream();
-            formatter.WriteObject(stream, exception1);
-            stream.Position = 0;
-            var exception2 = (ArgumentExceedsUpperLimitException)formatter.ReadObject(stream);
-
-            // assert
-            Check.That(exception2).Not.IsSameReferenceAs(exception1);
-
-            Check.That(exception2.Message).Contains("MSG");
-
-            Check.That(exception2.InnerException).IsInstanceOf<ApplicationException>();
-
-            Check.That(exception2.ParamName).IsNull();
-
-            Check.That(exception2.ActualValue).IsNull();
-
-            Check.That(exception2.UpperLimit).IsNull();
         }
     }
 }
