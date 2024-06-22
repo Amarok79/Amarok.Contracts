@@ -11,6 +11,7 @@ using BenchmarkDotNet.Jobs;
 namespace Amarok.Contracts;
 
 
+[SimpleJob(RuntimeMoniker.Net80)]
 [SimpleJob(RuntimeMoniker.Net70)]
 [SimpleJob(RuntimeMoniker.Net60)]
 [SimpleJob(RuntimeMoniker.Net48)]
