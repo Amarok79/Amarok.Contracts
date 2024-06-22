@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #pragma warning disable CA1822 // Mark members as static
 
@@ -75,25 +75,30 @@ public class NotEmptyBenchmarks
 }
 
 /*
-BenchmarkDotNet=v0.13.2, OS=Windows 11 (10.0.22621.819)
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.3737/23H2/2023Update/SunValley3)
 Intel Core i7-10875H CPU 2.30GHz, 1 CPU, 16 logical and 8 physical cores
-  [Host]             : .NET Framework 4.8.1 (4.8.9105.0), X64 RyuJIT VectorSize=256
-  .NET 6.0           : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
-  .NET 7.0           : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
-  .NET Framework 4.8 : .NET Framework 4.8.1 (4.8.9105.0), X64 RyuJIT VectorSize=256
+  [Host]             : .NET Framework 4.8.1 (4.8.9241.0), X64 RyuJIT VectorSize=256
+  .NET 6.0           : .NET 6.0.31 (6.0.3124.26714), X64 RyuJIT AVX2
+  .NET 7.0           : .NET 7.0.20 (7.0.2024.26716), X64 RyuJIT AVX2
+  .NET 8.0           : .NET 8.0.6 (8.0.624.26715), X64 RyuJIT AVX2
+  .NET Framework 4.8 : .NET Framework 4.8.1 (4.8.9241.0), X64 RyuJIT VectorSize=256
 
 
-|   Method |                Job |            Runtime |     Mean |     Error |    StdDev | Ratio | RatioSD |
+| Method   | Job                | Runtime            | Mean     | Error     | StdDev    | Ratio | RatioSD |
 |--------- |------------------- |------------------- |---------:|----------:|----------:|------:|--------:|
-| Baseline |           .NET 6.0 |           .NET 6.0 | 1.548 us | 0.0057 us | 0.0051 us |  1.00 |    0.00 |
-|    Throw |           .NET 6.0 |           .NET 6.0 | 1.336 us | 0.0082 us | 0.0073 us |  0.86 |    0.01 |
-|   Verify |           .NET 6.0 |           .NET 6.0 | 1.551 us | 0.0059 us | 0.0055 us |  1.00 |    0.00 |
+| Baseline | .NET 6.0           | .NET 6.0           | 1.487 us | 0.0138 us | 0.0122 us |  1.00 |    0.00 |
+| Throw    | .NET 6.0           | .NET 6.0           | 1.551 us | 0.0303 us | 0.0283 us |  1.04 |    0.02 |
+| Verify   | .NET 6.0           | .NET 6.0           | 1.543 us | 0.0274 us | 0.0256 us |  1.04 |    0.02 |
 |          |                    |                    |          |           |           |       |         |
-| Baseline |           .NET 7.0 |           .NET 7.0 | 1.205 us | 0.0238 us | 0.0275 us |  1.00 |    0.00 |
-|    Throw |           .NET 7.0 |           .NET 7.0 | 1.484 us | 0.0280 us | 0.0275 us |  1.24 |    0.03 |
-|   Verify |           .NET 7.0 |           .NET 7.0 | 1.426 us | 0.0278 us | 0.0285 us |  1.19 |    0.05 |
+| Baseline | .NET 7.0           | .NET 7.0           | 1.269 us | 0.0065 us | 0.0057 us |  1.00 |    0.00 |
+| Throw    | .NET 7.0           | .NET 7.0           | 1.355 us | 0.0163 us | 0.0144 us |  1.07 |    0.01 |
+| Verify   | .NET 7.0           | .NET 7.0           | 1.337 us | 0.0259 us | 0.0255 us |  1.05 |    0.02 |
 |          |                    |                    |          |           |           |       |         |
-| Baseline | .NET Framework 4.8 | .NET Framework 4.8 | 1.603 us | 0.0070 us | 0.0062 us |  1.00 |    0.00 |
-|    Throw | .NET Framework 4.8 | .NET Framework 4.8 | 1.231 us | 0.0236 us | 0.0231 us |  0.77 |    0.02 |
-|   Verify | .NET Framework 4.8 | .NET Framework 4.8 | 1.409 us | 0.0225 us | 0.0210 us |  0.88 |    0.01 |
+| Baseline | .NET 8.0           | .NET 8.0           | 1.138 us | 0.0227 us | 0.0415 us |  1.00 |    0.00 |
+| Throw    | .NET 8.0           | .NET 8.0           | 1.414 us | 0.0270 us | 0.0265 us |  1.22 |    0.06 |
+| Verify   | .NET 8.0           | .NET 8.0           | 1.609 us | 0.0244 us | 0.0228 us |  1.39 |    0.08 |
+|          |                    |                    |          |           |           |       |         |
+| Baseline | .NET Framework 4.8 | .NET Framework 4.8 | 1.268 us | 0.0065 us | 0.0061 us |  1.00 |    0.00 |
+| Throw    | .NET Framework 4.8 | .NET Framework 4.8 | 1.348 us | 0.0161 us | 0.0150 us |  1.06 |    0.01 |
+| Verify   | .NET Framework 4.8 | .NET Framework 4.8 | 1.352 us | 0.0257 us | 0.0285 us |  1.06 |    0.02 |
 */
