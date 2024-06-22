@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #pragma warning disable S3218 // Inner class members should not shadow outer class "static" or type members
 
@@ -97,7 +97,7 @@ internal partial class Verify
             throw new ArgumentOutOfRangeException(nameof(count), count, ExceptionResources.ArgumentIsPositive);
         }
 
-        if (( array.Length > 0 && offset >= array.Length ) || ( array.Length == 0 && offset > 0 ))
+        if ((array.Length > 0 && offset >= array.Length) || (array.Length == 0 && offset > 0))
         {
             throw new ArgumentExceedsUpperLimitException(
                 nameof(offset),
@@ -207,7 +207,7 @@ internal partial class Verify
                 throw new ArgumentOutOfRangeException(nameof(count), count, ExceptionResources.ArgumentIsPositive);
             }
 
-            if (( array.Length > 0 && offset >= array.Length ) || ( array.Length == 0 && offset > 0 ))
+            if ((array.Length > 0 && offset >= array.Length) || (array.Length == 0 && offset > 0))
             {
                 throw new ArgumentExceedsUpperLimitException(
                     nameof(offset),

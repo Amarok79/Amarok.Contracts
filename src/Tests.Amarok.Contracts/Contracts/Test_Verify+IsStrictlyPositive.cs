@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #define DEBUG
 
@@ -88,7 +88,7 @@ public partial class Test_Verify
         [Test]
         public void Throws_For_Negative()
         {
-            var exception = Check.ThatCode(() => Verify.IsStrictlyPositive((Int64)( -1 ), "name"))
+            var exception = Check.ThatCode(() => Verify.IsStrictlyPositive((Int64)(-1), "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 
@@ -265,7 +265,7 @@ public partial class Test_Verify
         [Test]
         public void Throws_For_Negative()
         {
-            var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive((Int64)( -1 ), "name"))
+            var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyPositive((Int64)(-1), "name"))
                .Throws<ArgumentOutOfRangeException>()
                .Value;
 

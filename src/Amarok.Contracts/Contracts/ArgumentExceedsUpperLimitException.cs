@@ -30,7 +30,7 @@ internal class ArgumentExceedsUpperLimitException : ArgumentOutOfRangeException
                 msg = msg + Environment.NewLine + ExceptionResources.UpperLimit + UpperLimit;
             }
 
-            return msg!;
+            return msg;
         }
     }
 

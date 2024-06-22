@@ -1,11 +1,15 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #define DEBUG
 
 
-namespace Amarok.Contracts
+using NUnit.Framework;
+
+
+namespace Amarok.Contracts;
+
+
+[TestFixture]
+public partial class Test_Verify
 {
-    public partial class Test_Verify
-    {
-    }
 }
