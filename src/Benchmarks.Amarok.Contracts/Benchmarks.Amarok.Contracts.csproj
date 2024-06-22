@@ -6,9 +6,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
+        <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
         <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
-        <PackageReference Include="System.CodeDom" Version="7.0.0" />
+        <PackageReference Include="System.CodeDom" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>
