@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #define DEBUG
 
@@ -25,8 +25,8 @@ public partial class Test_Verify
         public void Throws_For_Null()
         {
             var exception = Check.ThatCode(() => Verify.IsInterface(null, "name"))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -39,12 +39,12 @@ public partial class Test_Verify
         public void Throws_For_Class()
         {
             var exception = Check.ThatCode(() => Verify.IsInterface(typeof(String), "name"))
-               .Throws<ArgumentException>()
-               .Value;
+                .Throws<ArgumentException>()
+                .Value;
 
             Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsInterface)
-               .And.Contains("Types representing concrete classes or value types are invalid.");
+                .StartsWith(ExceptionResources.ArgumentIsInterface)
+                .And.Contains("Types representing concrete classes or value types are invalid.");
 
             Check.That(exception.ParamName).IsEqualTo("name");
 
@@ -55,8 +55,8 @@ public partial class Test_Verify
         public void Throws_For_ValueType()
         {
             var exception = Check.ThatCode(() => Verify.IsInterface(typeof(Int32), "name"))
-               .Throws<ArgumentException>()
-               .Value;
+                .Throws<ArgumentException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsInterface);
 
@@ -79,8 +79,8 @@ public partial class Test_Verify
         public void Throws_For_Null()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsInterface(null, "name"))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -93,8 +93,8 @@ public partial class Test_Verify
         public void Throws_For_Class()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsInterface(typeof(String), "name"))
-               .Throws<ArgumentException>()
-               .Value;
+                .Throws<ArgumentException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsInterface);
 
@@ -107,8 +107,8 @@ public partial class Test_Verify
         public void Throws_For_ValueType()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsInterface(typeof(Int32), "name"))
-               .Throws<ArgumentException>()
-               .Value;
+                .Throws<ArgumentException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsInterface);
 

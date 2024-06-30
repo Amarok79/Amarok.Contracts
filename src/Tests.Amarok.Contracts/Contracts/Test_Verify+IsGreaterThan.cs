@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #define DEBUG
 
@@ -27,8 +27,8 @@ public partial class Test_Verify
         public void Throws()
         {
             var exception = Check.ThatCode(() => Verify.IsGreaterThan(99, 100, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
@@ -57,8 +57,8 @@ public partial class Test_Verify
         public void Throws()
         {
             var exception = Check.ThatCode(() => Verify.IsGreaterThan(99, (Int64)100, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
@@ -87,8 +87,8 @@ public partial class Test_Verify
         public void Throws()
         {
             var exception = Check.ThatCode(() => Verify.IsGreaterThan(99, (Double)100, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
@@ -109,10 +109,10 @@ public partial class Test_Verify
         public void DoesNotThrow()
         {
             Check.ThatCode(() => Verify.IsGreaterThan(TimeSpan.FromTicks(101), TimeSpan.FromTicks(100), "name"))
-               .DoesNotThrow();
+                .DoesNotThrow();
 
             Check.ThatCode(() => Verify.IsGreaterThan(TimeSpan.FromTicks(100), TimeSpan.FromTicks(100), "name"))
-               .DoesNotThrow();
+                .DoesNotThrow();
         }
 
         [Test]
@@ -121,8 +121,8 @@ public partial class Test_Verify
             var exception = Check.ThatCode(
                     () => Verify.IsGreaterThan(TimeSpan.FromTicks(99), TimeSpan.FromTicks(100), "name")
                 )
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
@@ -152,8 +152,8 @@ public partial class Test_Verify
         public void Throws()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsGreaterThan(99, 100, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
@@ -182,8 +182,8 @@ public partial class Test_Verify
         public void Throws()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsGreaterThan(99, (Int64)100, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
@@ -212,8 +212,8 @@ public partial class Test_Verify
         public void Throws()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsGreaterThan(99, (Double)100, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 
@@ -234,10 +234,10 @@ public partial class Test_Verify
         public void DoesNotThrow()
         {
             Check.ThatCode(() => Verify.Debug.IsGreaterThan(TimeSpan.FromTicks(101), TimeSpan.FromTicks(100), "name"))
-               .DoesNotThrow();
+                .DoesNotThrow();
 
             Check.ThatCode(() => Verify.Debug.IsGreaterThan(TimeSpan.FromTicks(100), TimeSpan.FromTicks(100), "name"))
-               .DoesNotThrow();
+                .DoesNotThrow();
         }
 
         [Test]
@@ -246,8 +246,8 @@ public partial class Test_Verify
             var exception = Check.ThatCode(
                     () => Verify.Debug.IsGreaterThan(TimeSpan.FromTicks(99), TimeSpan.FromTicks(100), "name")
                 )
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsGreaterThan);
 

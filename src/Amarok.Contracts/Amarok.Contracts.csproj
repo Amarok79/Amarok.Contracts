@@ -22,7 +22,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\amarok.png" Pack="true" PackagePath="\" />
+        <None Include="..\amarok.png" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
 </Project>

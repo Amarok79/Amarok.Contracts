@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #define DEBUG
 
@@ -29,8 +29,8 @@ public partial class Test_Verify
             var exception = Check.ThatCode(() => Verify.NotNull(null, "name")).Throws<ArgumentNullException>().Value;
 
             Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentNull)
-               .And.Contains("Null values are invalid.");
+                .StartsWith(ExceptionResources.ArgumentNull)
+                .And.Contains("Null values are invalid.");
 
             Check.That(exception.ParamName).IsEqualTo("name");
 
@@ -53,8 +53,8 @@ public partial class Test_Verify
         public void Throws_For_Null()
         {
             var exception = Check.ThatCode(() => Verify.Debug.NotNull(null, "name"))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 

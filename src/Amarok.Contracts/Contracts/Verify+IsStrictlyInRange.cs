@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #pragma warning disable S3218 // Inner class members should not shadow outer class "static" or type members
 
@@ -13,8 +13,7 @@ namespace Amarok.Contracts;
 internal partial class Verify
 {
     /// <summary>
-    ///     Verifies that the given value is greater than the given lower limit and less than the given
-    ///     upper limit.
+    ///     Verifies that the given value is greater than the given lower limit and less than the given upper limit.
     /// </summary>
     /// 
     /// <param name="value">
@@ -61,8 +60,7 @@ internal partial class Verify
     }
 
     /// <summary>
-    ///     Verifies that the given value is greater than the given lower limit and less than the given
-    ///     upper limit.
+    ///     Verifies that the given value is greater than the given lower limit and less than the given upper limit.
     /// </summary>
     /// 
     /// <param name="value">
@@ -109,8 +107,7 @@ internal partial class Verify
     }
 
     /// <summary>
-    ///     Verifies that the given value is greater than the given lower limit and less than the given
-    ///     upper limit.
+    ///     Verifies that the given value is greater than the given lower limit and less than the given upper limit.
     /// </summary>
     /// 
     /// <param name="value">
@@ -157,8 +154,7 @@ internal partial class Verify
     }
 
     /// <summary>
-    ///     Verifies that the given value is greater than the given lower limit and less than the given
-    ///     upper limit.
+    ///     Verifies that the given value is greater than the given lower limit and less than the given upper limit.
     /// </summary>
     /// 
     /// <param name="value">
@@ -209,8 +205,7 @@ internal partial class Verify
     internal static partial class Debug
     {
         /// <summary>
-        ///     Verifies that the given value is greater than the given lower limit and less than the given
-        ///     upper limit.
+        ///     Verifies that the given value is greater than the given lower limit and less than the given upper limit.
         /// </summary>
         /// 
         /// <param name="value">
@@ -257,8 +252,7 @@ internal partial class Verify
         }
 
         /// <summary>
-        ///     Verifies that the given value is greater than the given lower limit and less than the given
-        ///     upper limit.
+        ///     Verifies that the given value is greater than the given lower limit and less than the given upper limit.
         /// </summary>
         /// 
         /// <param name="value">
@@ -305,8 +299,7 @@ internal partial class Verify
         }
 
         /// <summary>
-        ///     Verifies that the given value is greater than the given lower limit and less than the given
-        ///     upper limit.
+        ///     Verifies that the given value is greater than the given lower limit and less than the given upper limit.
         /// </summary>
         /// 
         /// <param name="value">
@@ -353,8 +346,7 @@ internal partial class Verify
         }
 
         /// <summary>
-        ///     Verifies that the given value is greater than the given lower limit and less than the given
-        ///     upper limit.
+        ///     Verifies that the given value is greater than the given lower limit and less than the given upper limit.
         /// </summary>
         /// 
         /// <param name="value">

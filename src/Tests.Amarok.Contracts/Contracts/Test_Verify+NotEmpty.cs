@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #define DEBUG
 
@@ -40,12 +40,12 @@ public partial class Test_Verify
         public void Throws_For_EmptyString()
         {
             var exception = Check.ThatCode(() => Verify.NotEmpty(String.Empty, "name"))
-               .Throws<ArgumentException>()
-               .Value;
+                .Throws<ArgumentException>()
+                .Value;
 
             Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentEmptyString)
-               .And.Contains("Empty strings are invalid.");
+                .StartsWith(ExceptionResources.ArgumentEmptyString)
+                .And.Contains("Empty strings are invalid.");
 
             Check.That(exception.ParamName).IsEqualTo("name");
 
@@ -68,8 +68,8 @@ public partial class Test_Verify
         public void Throws_For_Null()
         {
             var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(null, "name"))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -82,8 +82,8 @@ public partial class Test_Verify
         public void Throws_For_EmptyString()
         {
             var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(String.Empty, "name"))
-               .Throws<ArgumentException>()
-               .Value;
+                .Throws<ArgumentException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyString);
 
@@ -108,8 +108,8 @@ public partial class Test_Verify
         public void Throws_For_Null()
         {
             var exception = Check.ThatCode(() => Verify.NotEmpty((IEnumerable<Int32>)null, "name"))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -126,8 +126,8 @@ public partial class Test_Verify
             var exception = Check.ThatCode(() => Verify.NotEmpty(collection, "name")).Throws<ArgumentException>().Value;
 
             Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentEmptyCollection)
-               .And.Contains("Empty collections are invalid.");
+                .StartsWith(ExceptionResources.ArgumentEmptyCollection)
+                .And.Contains("Empty collections are invalid.");
 
             Check.That(exception.ParamName).IsEqualTo("name");
 
@@ -164,8 +164,8 @@ public partial class Test_Verify
         public void Throws_For_Null()
         {
             var exception = Check.ThatCode(() => Verify.Debug.NotEmpty((IEnumerable<Int32>)null, "name"))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -180,8 +180,8 @@ public partial class Test_Verify
             var collection = Array.Empty<Int32>();
 
             var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(collection, "name"))
-               .Throws<ArgumentException>()
-               .Value;
+                .Throws<ArgumentException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyCollection);
 
@@ -196,8 +196,8 @@ public partial class Test_Verify
             var collection = _CreateEmptyEnumerable();
 
             var exception = Check.ThatCode(() => Verify.Debug.NotEmpty(collection, "name"))
-               .Throws<ArgumentException>()
-               .Value;
+                .Throws<ArgumentException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentEmptyCollection);
 

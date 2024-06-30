@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #define DEBUG
 
@@ -27,8 +27,8 @@ public partial class Test_Verify
         public void Throws_For_Null()
         {
             var exception = Check.ThatCode(() => Verify.IsAssignableTo(null, typeof(Animal), "name"))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -41,8 +41,8 @@ public partial class Test_Verify
         public void Throws_For_NullBaseType()
         {
             var exception = Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), null, "name"))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -55,12 +55,12 @@ public partial class Test_Verify
         public void Throws()
         {
             var exception = Check.ThatCode(() => Verify.IsAssignableTo(typeof(Dog), typeof(Int32), "name"))
-               .Throws<ArgumentException>()
-               .Value;
+                .Throws<ArgumentException>()
+                .Value;
 
             Check.That(exception.Message)
-               .StartsWith(ExceptionResources.ArgumentIsAssignableTo)
-               .And.Contains("Types not assignable to a specific type are invalid.");
+                .StartsWith(ExceptionResources.ArgumentIsAssignableTo)
+                .And.Contains("Types not assignable to a specific type are invalid.");
 
             Check.That(exception.ParamName).IsEqualTo("name");
 
@@ -83,8 +83,8 @@ public partial class Test_Verify
         public void Throws_For_Null()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(null, typeof(Animal), "name"))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -97,8 +97,8 @@ public partial class Test_Verify
         public void Throws_For_NullBaseType()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), null, "name"))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -111,8 +111,8 @@ public partial class Test_Verify
         public void Throws()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsAssignableTo(typeof(Dog), typeof(Int32), "name"))
-               .Throws<ArgumentException>()
-               .Value;
+                .Throws<ArgumentException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsAssignableTo);
 

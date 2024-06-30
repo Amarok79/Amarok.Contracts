@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #define DEBUG
 
@@ -27,8 +27,8 @@ public partial class Test_Verify
         public void Throws_ExceedsLowerLimit()
         {
             var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(100, 100, 200, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
 
@@ -45,8 +45,8 @@ public partial class Test_Verify
         public void Throws_ExceedsUpperLimit()
         {
             var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(200, 100, 200, "name"))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
 
@@ -75,8 +75,8 @@ public partial class Test_Verify
         public void Throws_ExceedsLowerLimit()
         {
             var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(100, 100, (Int64)200, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
 
@@ -93,8 +93,8 @@ public partial class Test_Verify
         public void Throws_ExceedsUpperLimit()
         {
             var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(200, 100, (Int64)200, "name"))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
 
@@ -123,8 +123,8 @@ public partial class Test_Verify
         public void Throws_ExceedsLowerLimit()
         {
             var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(100, 100, (Double)200, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
 
@@ -141,8 +141,8 @@ public partial class Test_Verify
         public void Throws_ExceedsUpperLimit()
         {
             var exception = Check.ThatCode(() => Verify.IsStrictlyInRange(200, 100, (Double)200, "name"))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
 
@@ -170,7 +170,7 @@ public partial class Test_Verify
                         "name"
                     )
                 )
-               .DoesNotThrow();
+                .DoesNotThrow();
 
             Check.ThatCode(
                     () => Verify.IsStrictlyInRange(
@@ -180,7 +180,7 @@ public partial class Test_Verify
                         "name"
                     )
                 )
-               .DoesNotThrow();
+                .DoesNotThrow();
         }
 
         [Test]
@@ -194,8 +194,8 @@ public partial class Test_Verify
                         "name"
                     )
                 )
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
 
@@ -219,8 +219,8 @@ public partial class Test_Verify
                         "name"
                     )
                 )
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
 
@@ -249,8 +249,8 @@ public partial class Test_Verify
         public void Throws_ExceedsLowerLimit()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(100, 100, 200, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
 
@@ -267,8 +267,8 @@ public partial class Test_Verify
         public void Throws_ExceedsUpperLimit()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(200, 100, 200, "name"))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
 
@@ -297,8 +297,8 @@ public partial class Test_Verify
         public void Throws_ExceedsLowerLimit()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(100, 100, (Int64)200, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
 
@@ -315,8 +315,8 @@ public partial class Test_Verify
         public void Throws_ExceedsUpperLimit()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(200, 100, (Int64)200, "name"))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
 
@@ -345,8 +345,8 @@ public partial class Test_Verify
         public void Throws_ExceedsLowerLimit()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(100, 100, (Double)200, "name"))
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
 
@@ -363,8 +363,8 @@ public partial class Test_Verify
         public void Throws_ExceedsUpperLimit()
         {
             var exception = Check.ThatCode(() => Verify.Debug.IsStrictlyInRange(200, 100, (Double)200, "name"))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
 
@@ -392,7 +392,7 @@ public partial class Test_Verify
                         "name"
                     )
                 )
-               .DoesNotThrow();
+                .DoesNotThrow();
 
             Check.ThatCode(
                     () => Verify.Debug.IsStrictlyInRange(
@@ -402,7 +402,7 @@ public partial class Test_Verify
                         "name"
                     )
                 )
-               .DoesNotThrow();
+                .DoesNotThrow();
         }
 
         [Test]
@@ -416,8 +416,8 @@ public partial class Test_Verify
                         "name"
                     )
                 )
-               .Throws<ArgumentExceedsLowerLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsLowerLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyGreaterThan);
 
@@ -441,8 +441,8 @@ public partial class Test_Verify
                         "name"
                     )
                 )
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsStrictlyLessThan);
 

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022, Olaf Kober <olaf.kober@outlook.com>
+﻿// Copyright (c) 2024, Olaf Kober <olaf.kober@outlook.com>
 
 #define DEBUG
 
@@ -29,8 +29,8 @@ public partial class Test_Verify
         public void ThrowsForNull()
         {
             var exception = Check.ThatCode(() => Verify.ArraySegment((Byte[])null, 0))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -43,8 +43,8 @@ public partial class Test_Verify
         public void ThrowsForNegativeCount()
         {
             var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], -1))
-               .Throws<ArgumentOutOfRangeException>()
-               .Value;
+                .Throws<ArgumentOutOfRangeException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
@@ -59,8 +59,8 @@ public partial class Test_Verify
         public void ThrowsForCountTooBig()
         {
             var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 3))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
@@ -101,8 +101,8 @@ public partial class Test_Verify
         public void ThrowsForNull()
         {
             var exception = Check.ThatCode(() => Verify.ArraySegment((Byte[])null, 0, 0))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -115,8 +115,8 @@ public partial class Test_Verify
         public void ThrowsForNegativeOffset()
         {
             var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], -1, 0))
-               .Throws<ArgumentOutOfRangeException>()
-               .Value;
+                .Throws<ArgumentOutOfRangeException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
@@ -131,8 +131,8 @@ public partial class Test_Verify
         public void ThrowsForNegativeCount()
         {
             var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, -1))
-               .Throws<ArgumentOutOfRangeException>()
-               .Value;
+                .Throws<ArgumentOutOfRangeException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
@@ -147,8 +147,8 @@ public partial class Test_Verify
         public void ThrowsForOffsetTooBig()
         {
             var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 2, 0))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
@@ -165,8 +165,8 @@ public partial class Test_Verify
         public void ThrowsForCountTooBig()
         {
             var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 0, 3))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
@@ -183,8 +183,8 @@ public partial class Test_Verify
         public void ThrowsForOffsetPlusCountTooBig()
         {
             var exception = Check.ThatCode(() => Verify.ArraySegment(new Byte[2], 1, 2))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
@@ -215,8 +215,8 @@ public partial class Test_Verify
         public void ThrowsForNull()
         {
             var exception = Check.ThatCode(() => Verify.Debug.ArraySegment((Byte[])null, 0))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -229,8 +229,8 @@ public partial class Test_Verify
         public void ThrowsForNegativeCount()
         {
             var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], -1))
-               .Throws<ArgumentOutOfRangeException>()
-               .Value;
+                .Throws<ArgumentOutOfRangeException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
@@ -245,8 +245,8 @@ public partial class Test_Verify
         public void ThrowsForCountTooBig()
         {
             var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 3))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
@@ -287,8 +287,8 @@ public partial class Test_Verify
         public void ThrowsForNull()
         {
             var exception = Check.ThatCode(() => Verify.Debug.ArraySegment((Byte[])null, 0, 0))
-               .Throws<ArgumentNullException>()
-               .Value;
+                .Throws<ArgumentNullException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentNull);
 
@@ -301,8 +301,8 @@ public partial class Test_Verify
         public void ThrowsForNegativeOffset()
         {
             var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], -1, 0))
-               .Throws<ArgumentOutOfRangeException>()
-               .Value;
+                .Throws<ArgumentOutOfRangeException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
@@ -317,8 +317,8 @@ public partial class Test_Verify
         public void ThrowsForNegativeCount()
         {
             var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, -1))
-               .Throws<ArgumentOutOfRangeException>()
-               .Value;
+                .Throws<ArgumentOutOfRangeException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsPositive);
 
@@ -333,8 +333,8 @@ public partial class Test_Verify
         public void ThrowsForOffsetTooBig()
         {
             var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 2, 0))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
@@ -351,8 +351,8 @@ public partial class Test_Verify
         public void ThrowsForCountTooBig()
         {
             var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 0, 3))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 
@@ -369,8 +369,8 @@ public partial class Test_Verify
         public void ThrowsForOffsetPlusCountTooBig()
         {
             var exception = Check.ThatCode(() => Verify.Debug.ArraySegment(new Byte[2], 1, 2))
-               .Throws<ArgumentExceedsUpperLimitException>()
-               .Value;
+                .Throws<ArgumentExceedsUpperLimitException>()
+                .Value;
 
             Check.That(exception.Message).StartsWith(ExceptionResources.ArgumentIsLessThan);
 

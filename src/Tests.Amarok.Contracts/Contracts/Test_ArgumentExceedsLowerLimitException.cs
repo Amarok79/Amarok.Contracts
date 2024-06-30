@@ -53,7 +53,7 @@ public class Test_ArgumentExceedsLowerLimitException
         public void Succeed_With_MessageInnerException()
         {
             // arrange
-            var inner = new ApplicationException();
+            var inner     = new ApplicationException();
             var exception = new ArgumentExceedsLowerLimitException("MSG", inner);
 
             // assert

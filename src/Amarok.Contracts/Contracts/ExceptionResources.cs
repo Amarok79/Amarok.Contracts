@@ -32,15 +32,13 @@ internal static class ExceptionResources
     internal static String ArgumentIsGreaterThan => "Values exceeding the inclusive lower limit are invalid.";
 
     /// <summary>
-    ///     Looks up a localized string similar to Types representing interface or abstract base classes
-    ///     are invalid.
+    ///     Looks up a localized string similar to Types representing interface or abstract base classes are invalid.
     /// </summary>
     internal static String ArgumentIsInstantiable =>
         "Types representing interface or abstract base classes are invalid.";
 
     /// <summary>
-    ///     Looks up a localized string similar to Types representing concrete classes or value types are
-    ///     invalid.
+    ///     Looks up a localized string similar to Types representing concrete classes or value types are invalid.
     /// </summary>
     internal static String ArgumentIsInterface => "Types representing concrete classes or value types are invalid.";
 
@@ -70,8 +68,7 @@ internal static class ExceptionResources
     internal static String ArgumentIsStrictlyPositive => "Zero or negative values are invalid.";
 
     /// <summary>
-    ///     Looks up a localized string similar to Types not derived from a specific base class are
-    ///     invalid.
+    ///     Looks up a localized string similar to Types not derived from a specific base class are invalid.
     /// </summary>
     internal static String ArgumentIsSubclassOf => "Types not derived from a specific base class are invalid.";
 
