@@ -34,8 +34,8 @@ internal static class ExceptionResources
     /// <summary>
     ///     Looks up a localized string similar to Types representing interface or abstract base classes are invalid.
     /// </summary>
-    internal static String ArgumentIsInstantiable =>
-        "Types representing interface or abstract base classes are invalid.";
+    internal static String ArgumentIsInstantiable
+        => "Types representing interface or abstract base classes are invalid.";
 
     /// <summary>
     ///     Looks up a localized string similar to Types representing concrete classes or value types are invalid.

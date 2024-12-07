@@ -11,8 +11,8 @@ using BenchmarkDotNet.Jobs;
 namespace Amarok.Contracts;
 
 
+[SimpleJob(RuntimeMoniker.Net90)]
 [SimpleJob(RuntimeMoniker.Net80)]
-[SimpleJob(RuntimeMoniker.Net70)]
 [SimpleJob(RuntimeMoniker.Net60)]
 [SimpleJob(RuntimeMoniker.Net48)]
 public class NotNullBenchmarks
@@ -47,9 +47,7 @@ public class NotNullBenchmarks
     private void _ThrowCore(String abc)
     {
         if (abc is null)
-        {
             throw new ArgumentNullException(nameof(abc));
-        }
     }
 
 

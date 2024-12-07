@@ -30,9 +30,7 @@ internal partial class Verify
     public static void IsStrictlyPositive(Int32 value, String paramName)
     {
         if (value <= 0)
-        {
             throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
-        }
     }
 
     /// <summary>
@@ -53,9 +51,7 @@ internal partial class Verify
     public static void IsStrictlyPositive(Int64 value, String paramName)
     {
         if (value <= 0L)
-        {
             throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
-        }
     }
 
     /// <summary>
@@ -76,9 +72,7 @@ internal partial class Verify
     public static void IsStrictlyPositive(Double value, String paramName)
     {
         if (value <= 0.0d)
-        {
             throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
-        }
     }
 
     /// <summary>
@@ -99,9 +93,7 @@ internal partial class Verify
     public static void IsStrictlyPositive(TimeSpan value, String paramName)
     {
         if (value.Ticks <= 0L)
-        {
             throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
-        }
     }
 
 
@@ -126,9 +118,7 @@ internal partial class Verify
         public static void IsStrictlyPositive(Int32 value, String paramName)
         {
             if (value <= 0)
-            {
                 throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
-            }
         }
 
         /// <summary>
@@ -149,9 +139,7 @@ internal partial class Verify
         public static void IsStrictlyPositive(Int64 value, String paramName)
         {
             if (value <= 0L)
-            {
                 throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
-            }
         }
 
         /// <summary>
@@ -172,9 +160,7 @@ internal partial class Verify
         public static void IsStrictlyPositive(Double value, String paramName)
         {
             if (value <= 0.0d)
-            {
                 throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
-            }
         }
 
         /// <summary>
@@ -195,9 +181,7 @@ internal partial class Verify
         public static void IsStrictlyPositive(TimeSpan value, String paramName)
         {
             if (value.Ticks <= 0L)
-            {
                 throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsStrictlyPositive);
-            }
         }
     }
 }

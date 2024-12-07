@@ -12,27 +12,33 @@
     <PropertyGroup>
         <Authors>Olaf Kober</Authors>
         <Description>Simple helper methods for verifying argument values.</Description>
-        <Copyright>Copyright (c) 2019, Olaf Kober</Copyright>
+        <Copyright>Copyright (c) 2020, Olaf Kober</Copyright>
+    </PropertyGroup>
+
+
+    <PropertyGroup>
+        <RootDir>$([MSBuild]::NormalizeDirectory($(MSBuildThisFileDirectory)))</RootDir>
     </PropertyGroup>
 
     <PropertyGroup>
-        <OutputPath>..\..\bin\lib</OutputPath>
+        <OutputPath>$(RootDir)bin\lib</OutputPath>
+        <PackageOutputPath>$(RootDir)out</PackageOutputPath>
         <Nullable>Enable</Nullable>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <IsPackable>True</IsPackable>
         <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     </PropertyGroup>
 
-    <PropertyGroup Condition="$(MSBuildProjectName.StartsWith('Tests.'))">
-        <OutputPath>..\..\bin\tests</OutputPath>
+    <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
+        <OutputPath>$(RootDir)bin\tests</OutputPath>
         <Nullable>Disable</Nullable>
         <GenerateDocumentationFile>False</GenerateDocumentationFile>
         <IsPackable>False</IsPackable>
         <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
     </PropertyGroup>
 
-    <PropertyGroup Condition="$(MSBuildProjectName.StartsWith('Benchmarks.'))">
-        <OutputPath>..\..\bin\benchmark</OutputPath>
+    <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Benchmarks'))">
+        <OutputPath>$(RootDir)bin\benchmarks</OutputPath>
         <Nullable>Disable</Nullable>
         <GenerateDocumentationFile>False</GenerateDocumentationFile>
         <IsPackable>False</IsPackable>

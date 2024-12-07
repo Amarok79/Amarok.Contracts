@@ -36,14 +36,10 @@ internal partial class Verify
     public static void NotEmpty(String? value, String paramName)
     {
         if (value is null)
-        {
             throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
-        }
 
         if (value.Length == 0)
-        {
             throw new ArgumentException(ExceptionResources.ArgumentEmptyString, paramName);
-        }
     }
 
     /// <summary>
@@ -67,23 +63,17 @@ internal partial class Verify
     public static void NotEmpty<T>(IEnumerable<T>? collection, String paramName)
     {
         if (collection is null)
-        {
             throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
-        }
 
         if (collection is IReadOnlyCollection<T> readOnlyCollection)
         {
             if (readOnlyCollection.Count == 0)
-            {
                 throw new ArgumentException(ExceptionResources.ArgumentEmptyCollection, paramName);
-            }
         }
         else
         {
             if (!collection.Any())
-            {
                 throw new ArgumentException(ExceptionResources.ArgumentEmptyCollection, paramName);
-            }
         }
     }
 
@@ -112,14 +102,10 @@ internal partial class Verify
         public static void NotEmpty(String? value, String paramName)
         {
             if (value is null)
-            {
                 throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
-            }
 
             if (value.Length == 0)
-            {
                 throw new ArgumentException(ExceptionResources.ArgumentEmptyString, paramName);
-            }
         }
 
         /// <summary>
@@ -143,23 +129,17 @@ internal partial class Verify
         public static void NotEmpty<T>(IEnumerable<T>? collection, String paramName)
         {
             if (collection is null)
-            {
                 throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
-            }
 
             if (collection is IReadOnlyCollection<T> readOnlyCollection)
             {
                 if (readOnlyCollection.Count == 0)
-                {
                     throw new ArgumentException(ExceptionResources.ArgumentEmptyCollection, paramName);
-                }
             }
             else
             {
                 if (!collection.Any())
-                {
                     throw new ArgumentException(ExceptionResources.ArgumentEmptyCollection, paramName);
-                }
             }
         }
     }

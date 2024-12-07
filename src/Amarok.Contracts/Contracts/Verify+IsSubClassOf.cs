@@ -36,14 +36,10 @@ internal partial class Verify
     public static void IsSubclassOf(Type? type, Type baseType, String paramName)
     {
         if (type is null)
-        {
             throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
-        }
 
         if (!type.IsSubclassOf(baseType))
-        {
             throw new ArgumentException(ExceptionResources.ArgumentIsSubclassOf, paramName);
-        }
     }
 
 
@@ -74,14 +70,10 @@ internal partial class Verify
         public static void IsSubclassOf(Type? type, Type baseType, String paramName)
         {
             if (type is null)
-            {
                 throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
-            }
 
             if (!type.IsSubclassOf(baseType))
-            {
                 throw new ArgumentException(ExceptionResources.ArgumentIsSubclassOf, paramName);
-            }
         }
     }
 }

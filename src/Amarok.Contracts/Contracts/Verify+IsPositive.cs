@@ -30,9 +30,7 @@ internal partial class Verify
     public static void IsPositive(Int32 value, String paramName)
     {
         if (value < 0)
-        {
             throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
-        }
     }
 
     /// <summary>
@@ -53,9 +51,7 @@ internal partial class Verify
     public static void IsPositive(Int64 value, String paramName)
     {
         if (value < 0L)
-        {
             throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
-        }
     }
 
     /// <summary>
@@ -76,9 +72,7 @@ internal partial class Verify
     public static void IsPositive(Double value, String paramName)
     {
         if (value < 0.0d)
-        {
             throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
-        }
     }
 
     /// <summary>
@@ -99,9 +93,7 @@ internal partial class Verify
     public static void IsPositive(TimeSpan value, String paramName)
     {
         if (value.Ticks < 0L)
-        {
             throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
-        }
     }
 
 
@@ -126,9 +118,7 @@ internal partial class Verify
         public static void IsPositive(Int32 value, String paramName)
         {
             if (value < 0)
-            {
                 throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
-            }
         }
 
         /// <summary>
@@ -149,9 +139,7 @@ internal partial class Verify
         public static void IsPositive(Int64 value, String paramName)
         {
             if (value < 0L)
-            {
                 throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
-            }
         }
 
         /// <summary>
@@ -172,9 +160,7 @@ internal partial class Verify
         public static void IsPositive(Double value, String paramName)
         {
             if (value < 0.0d)
-            {
                 throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
-            }
         }
 
         /// <summary>
@@ -195,9 +181,7 @@ internal partial class Verify
         public static void IsPositive(TimeSpan value, String paramName)
         {
             if (value.Ticks < 0L)
-            {
                 throw new ArgumentOutOfRangeException(paramName, value, ExceptionResources.ArgumentIsPositive);
-            }
         }
     }
 }

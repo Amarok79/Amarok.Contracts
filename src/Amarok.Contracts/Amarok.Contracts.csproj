@@ -1,18 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;net6.0;net7.0;net8.0</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;net6.0;net8.0</TargetFrameworks>
         <NoWarn>1701;1702;NU5105;NU5128</NoWarn>
     </PropertyGroup>
 
     <PropertyGroup>
+        <PackageIcon>amarok.png</PackageIcon>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/Amarok79/Amarok.Contracts</PackageProjectUrl>
         <RepositoryUrl>https://github.com/Amarok79/Amarok.Contracts</RepositoryUrl>
-        <PackageIcon>amarok.png</PackageIcon>
         <PublishRepositoryUrl>True</PublishRepositoryUrl>
         <EmbedUntrackedSources>True</EmbedUntrackedSources>
-        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
         <PackageTags>Verify Check Contract NotNull NotEmpty InRange IsPositive IsGreaterThan IsLessThan</PackageTags>
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
@@ -22,7 +21,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\amarok.png" Pack="true" PackagePath="\"/>
+        <None Include="..\amarok.png" Pack="true" PackagePath="\" />
     </ItemGroup>
 
 </Project>

@@ -33,14 +33,10 @@ internal partial class Verify
     public static void IsInstantiable(Type? type, String paramName)
     {
         if (type is null)
-        {
             throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
-        }
 
         if (type.IsInterface || type.IsAbstract || type.IsGenericTypeDefinition)
-        {
             throw new ArgumentException(ExceptionResources.ArgumentIsInstantiable, paramName);
-        }
     }
 
 
@@ -68,14 +64,10 @@ internal partial class Verify
         public static void IsInstantiable(Type? type, String paramName)
         {
             if (type is null)
-            {
                 throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
-            }
 
             if (type.IsInterface || type.IsAbstract || type.IsGenericTypeDefinition)
-            {
                 throw new ArgumentException(ExceptionResources.ArgumentIsInstantiable, paramName);
-            }
         }
     }
 }

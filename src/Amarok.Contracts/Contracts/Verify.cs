@@ -12,8 +12,8 @@ namespace Amarok.Contracts;
 internal static partial class Verify
 {
     /// <summary>
-    ///     This nested type provides the same static methods for argument verification as the parent type, except that these
-    ///     nested methods are all annotated with
+    ///     This nested type provides the same static methods for argument verification as the parent type, except
+    ///     that these nested methods are all annotated with
     ///     <c>
     ///         [Conditional("DEBUG")]
     ///     </c>
