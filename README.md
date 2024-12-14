@@ -1,4 +1,3 @@
-![CI](https://github.com/Amarok79/Amarok.Contracts/workflows/CI/badge.svg)
 [![NuGet](https://img.shields.io/nuget/v/Amarok.Contracts.svg?logo=)](https://www.nuget.org/packages/Amarok.Contracts/)
 
 # Introduction
@@ -22,9 +21,9 @@ If those contracts are violated, appropriate argument exceptions are thrown.
 
 The library is redistributed as source-only NuGet
 package: [Amarok.Contracts](https://www.nuget.org/packages/Amarok.Contracts/). The package targets .NET Standard 2.0,
-.NET 6.0, .NET 7.0, and .NET 8.0 projects developed with Visual Studio 2022.
+.NET 6.0, .NET 8.0, and .NET 9.0 projects developed with Visual Studio 2022.
 
-Tests are performed on .NET Framework 4.8, .NET 6.0, .NET 7.0, and .NET 8.0.
+Tests are performed on .NET Framework 4.8, .NET 6.0, .NET 8.0, and .NET 9.0.
 
 # Documentation
 
