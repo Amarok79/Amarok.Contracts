@@ -36,10 +36,14 @@ internal partial class Verify
     public static void ArraySegment<T>(T[] array, Int32 count)
     {
         if (array is null)
+        {
             throw new ArgumentNullException(nameof(array), ExceptionResources.ArgumentNull);
+        }
 
         if (count < 0)
+        {
             throw new ArgumentOutOfRangeException(nameof(count), count, ExceptionResources.ArgumentIsPositive);
+        }
 
         if (count > array.Length)
         {
@@ -79,13 +83,19 @@ internal partial class Verify
     public static void ArraySegment<T>(T[] array, Int32 offset, Int32 count)
     {
         if (array is null)
+        {
             throw new ArgumentNullException(nameof(array), ExceptionResources.ArgumentNull);
+        }
 
         if (offset < 0)
+        {
             throw new ArgumentOutOfRangeException(nameof(offset), offset, ExceptionResources.ArgumentIsPositive);
+        }
 
         if (count < 0)
+        {
             throw new ArgumentOutOfRangeException(nameof(count), count, ExceptionResources.ArgumentIsPositive);
+        }
 
         if ((array.Length > 0 && offset >= array.Length) || (array.Length == 0 && offset > 0))
         {
@@ -136,10 +146,14 @@ internal partial class Verify
         public static void ArraySegment<T>(T[] array, Int32 count)
         {
             if (array is null)
+            {
                 throw new ArgumentNullException(nameof(array), ExceptionResources.ArgumentNull);
+            }
 
             if (count < 0)
+            {
                 throw new ArgumentOutOfRangeException(nameof(count), count, ExceptionResources.ArgumentIsPositive);
+            }
 
             if (count > array.Length)
             {
@@ -179,13 +193,19 @@ internal partial class Verify
         public static void ArraySegment<T>(T[] array, Int32 offset, Int32 count)
         {
             if (array is null)
+            {
                 throw new ArgumentNullException(nameof(array), ExceptionResources.ArgumentNull);
+            }
 
             if (offset < 0)
+            {
                 throw new ArgumentOutOfRangeException(nameof(offset), offset, ExceptionResources.ArgumentIsPositive);
+            }
 
             if (count < 0)
+            {
                 throw new ArgumentOutOfRangeException(nameof(count), count, ExceptionResources.ArgumentIsPositive);
+            }
 
             if ((array.Length > 0 && offset >= array.Length) || (array.Length == 0 && offset > 0))
             {

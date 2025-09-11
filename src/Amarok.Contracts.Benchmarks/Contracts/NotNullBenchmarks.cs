@@ -47,7 +47,9 @@ public class NotNullBenchmarks
     private void _ThrowCore(String abc)
     {
         if (abc is null)
+        {
             throw new ArgumentNullException(nameof(abc));
+        }
     }
 
 

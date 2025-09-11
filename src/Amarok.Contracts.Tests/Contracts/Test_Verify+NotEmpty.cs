@@ -99,15 +99,7 @@ public partial class Test_Verify
         [Test]
         public void DoesNotThrow()
         {
-            Check.ThatCode(
-                    () => Verify.NotEmpty(
-                        new[] {
-                            123, 456,
-                        },
-                        "name"
-                    )
-                )
-                .DoesNotThrow();
+            Check.ThatCode(() => Verify.NotEmpty([ 123, 456 ], "name")).DoesNotThrow();
 
             Check.ThatCode(() => Verify.NotEmpty(_CreateNonEmptyEnumerable(), "name")).DoesNotThrow();
         }

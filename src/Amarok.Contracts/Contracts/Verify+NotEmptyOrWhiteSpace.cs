@@ -33,10 +33,14 @@ internal partial class Verify
     public static void NotEmptyOrWhiteSpace(String? value, String paramName)
     {
         if (value is null)
+        {
             throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+        }
 
         if (String.IsNullOrWhiteSpace(value))
+        {
             throw new ArgumentException(ExceptionResources.ArgumentEmptyString, paramName);
+        }
     }
 
 
@@ -64,10 +68,14 @@ internal partial class Verify
         public static void NotEmptyOrWhiteSpace(String? value, String paramName)
         {
             if (value is null)
+            {
                 throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+            }
 
             if (String.IsNullOrWhiteSpace(value))
+            {
                 throw new ArgumentException(ExceptionResources.ArgumentEmptyString, paramName);
+            }
         }
     }
 }

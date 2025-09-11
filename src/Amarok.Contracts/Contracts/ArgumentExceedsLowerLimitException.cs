@@ -26,7 +26,9 @@ internal class ArgumentExceedsLowerLimitException : ArgumentOutOfRangeException
             var msg = base.Message;
 
             if (LowerLimit != null)
+            {
                 msg = msg + Environment.NewLine + ExceptionResources.LowerLimit + LowerLimit;
+            }
 
             return msg;
         }

@@ -31,7 +31,9 @@ internal partial class Verify
     public static void NotNull(Object? value, String paramName)
     {
         if (value is null)
+        {
             throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+        }
     }
 
 
@@ -56,7 +58,9 @@ internal partial class Verify
         public static void NotNull(Object? value, String paramName)
         {
             if (value is null)
+            {
                 throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+            }
         }
     }
 }

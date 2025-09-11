@@ -36,10 +36,14 @@ internal partial class Verify
     public static void IsAssignableTo(Type? type, Type targetType, String paramName)
     {
         if (type is null || targetType is null)
+        {
             throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+        }
 
         if (!targetType.IsAssignableFrom(type))
+        {
             throw new ArgumentException(ExceptionResources.ArgumentIsAssignableTo, paramName);
+        }
     }
 
 
@@ -70,10 +74,14 @@ internal partial class Verify
         public static void IsAssignableTo(Type? type, Type targetType, String paramName)
         {
             if (type is null || targetType is null)
+            {
                 throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+            }
 
             if (!targetType.IsAssignableFrom(type))
+            {
                 throw new ArgumentException(ExceptionResources.ArgumentIsAssignableTo, paramName);
+            }
         }
     }
 }

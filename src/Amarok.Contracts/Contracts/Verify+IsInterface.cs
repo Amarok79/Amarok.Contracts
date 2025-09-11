@@ -33,10 +33,14 @@ internal partial class Verify
     public static void IsInterface(Type? type, String paramName)
     {
         if (type is null)
+        {
             throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+        }
 
         if (!type.IsInterface)
+        {
             throw new ArgumentException(ExceptionResources.ArgumentIsInterface, paramName);
+        }
     }
 
 
@@ -64,10 +68,14 @@ internal partial class Verify
         public static void IsInterface(Type? type, String paramName)
         {
             if (type is null)
+            {
                 throw new ArgumentNullException(paramName, ExceptionResources.ArgumentNull);
+            }
 
             if (!type.IsInterface)
+            {
                 throw new ArgumentException(ExceptionResources.ArgumentIsInterface, paramName);
+            }
         }
     }
 }

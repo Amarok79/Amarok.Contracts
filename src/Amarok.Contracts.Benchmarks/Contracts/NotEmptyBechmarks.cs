@@ -47,10 +47,14 @@ public class NotEmptyBenchmarks
     private void _ThrowCore(String abc)
     {
         if (abc is null)
+        {
             throw new ArgumentNullException(nameof(abc));
+        }
 
         if (abc.Length == 0)
+        {
             throw new ArgumentException("msg", nameof(abc));
+        }
     }
 
 
